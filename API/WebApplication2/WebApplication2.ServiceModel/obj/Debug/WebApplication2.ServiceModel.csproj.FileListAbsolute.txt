@@ -1,0 +1,6 @@
+c:\users\ww\documents\visual studio 2012\Projects\WebApplication2\WebApplication2\WebApplication2.ServiceModel\bin\Debug\WebApplication2.ServiceModel.dll
+c:\users\ww\documents\visual studio 2012\Projects\WebApplication2\WebApplication2\WebApplication2.ServiceModel\bin\Debug\WebApplication2.ServiceModel.pdb
+c:\users\ww\documents\visual studio 2012\Projects\WebApplication2\WebApplication2\WebApplication2.ServiceModel\bin\Debug\ServiceStack.Interfaces.dll
+c:\users\ww\documents\visual studio 2012\Projects\WebApplication2\WebApplication2\WebApplication2.ServiceModel\obj\Debug\WebApplication2.ServiceModel.csprojResolveAssemblyReference.cache
+c:\users\ww\documents\visual studio 2012\Projects\WebApplication2\WebApplication2\WebApplication2.ServiceModel\obj\Debug\WebApplication2.ServiceModel.dll
+c:\users\ww\documents\visual studio 2012\Projects\WebApplication2\WebApplication2\WebApplication2.ServiceModel\obj\Debug\WebApplication2.ServiceModel.pdb

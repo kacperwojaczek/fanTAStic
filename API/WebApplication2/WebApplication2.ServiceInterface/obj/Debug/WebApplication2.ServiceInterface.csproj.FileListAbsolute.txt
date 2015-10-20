@@ -1,0 +1,16 @@
+c:\users\ww\documents\visual studio 2012\Projects\WebApplication2\WebApplication2\WebApplication2.ServiceInterface\bin\Debug\WebApplication2.ServiceInterface.dll
+c:\users\ww\documents\visual studio 2012\Projects\WebApplication2\WebApplication2\WebApplication2.ServiceInterface\bin\Debug\WebApplication2.ServiceInterface.pdb
+c:\users\ww\documents\visual studio 2012\Projects\WebApplication2\WebApplication2\WebApplication2.ServiceInterface\bin\Debug\ServiceStack.Client.dll
+c:\users\ww\documents\visual studio 2012\Projects\WebApplication2\WebApplication2\WebApplication2.ServiceInterface\bin\Debug\ServiceStack.Common.dll
+c:\users\ww\documents\visual studio 2012\Projects\WebApplication2\WebApplication2\WebApplication2.ServiceInterface\bin\Debug\ServiceStack.dll
+c:\users\ww\documents\visual studio 2012\Projects\WebApplication2\WebApplication2\WebApplication2.ServiceInterface\bin\Debug\ServiceStack.Interfaces.dll
+c:\users\ww\documents\visual studio 2012\Projects\WebApplication2\WebApplication2\WebApplication2.ServiceInterface\bin\Debug\ServiceStack.Text.dll
+c:\users\ww\documents\visual studio 2012\Projects\WebApplication2\WebApplication2\WebApplication2.ServiceInterface\bin\Debug\WebApplication2.ServiceModel.dll
+c:\users\ww\documents\visual studio 2012\Projects\WebApplication2\WebApplication2\WebApplication2.ServiceInterface\bin\Debug\WebApplication2.ServiceModel.pdb
+c:\users\ww\documents\visual studio 2012\Projects\WebApplication2\WebApplication2\WebApplication2.ServiceInterface\bin\Debug\ServiceStack.xml
+c:\users\ww\documents\visual studio 2012\Projects\WebApplication2\WebApplication2\WebApplication2.ServiceInterface\bin\Debug\ServiceStack.Client.xml
+c:\users\ww\documents\visual studio 2012\Projects\WebApplication2\WebApplication2\WebApplication2.ServiceInterface\bin\Debug\ServiceStack.Common.xml
+c:\users\ww\documents\visual studio 2012\Projects\WebApplication2\WebApplication2\WebApplication2.ServiceInterface\bin\Debug\ServiceStack.Text.xml
+c:\users\ww\documents\visual studio 2012\Projects\WebApplication2\WebApplication2\WebApplication2.ServiceInterface\obj\Debug\WebApplication2.ServiceInterface.csprojResolveAssemblyReference.cache
+c:\users\ww\documents\visual studio 2012\Projects\WebApplication2\WebApplication2\WebApplication2.ServiceInterface\obj\Debug\WebApplication2.ServiceInterface.dll
+c:\users\ww\documents\visual studio 2012\Projects\WebApplication2\WebApplication2\WebApplication2.ServiceInterface\obj\Debug\WebApplication2.ServiceInterface.pdb
