@@ -1,8 +1,9 @@
 <?php
-function head($site, $title) {
+function head($title, $subtitle) {
+	global $site;
 	?>
 		<head>
-			<title><?php echo $site ?><?php if($title) echo " | ".$title ?></title>
+			<title><?php echo $site ?><?php if($title) echo " | ".$title ?><?php if($subtitle) echo " | ".$subtitle ?></title>
 
 			<!-- meta tags -->
 			<meta charset="utf-8" />
