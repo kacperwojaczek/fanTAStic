@@ -48,4 +48,16 @@ namespace WebApplication2.ServiceInterface
             return new UserResponse { Result = "Modifiying user {0} name to {1}".Fmt(request.Login, request.Firstname) };
         }
     }
+    public class loginService : Service
+    {
+        public object Get(loginRequest request)
+        {
+            if (request.Login.IsNullOrEmpty())
+            {
+                return new loginResponse { Result = "Nie podales nazwy uzytkownia!" };
+            }
+
+            return new loginResponse { Result = "Zalogowales sie, {0}!".Fmt(request.Login) };
+        }
+    }
 }
