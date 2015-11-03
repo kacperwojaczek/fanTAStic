@@ -36,7 +36,7 @@
 		info:
 	}
 	*/
-	curl_close(ch2);
+	curl_close($ch2);
 	
 	/*
 	Warunki co ma się stać w zależności od odpowiedzi.
