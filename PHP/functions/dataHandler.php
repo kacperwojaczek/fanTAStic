@@ -1,11 +1,11 @@
 <?php
-function dataSend($url)
+function dataSend($url,$jsonData)
 {
 	$ch =  curl_init($url);
-	$jsonData = array(
+	/*$jsonData = array(
 		$_POST["username"] => "username";
 		$_POST["password"] => "password";
-	);
+	);*/
 	$jsonDataEncoded = json_encode($jsonData);
 	curl_setopt($ch, CURLOPT_POST, 1);
 	curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonDataEncoded);
@@ -23,6 +23,7 @@ function dataGet($url2)
 		CURLOPT_URL = $url2		          //Jeśli się zakomentuje RETURNTRANSFER to chyba dostaniemy string w odpowiedzi
 	));
 	$answer = curl_exec($ch2);
+	curl_close($ch2);
 	return $answer;
 }
 ?>
