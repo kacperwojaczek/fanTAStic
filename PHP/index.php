@@ -2,16 +2,16 @@
 	include "config.php";
 ?>
 <html>
-<?php head($site, "główna"); ?>
+<?php head(); ?>
 <body>
-	<!--?php //include "structure/nav.php" ?-->
+	<!--?php //include navbar ?-->
 	<main>
-	<!--?php //include "structure/halloffame.php" ?-->
+	<!--?php //include halloffame ?-->
 	</main>
 	<aside>
 		<?php login(); ?>
 		<?php register(); ?>
 	</aside>
-	<!--?php //include "structure/footer.php" ?-->
+	<?php footer(); ?>
 </body>
 </html>
