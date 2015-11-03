@@ -4,7 +4,7 @@
 	//"http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URl'];
 	//"http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 	//Tu adres do wyslałania
-	$url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URl'];	//???
+	$url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];	//???
 	$ch =  curl_init($url);
 	$jsonData = array(
 		$_POST["username"] => "username";
