@@ -3,8 +3,8 @@ Create table Tags
 count int,
 );
 
-Create table TablicaWpisow 
-(id int not null primary key,  // równe id usera
+Create table TablicaWpisow_idUsera
+(id int not null primary key,  
 Tytul varchar(75),
 autor int,
 Tresc text,
