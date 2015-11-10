@@ -1,0 +1,21 @@
+Create table Tags
+(nazwa varchar(30) not null unique primary key,
+count int,
+);
+
+Create table TablicaWpisow 
+(id int not null primary key,  // równe id usera
+Tytul varchar(75),
+autor int,
+Tresc text,
+Tagi binary(500)
+attachment varchar(150)
+);
+
+Create table Users
+(id int not null primary key identity(1,1),
+ImieBloggera varchar(30),
+NazwiskoBloggera varchar(50),
+NazwaBloga varchar(100),
+idTabWpis int references TablicaWpisow(id)
+);
