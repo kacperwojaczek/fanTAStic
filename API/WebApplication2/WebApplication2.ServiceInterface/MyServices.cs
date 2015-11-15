@@ -26,7 +26,12 @@ namespace WebApplication2.ServiceInterface
             User user1 = new User();
             user1.Firstname = request.Firstname.ToString();
             user1.Lastname = request.Lastname.ToString();
-            return new RegistrationResponse { Result = "User {0} ({1} {2}) successfully registered!".Fmt(request.Login, request.Firstname, request.Lastname) };
+            user1.Login = request.Login.ToString();
+            user1.Password = request.Password.ToString();
+            user1.Email = request.Email.ToString();
+            RegistrationResponse Response = new RegistrationResponse();
+            Response.Result = Response.Session(request);
+            return Response;
         }
     }
 
@@ -56,8 +61,9 @@ namespace WebApplication2.ServiceInterface
             {
                 return new loginResponse { Result = "Nie podales nazwy uzytkownia!" };
             }
-
-            return new loginResponse { Result = "Zalogowales sie, {0}!".Fmt(request.Login) };
+            loginResponse Response = new loginResponse();
+            Response.Result = Response.Session(request);
+            return Response;
         }
     }
 }
