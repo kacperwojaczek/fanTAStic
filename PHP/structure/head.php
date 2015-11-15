@@ -32,8 +32,11 @@ function head($title, $subtitle) {
 			<meta name="theme-color" content="#f85145">
 
 			<!-- css -->
+			<link rel="stylesheet" href="/styles/css/main.css">
 
-			<!-- js -->
+			<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Wire+One&subset=latin,latin-ext">
+			<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Unica+One&subset=latin,latin-ext">
+			<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Vollkorn:400,400italic,700italic,700&subset=latin,latin-ext">
 		</head>
 	<?php
 }

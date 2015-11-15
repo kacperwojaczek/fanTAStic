@@ -1,0 +1,72 @@
+.logo {
+	display: block;
+
+	height: 100px;
+	width: 170px;
+
+	margin: $margin auto;
+
+	background-image: url("../images/logo-light.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center center;
+
+	color: transparent;
+
+	&.dark {
+		background-image: url("../images/logo-dark.png");
+	}
+
+	&.medium {
+		height: 70px;
+		width: 120px;
+	}
+	&.small {
+		height: 40px;
+		width: 70px;
+
+	}
+
+	&.medium, &.small {
+		transition: background-image 1s;
+
+		margin: 5px $margin/4;
+
+		background-image: url("../images/logo-small-light.png");
+
+		&.dark {
+			background-image: url("../images/logo-small-dark.png");
+		}
+
+		&.grey-dark {
+			background-image: url("../images/logo-small-grey-dark.png");
+		}
+		&.grey-medium {
+			background-image: url("../images/logo-small-grey-medium.png");
+		}
+		&.grey-light {
+			background-image: url("../images/logo-small-grey-light.png");
+		}
+		&.grey-ultra {
+			background-image: url("../images/logo-small-grey-ultra.png");
+		}
+
+		&.color {
+			background-image: url("../images/logo-small-color.png");
+		}
+
+		&.black {
+			background-image: url("../images/logo-small-black.png");
+		}
+		&.white {
+			background-image: url("../images/logo-small-white.png");
+		}
+
+		&:hover {
+			background-image: url("../images/logo-small-white.png");
+		}
+		&:active {
+			background-image: url("../images/logo-small-color.png");
+		}
+	}
+}
