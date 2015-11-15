@@ -1,5 +1,9 @@
 <?php
-$site = "fanTAStic";
+$site = "ipsu.me";
 
-include "structure/structure.php"
+$urlFrontend = "ipsu.me";
+$urlBackend = "http://ipsume.azurewebsites.net/";
+
+include "structure/structure.php";
+include "functions/modalCookieCheck.php";
 ?>
