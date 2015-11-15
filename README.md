@@ -2,8 +2,8 @@
 Kappa (czyli opis)
 
 ### Terminy
-- [ ] 3.11 Wspólny Postęp
-- [ ] 10.11 
+- [X] 3.11 Wspólny Postęp
+- [X] 10.11 
 - [ ] 17.11 Mateusz + Kacper G
 - [ ] 24.11 
 - [ ] 1.12 Kacper W
