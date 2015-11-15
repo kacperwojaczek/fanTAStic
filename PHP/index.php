@@ -1,11 +1,11 @@
 <?php
-	include "config.php";
+	include_once "config.php";
 ?>
 
 <html>
 <?php head(); ?>
 <body>
-<?php if(modalCookieCheck("modal-launch")) { ?>
+<?php if($_COOKIE["modal-launch"] !== "hidden") { ?>
 	<div id="modal-control">
 <?php } ?>
 	<?php navbar(); ?>
@@ -13,7 +13,7 @@
 		<?php halloffame(); ?>
 	</main>
 	<?php footer(); ?>
-<?php if(modalCookieCheck("modal-launch")) { ?>
+<?php if($_COOKIE["modal-launch"] !== "hidden") { ?>
 	</div>
 	<div id="modal-wrapper">
 		<div id="modal">

@@ -6,7 +6,7 @@ function halloffame() {
 	?>
 	<div class="post-container">
 	<?php
-	for($i = 0; $i < rand(5, 100); ++$i) {
+	for($i = 0; $i < rand(5, 30); ++$i) {
 		$string = implode(' ', array_slice(explode(' ', $lipsum), 0, rand(5, 100)));
 		postExcerpt("", "", "", "", $string);
 	}

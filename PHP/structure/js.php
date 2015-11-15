@@ -5,7 +5,8 @@ function js() {
 		var scrolled;
 
 		function init() {
-			<?php if($_COOKIE[$cookieName] === "hidden") { ?>
+
+			<?php if($_COOKIE["modal-launch"] !== "hidden") { ?>
 			document.getElementById("modal-close").addEventListener("click", function() {
 				document.getElementById("modal-control").className = "hidden";
 

@@ -1,5 +1,5 @@
 <?php
-	include "config.php";
+	include_once "config.php";
 ?>
 <html>
 <?php head("__BLOG_TITLE__", "__POST_TITLE__"); ?>

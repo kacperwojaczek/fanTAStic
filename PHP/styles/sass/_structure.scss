@@ -26,7 +26,7 @@ body > nav, body > #modal-control > nav {
 body > main, body > #modal-control > main {
 	display: block;
 
-	min-height: 100vh;
+	min-height: calc(100vh - #{$footer-height});
 
 	width: 100vw;
 	&.aside {

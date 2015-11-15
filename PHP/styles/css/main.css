@@ -491,7 +491,7 @@ body > nav.scrolled, body > #modal-control > nav.scrolled {
 /* line 26, ../sass/_structure.scss */
 body > main, body > #modal-control > main {
   display: block;
-  min-height: 100vh;
+  min-height: calc(100vh - 150px);
   width: 100vw;
   padding-top: 62.5px;
   float: left;
