@@ -2,14 +2,14 @@
 	include "config.php";
 ?>
 <html>
-<?php head($site, "__USERNAME__"); ?>
+<?php head("__USERNAME__"); ?>
 <body>
 	<!--?php //include navbar ?-->
-	<main>
-	<!--?php //info ?-->
+	<main class="aside">
+		<!--?php //info ?-->
 	</main>
 	<aside>
-	<!--?php //najnowsze posty(x) ?-->
+		<!--?php //najnowsze posty(x) ?-->
 	</aside>
 	<?php footer(); ?>
 </body>

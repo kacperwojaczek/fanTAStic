@@ -2,14 +2,12 @@
 	include "config.php";
 ?>
 <html>
-<?php head($site, "The Team"); ?>
+<?php head("The Team"); ?>
 <body>
-	<!--?php navbar(); ?-->
-	<main>
-
+	<?php navbar(); ?>
+	<main class="aside">
 	</main>
 	<aside>
-
 	</aside>
 	<?php footer(); ?>
 </body>

@@ -2,9 +2,9 @@
 	include "config.php";
 ?>
 <html>
-<?php head($site, "Site Policy"); ?>
+<?php head("Site Policy"); ?>
 <body>
-	<!--?php navbar(); ?-->
+	<?php navbar(); ?>
 	<main>
 		<header><h1>Terms of Service</h1></header>
 		<section id="disclaimer">
@@ -193,8 +193,8 @@
 					unless the account was suspended or terminated due to unlawful conduct.</li>
 			</ol>
 		</section>
-		<section id="">
-			<h2>Copyright & Content Ownership</h2><a name="<?php echo $site; ?> | Policy | " href="#">Permalink</a>
+		<section id="copyright">
+			<h2>Copyright & Content Ownership</h2><a name="<?php echo $site; ?> | Policy | " href="#copyright">Permalink</a>
 			<ol>
 				<li>We claim no intellectual property rights over the material you provide to the Service.
 					Your profile and materials uploaded remain yours. 
