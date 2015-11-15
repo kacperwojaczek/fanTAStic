@@ -6,7 +6,9 @@
 	//"http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URl'];
 	//"http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 	
-	$url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];	//?
+	echo $urlBackend;
+
+	$url = $urlBackend;
 	$jsonData = array(
 		$_POST["username"] => "username";
 		$_POST["password"] => "password";
@@ -16,6 +18,7 @@
 	$url2 = '';
 	$answer = get_answer($url2);
 	$answerDecoded = json_decode($answer);
+	
 	/*
 	Proponowana przez Grega odpowiedź:
 	{
@@ -28,5 +31,6 @@
 	/*
 	Warunki co ma się stać w zależności od odpowiedzi.
 	*/
-	die();
+
+	var_dump($answer);
 ?>
