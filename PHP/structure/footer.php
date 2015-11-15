@@ -9,6 +9,8 @@ function footer() {
 				<li><a href="/policy">Policy</a></li>
 			</li>
 		</footer>
+
+		<?php js(); ?>
 	<?php
 }
 ?>
