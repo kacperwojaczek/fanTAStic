@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using ServiceStack;
+using System.Data.SqlClient;
 
 namespace WebApplication2.ServiceModel
 {
@@ -19,5 +20,48 @@ namespace WebApplication2.ServiceModel
         public ResponseStatus ResponseStatus { get; set; }
 
         public string Result { get; set; }
+
+        public string Session(loginRequest request)
+        {
+            string connetionString = null;
+            SqlConnection cnn;
+            connetionString = "Data Source=ServerName;Initial Catalog=DatabaseName;User ID=UserName;Password=Password";
+            cnn = new SqlConnection(connetionString);
+            try
+            {
+                cnn.Open();
+                //Console.WriteLine("Connection Open ! ");
+                string command=String.Format("Select Haslo from Users where NazwaBloga={0}", request.Login);
+                SqlCommand polecenie = new SqlCommand(command, cnn);
+                SqlDataReader dataReader;
+                dataReader = polecenie.ExecuteReader();
+                if (dataReader.HasRows)
+                {
+                    if (String.Compare(dataReader.GetString(0), request.Password) == 1)
+                    {
+                        dataReader.Close();
+                        cnn.Close();
+                        return String.Format("Zalogowales sie, {0}!", request.Login);
+                    }
+                    else
+                    {
+                        dataReader.Close();
+                        cnn.Close();
+                        return String.Format("Niepoprawne hasło!");
+                    }
+                }
+                else
+                {
+                    dataReader.Close();
+                    cnn.Close();
+                    return String.Format("W bazie danych nie ma użytkownika o nazwie {0}!", request.Login); 
+                }
+            }
+            catch (Exception ex)
+            {
+                return String.Format("Błąd ładowania bazy");
+            }
+
+        }
     }
 }
