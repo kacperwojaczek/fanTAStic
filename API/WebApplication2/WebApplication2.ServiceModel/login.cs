@@ -25,7 +25,7 @@ namespace WebApplication2.ServiceModel
         {
             string connetionString = null;
             SqlConnection cnn;
-            connetionString = "Data Source=ServerName;Initial Catalog=DatabaseName;User ID=UserName;Password=Password";
+            connetionString = "Server=tcp:o2elk70fp8.database.windows.net,1433;Database=ipsumeAHtTXn574L;User ID=fantastic@o2elk70fp8;Password=nhm554WW;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
             cnn = new SqlConnection(connetionString);
             try
             {
