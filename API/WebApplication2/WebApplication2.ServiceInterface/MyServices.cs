@@ -5,6 +5,8 @@ using System.Web;
 using ServiceStack;
 using WebApplication2;
 using WebApplication2.ServiceModel;
+using System.Net;
+using Newtonsoft.Json;
 
 namespace WebApplication2.ServiceInterface
 {
@@ -40,18 +42,23 @@ namespace WebApplication2.ServiceInterface
     {
         public object Get(UserRequest request)
         {
+            User user;
+            UserResponse Response = new UserResponse();
             if (request.Login.IsNullOrEmpty())
             {
-                return new UserResponse { Result = "Returning all users list" };
+                base.Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return Response;
             }
-            return new UserResponse { Result = "User {0} data...".Fmt(request.Login) };
+            user = Response.Respond(request);
+            string response = JsonConvert.SerializeObject(user,Formatting.Indented);
+            return response;
         }
 
         //modyfikacja danych uzytkownika
 
         public object Patch(UserRequest request)
         {
-            return new UserResponse { Result = "Modifiying user {0} name to {1}".Fmt(request.Login, request.Firstname) };
+            return new UserResponse { Result = "Modifiying user {0} ".Fmt(request.Login) };
         }
     }
     public class loginService : Service
