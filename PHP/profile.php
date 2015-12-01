@@ -2,7 +2,7 @@
 	include_once "config.php";
 ?>
 <html>
-<?php head("__USERNAME__"); ?>
+<?php echo head("__USERNAME__"); ?>
 <body>
 	<!--?php //include navbar ?-->
 	<main class="aside">
@@ -11,6 +11,6 @@
 	<aside>
 		<!--?php //najnowsze posty(x) ?-->
 	</aside>
-	<?php footer(); ?>
+	<!--?php footer(); ?-->
 </body>
 </html>

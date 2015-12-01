@@ -1,9 +1,6 @@
 .form {
-	transition: max-height 2s;
-
 	display: block;
 
-	max-height: 100px;
 	width: 400px;
 
 	overflow: hidden;
@@ -11,47 +8,63 @@
 	border: solid 1px transparent;
 
 	h2 {
-		transition: opacity 1s;
+		transition: opacity $duration/2;
 
 		display: block;
 
 		width: 400px;
-		height: 100px;
+		height: 50px;
 
 		text-align: center;
-		line-height: 100px;
+		line-height: 50px;
 
 		opacity: $opacity;
 	}
 
-	&:hover {
-		max-height: 100vh;
-
-		h2 {
-			opacity: 1;
-		}
-	}
-
 	&.login {
 		border-color: $medium;
-
-		h2 {
-			color: $medium;
-
-			border-bottom: solid 1px transparent;
-		}
 	}
 	&.register {
 		border-color: $color;
+	}
+}
 
-		h2 {
-			color: $dark;
+.form-header + .form.login, .form-header + .form.register {
+	transition: max-height $duration;
 
-			border-right: solid 10px $color;
-			border-bottom: solid 1px transparent;
+	max-height: 0px;
 
-			background-color: $color;
-		}
+	&:target {
+		max-height: 1000px;
+	}
+}
+.login {
+	h2 {
+		color: $medium;
+		
+		border-bottom: solid 1px transparent;
+	}
+}
+.register {
+	h2 {
+		color: $dark;
+
+		border-right: solid 2px $color;
+		border-bottom: solid 1px transparent;
+
+		background-color: $color;
+	}
+}
+
+a.form-header {
+	h2 {
+		display: block;
+
+		width: 400px;
+		height: 50px;
+
+		text-align: center;
+		line-height: 50px;
 	}
 }
 
@@ -82,7 +95,7 @@ input[type="text"], input[type="email"], input[type="password"], input[type="tel
 	border: none;
 	outline: none;
 
-	font-size: 25px;
+	font-size: 18px;
 
 	text-align: center;
 
@@ -132,4 +145,24 @@ input[type="submit"], input[type="file"], input[type="image"], input[type="reset
 	&:active{
 
 	}
+}
+nav .button  {
+	display: inline-block;
+
+	height: $navbar-height;
+	width: 100px;
+
+	border: none;
+	outline: none;
+	text-decoration: none;
+
+	line-height: $navbar-height;
+
+	font-size: 16px;
+
+	text-align: center;
+
+	color: $black;
+
+	background-color: $white;
 }

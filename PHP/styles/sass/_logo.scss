@@ -1,5 +1,5 @@
 .logo {
-	display: block;
+	display: inline-block;
 
 	height: 100px;
 	width: 170px;
@@ -28,7 +28,7 @@
 	}
 
 	&.medium, &.small {
-		transition: background-image 1s;
+		transition: background-image $duration/2;
 
 		margin: 5px $margin/4;
 

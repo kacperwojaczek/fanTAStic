@@ -1,8 +1,8 @@
 .post-container {
 	width: calc(100vw - $margin/2);
 
-	column-count: 4;
-	column-gap: $margin/4;
+	@include column-count(4);
+	@include column-gap($margin/4);
 
 	margin: $margin/4;
 }

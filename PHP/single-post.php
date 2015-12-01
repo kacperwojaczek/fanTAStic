@@ -2,7 +2,7 @@
 	include_once "config.php";
 ?>
 <html>
-<?php head("__BLOG_TITLE__", "__POST_TITLE__"); ?>
+<?php echo head("__BLOG_TITLE__", "__POST_TITLE__"); ?>
 <body>
 	<!--?php //include navbar ?-->
 	<main class="aside">
@@ -10,6 +10,6 @@
 	</main>
 	<aside>
 	</aside>
-	<?php footer(); ?>
+	<!--?php footer(); ?-->
 </body>
 </html>
