@@ -7,8 +7,8 @@ using System.Data.SqlClient;
 
 namespace WebApplication2.ServiceModel
 {
-    [Route("/login", "GET")]
-    [Route("/login/{Login}", "GET")]
+    [Route("/login", "POST")]
+    [Route("/login/{Login}", "POST")]
     public class loginRequest : IReturn<loginResponse>
     {
         public string Login { get; set; }
@@ -21,45 +21,48 @@ namespace WebApplication2.ServiceModel
 
         public string Result { get; set; }
 
-        public string Session(loginRequest request)
+        public int Session(loginRequest request)
         {
             string connetionString = null;
             SqlConnection cnn;
-            connetionString = "Server=tcp:o2elk70fp8.database.windows.net,1433;Database=ipsumeAHtTXn574L;User ID=fantastic@o2elk70fp8;Password=nhm554WW;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
+            connetionString = "workstation id=fantastic.mssql.somee.com;packet size=4096;user id=qacpiweb_SQLLogin_1;pwd=cfzqlqsobm;data source=fantastic.mssql.somee.com;persist security info=False;initial catalog=fantastic";
             cnn = new SqlConnection(connetionString);
             try
             {
-                cnn.Open();
+                
                 //Console.WriteLine("Connection Open ! ");
-                string command=String.Format("Select Haslo from Users where NazwaBloga={0}", request.Login);
+                string command = String.Format("Select Password from Users where Login='{0}'", request.Login);
                 SqlCommand polecenie = new SqlCommand(command, cnn);
                 SqlDataReader dataReader;
+                cnn.Open();
                 dataReader = polecenie.ExecuteReader();
                 if (dataReader.HasRows)
                 {
-                    if (String.Compare(dataReader.GetString(0), request.Password) == 1)
+                    dataReader.Read();
+                    string password = dataReader.GetString(0);
+                    if (password == request.Password)
                     {
                         dataReader.Close();
                         cnn.Close();
-                        return String.Format("Zalogowales sie, {0}!", request.Login);
+                        return 200;
                     }
                     else
                     {
                         dataReader.Close();
                         cnn.Close();
-                        return String.Format("Niepoprawne hasło!");
+                        return 401;
                     }
                 }
                 else
                 {
                     dataReader.Close();
                     cnn.Close();
-                    return String.Format("W bazie danych nie ma użytkownika o nazwie {0}!", request.Login); 
+                    return 404;
                 }
             }
             catch (Exception ex)
             {
-                return String.Format("Błąd ładowania bazy");
+                return 500;
             }
 
         }
