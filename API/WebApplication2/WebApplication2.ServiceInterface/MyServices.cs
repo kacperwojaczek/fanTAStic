@@ -30,7 +30,8 @@ namespace WebApplication2.ServiceInterface
             user1.Password = request.Password.ToString();
             user1.Email = request.Email.ToString();
             RegistrationResponse Response = new RegistrationResponse();
-            Response.Result = Response.Session(request);
+            int result = Response.Session(request);
+            base.Response.StatusCode = result;
             return Response;
         }
     }
@@ -55,14 +56,16 @@ namespace WebApplication2.ServiceInterface
     }
     public class loginService : Service
     {
-        public object Get(loginRequest request)
+        public object Post(loginRequest request)
         {
+            loginResponse Response = new loginResponse();
             if (request.Login.IsNullOrEmpty())
             {
-                return new loginResponse { Result = "Nie podales nazwy uzytkownia!" };
+                base.Response.StatusCode = 400;
+                return base.Response;
             }
-            loginResponse Response = new loginResponse();
-            Response.Result = Response.Session(request);
+            
+            base.Response.StatusCode = Response.Session(request);
             return Response;
         }
     }

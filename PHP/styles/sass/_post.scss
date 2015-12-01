@@ -1,0 +1,48 @@
+.post-container {
+	width: calc(100vw - $margin/2);
+
+	column-count: 4;
+	column-gap: $margin/4;
+
+	margin: $margin/4;
+}
+
+.post {
+	display: inline-block;
+	width: 100%;
+
+	margin-bottom: $margin/4;
+	padding: 0;
+
+	background-color: $white;
+
+	header {
+		display: block;
+
+		height: 50px;
+		width: 100%;
+
+		background-color: $color;
+
+		.avatar {
+
+		}
+		.post-title {
+
+			h2 {
+
+			}
+		}
+	}
+	article {
+		padding: $margin/4;
+	}
+	footer {
+		display: block;
+
+		height: 5px;
+		width: 100%;
+
+		background-color: $medium;
+	}
+}

@@ -1,5 +1,5 @@
 ﻿Logowanie
-	GET	/login
+	POST	/login
 		/login/{Login}
 
 Rejestracja

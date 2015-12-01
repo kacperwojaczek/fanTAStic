@@ -1,0 +1,62 @@
+body {
+	display: block;
+	height: 100%;
+	width: 100%;
+
+	background-color: $black;
+}
+
+body > nav, body > #modal-control > nav {
+	transition: background-color 1s;
+
+	display: block;
+
+	height: $navbar-height;
+	width: 100vw;
+
+	position: fixed;
+
+	background-color: transparent;
+
+	&.scrolled {
+		background-color: $dark;
+	}
+}
+
+body > main, body > #modal-control > main {
+	display: block;
+
+	min-height: calc(100vh - #{$footer-height});
+
+	width: 100vw;
+	&.aside {
+		width: calc(100vw - #{$aside-width});
+	}
+
+	padding-top: $navbar-height + $margin/4;
+
+	float: left;
+
+	background-color: $light;
+}
+
+body > aside, body > #modal-control > aside {
+	display: block;
+
+	height: 100vh;
+	width: $aside-width;
+
+
+	float: left;
+
+	background-color: $black;
+}
+
+body > footer, body > #modal-control > footer {
+	display: block;
+
+	height: $footer-height;
+	width: 100vw;
+
+	background-color: $black;
+}
