@@ -76,4 +76,29 @@ namespace WebApplication2.ServiceInterface
             return Response;
         }
     }
+    public class UserPostsService : Service
+    {
+        public object Get(UserPostsRequest request)
+        {
+            UserPostsResponse Response = new UserPostsResponse();
+            var posts = Response.Respond(request);
+            string response = JsonConvert.SerializeObject(posts, Formatting.Indented);
+            return response;
+        }
+    }
+    public class UserPostService : Service
+    {
+        public object Get(UserPostRequest request)
+        {
+            UserPostResponse Response = new UserPostResponse();
+            var post = Response.Respond(request);
+            if(post == null)
+            {
+                base.Response.StatusCode = (int)HttpStatusCode.NoContent;
+                return Response;
+            }
+            string response = JsonConvert.SerializeObject(post, Formatting.Indented);
+            return response;
+        }
+    }
 }
