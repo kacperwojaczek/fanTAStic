@@ -77,3 +77,5 @@ C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\
 C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\obj\Debug\WebApplication2.csprojResolveAssemblyReference.cache
 C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
 C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb
+C:\Users\Kacper\Documents\GitHub\fanTAStic\API\WebApplication2\WebApplication2\bin\Newtonsoft.Json.dll
+C:\Users\Kacper\Documents\GitHub\fanTAStic\API\WebApplication2\WebApplication2\bin\Newtonsoft.Json.xml
