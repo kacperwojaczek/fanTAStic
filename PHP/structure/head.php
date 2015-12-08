@@ -1,10 +1,11 @@
 <?php
 function head($title = "", $subtitle = "") {
 	global $site;
-	?>
+	
+	return '
 		<head>
 			<!-- title -->
-			<title><?php echo $site ?><?php if($title !== "") echo " | ".$title ?><?php if($subtitle !== "") echo " | ".$subtitle ?></title>
+			<title>'. $site .($title !== "" ? " | ".$title : "") .($subtitle !== "" ? " | ".$subtitle : ""). '</title>
 
 			<!-- meta tags -->
 			<meta charset="utf-8" />
@@ -38,7 +39,10 @@ function head($title = "", $subtitle = "") {
 			<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Wire+One&subset=latin,latin-ext">
 			<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Unica+One&subset=latin,latin-ext">
 			<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Vollkorn:400,400italic,700italic,700&subset=latin,latin-ext">
+
+			<!-- js -->
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		</head>
-	<?php
+	';
 }
 ?>

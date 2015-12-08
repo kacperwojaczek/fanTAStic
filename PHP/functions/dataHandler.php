@@ -8,11 +8,11 @@ function dataSend($url, $jsonData) {
 	curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonDataEncoded);
 	curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
 
-	$result = curl_exec($ch);
+	//$result = curl_exec($ch);
 
-	curl_close($ch);
+	//curl_close($ch);
 
-	return $result;
+	//return $result;
 }
 
 function dataGet($url2) {
@@ -22,10 +22,10 @@ function dataGet($url2) {
 		CURLOPT_URL = $url2
 	));
 
-	$answer = curl_exec($ch2);
+	//$answer = curl_exec($ch2);
 
-	curl_close($ch2);
+	//curl_close($ch2);
 	
-	return $answer;
+	//return $answer;
 }
 ?>

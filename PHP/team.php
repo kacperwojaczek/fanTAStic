@@ -2,13 +2,11 @@
 	include_once "config.php";
 ?>
 <html>
-<?php head("The Team"); ?>
+<?php echo head("The Team"); ?>
 <body>
-	<?php navbar(); ?>
-	<main class="aside">
+	<?php echo navbar(); ?>
+	<main>
 	</main>
-	<aside>
-	</aside>
-	<?php footer(); ?>
+	<?php echo footer(); ?>
 </body>
 </html>

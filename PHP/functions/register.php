@@ -1,33 +1,22 @@
 <?php
-	header('Location: /profile');
+
+	//header('Location: /');
 
 	include 'dataHandler.php';
-	//Tu adres do wyslałania
-	$url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URl'];	//??
+
+	$url = $urlBackend + "/register";
+
 	$jsonData = array(
-		$_POST["username"] => "username";
-		$_POST["password"] => "password";
-		$_POST["email"] => "email";
+		$_POST["Username"] => "username",
+		$_POST["Password"] => "password",
+		$_POST["Email"] => "email",
 	);
 	
-	$result = dataSend($url,$jsonData);
+	$result = dataSend($url, $jsonData);
 	
-	//Odpowiedź z adresu
 	$url2 = '';
 	$answer = dataGet($url2);
 	$answerDecoded = json_decode($answer);
-	/*
-	Proponowana przez Grega odpowiedź:
-	{
-		id:
-		msg:
-		params:
-		info:
-	}
-	*/
-	/*
-	Warunki co ma się stać w zależności od odpowiedzi.
-	*/
-	
-	die();
+
+	var_dump($answer);
 ?>

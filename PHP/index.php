@@ -3,29 +3,19 @@
 ?>
 
 <html>
-<?php head(); ?>
+<?php echo head(); ?>
 <body>
-<?php if($_COOKIE["modal-launch"] !== "hidden") { ?>
-	<div id="modal-control">
-<?php } ?>
-	<?php navbar(); ?>
+	<div id="modal-control" <?php if($_COOKIE["modal-launch"] === "hidden") {?> class="hidden" <?php } ?>>
+	<?php echo navbar(); ?>
 	<main>
-		<?php halloffame(); ?>
+		<?php echo halloffame(); ?>
 	</main>
-	<?php footer(); ?>
+	<?php echo footer(); ?>
+	</div>
+	<div id="modal-wrapper" <?php if($_COOKIE["modal-launch"] === "hidden") {?> class="hidden" <?php } ?>>
 <?php if($_COOKIE["modal-launch"] !== "hidden") { ?>
-	</div>
-	<div id="modal-wrapper">
-		<div id="modal">
-			<?php logo("", ""); ?>
-			<?php login(); ?>
-			<?php register(); ?>
-			<div id="explore">
-				<h2>or</h2>
-				<div id="modal-close">Explore the Community</div>
-			</div>
-		</div>
-	</div>
+		<?php echo splashModal(); ?>
 <?php } ?>
+	</div>
 </body>
 </html>

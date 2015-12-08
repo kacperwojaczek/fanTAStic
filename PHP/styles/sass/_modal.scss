@@ -1,23 +1,21 @@
-@import 'compass/css3/filter';
-
 @keyframes modal-in {
     from {
     	opacity: 0;
-    	filter: blur(10px);
+    	@include filter(blur(10px));
     }
     to {
     	opacity: 1;
-    	filter: blur(0);
+    	@include filter(blur(0));
     }
 }
 @keyframes modal-out {
     from {
     	opacity: 1;
-    	filter: blur(0);
+    	@include filter(blur(0));
     }
     to {
     	opacity: 0;
-    	filter: blur(10px);
+    	@include filter(blur(10px));
     }
 }
 
@@ -28,10 +26,14 @@
 	left: 50%;
 
 	transform: translate(-50%, -50%);
+
+	.logo {
+		width: 100%;
+	}
 }
 
 #modal-control {
-	transition: filter 2s;
+	transition: filter $duration;
 
 	height: 100vh;
 	width: 100vw;
@@ -42,6 +44,9 @@
 
 	&.hidden {
 		@include filter(blur(0px));
+
+		height: auto;
+		width: auto;
 
 		overflow: auto;
 	}
@@ -87,7 +92,7 @@
 		color: $medium;
 	}
 	div {
-		transition: color 1s;
+		transition: color $duration/2;
 
 		font-family: 'Vollkorn', sans-serif;
 		font-size: 24px;

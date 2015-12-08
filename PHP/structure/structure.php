@@ -3,6 +3,8 @@ include_once "head.php";
 include_once "navbar.php";
 include_once "footer.php";
 
+include_once "modals.php";
+
 include_once "js.php";
 
 include_once "post.php";

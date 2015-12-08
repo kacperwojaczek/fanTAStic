@@ -2,10 +2,10 @@
 	include_once "config.php";
 ?>
 <html>
-<?php head("Site Policy"); ?>
+<?php echo head("Site Policy"); ?>
 <body>
-	<?php navbar(); ?>
-	<main>
+	<?php echo navbar(); ?>
+	<main class="aside">
 		<header><h1>Terms of Service</h1></header>
 		<section id="disclaimer">
 			<h2>Disclaimer</h2><a name="<?php echo $site; ?> | Policy | disclaimer" href="#disclaimer">Permalink</a>
@@ -245,6 +245,6 @@
 			<li><a href="#code-license">Terms of Code Use</a></li>
 		</ul>
 	</aside>
-	<?php footer(); ?>
+	<?php echo footer(); ?>
 </body>
 </html>
