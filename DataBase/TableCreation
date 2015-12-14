@@ -1,22 +1,33 @@
-Create table Tags
+create table Tags
 (name varchar(30) not null primary key,
 count int,
 );
 
-Create table Wall_LoginUsera
-(id int not null primary key,  
-tytul varchar(75),
-autor int default 0,
-tresc text,
-tagi binary(500),
-attachment varchar(150)
-);
-
 Create table Users
-(id int not null primary key identity(1,1),
-imiebloggera varchar(64),
-nazwiskobloggera varchar(80),
-nazwabloga varchar(256),
+(id int not null primary key identity,
+Imie varchar(64),
+Nazwisko varchar(80),
+NazwaBloga varchar(256),
 Login nvarchar(128) unique,
 Password nvarchar(128)
 );
+
+Create table Wall	
+(id int not null primary key,
+Autor int,
+foreign key (Autor) references Users(id),
+Tytul varchar(75),
+reblog int default 0, --Podane ID prawowitego autora w razie reblogowania posta
+Tresc text,
+Tagi binary(500),
+attachment varchar(150),
+DataPosta date
+);
+
+Select * from Tags;
+Select * from Users;
+select * from Wall;
+
+--drop table Tags;
+--drop table Users
+--drop table Wall;
