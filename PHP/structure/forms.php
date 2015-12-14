@@ -26,4 +26,16 @@ function register() {
 		</div>
 	';
 }
+
+function writePost() {
+	return '
+		<div id="writePost" class="form writePost">
+			<form autocomplete="off" action="../functions/register.php" method="Post">
+				<label><input type="text" name="title" placeholder="Post Title"></label>
+				<label><textarea name="content"></textarea>
+				<input type="submit" value="Save">
+			</form>
+		</div>
+	';
+}
 ?>
