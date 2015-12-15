@@ -92,7 +92,7 @@ namespace WebApplication2.ServiceInterface
         {
             UserPostResponse Response = new UserPostResponse();
             var post = Response.Respond(request);
-            if(post == null)
+            if (post == null)
             {
                 base.Response.StatusCode = (int)HttpStatusCode.NoContent;
                 return Response;
@@ -100,11 +100,24 @@ namespace WebApplication2.ServiceInterface
             string response = JsonConvert.SerializeObject(post, Formatting.Indented);
             return response;
         }
+    }
 
-        public object Post(UserPostPOSTRequest request)
+    public class AddUserPostService : Service
+    {
+        public object Post(AddUserPostRequest request)
         {
-
-            return Response;
+            AddUserPostResponse Response = new AddUserPostResponse();
+            var resp = Response.Respond(request);
+            if (resp == 200)
+            {
+                base.Response.StatusCode = (int)HttpStatusCode.OK;
+                return Response;
+            }
+            else
+            {
+                base.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                return Response;
+            }
         }
     }
 }

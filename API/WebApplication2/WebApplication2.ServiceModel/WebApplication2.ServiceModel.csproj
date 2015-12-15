@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddUserPost.cs" />
     <Compile Include="Hello.cs" />
     <Compile Include="login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
