@@ -9,19 +9,9 @@ using System.Threading.Tasks;
 namespace WebApplication2.ServiceModel
 {
     [Route("/posts/{Id}", "GET")]
-    [Route("/posts/", "POST")]
     public class UserPostRequest : IReturn<UserPostResponse>
     {
         public int Id { get; set; }
-    }
-
-    public class UserPostPOSTRequest : IReturn<UserPost>
-    {
-        public int id { get; set; }
-        public int authorId { get; set; }
-        public string title { get; set; }
-        public string text { get; set; }
-        public string date { get; set; }
     }
 
     public class UserPostResponse
@@ -39,7 +29,15 @@ namespace WebApplication2.ServiceModel
             cnn = new SqlConnection(connectionString);
             try
             {
-                string command = String.Format("Select * from Wall where id='{0}'", request.Id);
+                string command;
+                if (request.Id == 0)
+                {
+                    command = "Select * from Wall";
+                }
+                else
+                {
+                    command = String.Format("Select * from Wall where id='{0}'", request.Id);
+                }
                 SqlCommand polecenie = new SqlCommand(command, cnn);
                 SqlDataReader dataReader;
                 cnn.Open();
