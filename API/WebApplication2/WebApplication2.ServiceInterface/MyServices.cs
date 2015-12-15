@@ -65,14 +65,17 @@ namespace WebApplication2.ServiceInterface
     {
         public object Post(loginRequest request)
         {
+            /* loginResponse Response = new loginResponse();
+             if (request.Login.IsNullOrEmpty())
+             {
+                 base.Response.StatusCode = 400;
+                 return base.Response;
+             }
+
+             base.Response.StatusCode = Response.Session(request);
+             return Response;*/
             loginResponse Response = new loginResponse();
-            if (request.Login.IsNullOrEmpty())
-            {
-                base.Response.StatusCode = 400;
-                return base.Response;
-            }
-            
-            base.Response.StatusCode = Response.Session(request);
+            base.Response.StatusCode = (int)HttpStatusCode.OK;
             return Response;
         }
     }
