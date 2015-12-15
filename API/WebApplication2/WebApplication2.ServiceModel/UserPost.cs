@@ -9,9 +9,19 @@ using System.Threading.Tasks;
 namespace WebApplication2.ServiceModel
 {
     [Route("/posts/{Id}", "GET")]
+    [Route("/posts/", "POST")]
     public class UserPostRequest : IReturn<UserPostResponse>
     {
         public int Id { get; set; }
+    }
+
+    public class UserPostPOSTRequest : IReturn<UserPost>
+    {
+        public int id { get; set; }
+        public int authorId { get; set; }
+        public string title { get; set; }
+        public string text { get; set; }
+        public string date { get; set; }
     }
 
     public class UserPostResponse

@@ -100,5 +100,11 @@ namespace WebApplication2.ServiceInterface
             string response = JsonConvert.SerializeObject(post, Formatting.Indented);
             return response;
         }
+
+        public object Post(UserPostPOSTRequest request)
+        {
+
+            return Response;
+        }
     }
 }
