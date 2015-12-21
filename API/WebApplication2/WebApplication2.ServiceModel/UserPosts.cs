@@ -103,7 +103,6 @@ namespace WebApplication2.ServiceModel
                 dataReader.Close();
 
                 command = "INSERT into Wall (Autor, Tytul, reblog, Tresc, Tagi, attachment, DataPosta) values (@AuthorId, @Title, @Reblog, @Text, @Tags, @Attach, GETDATE())";
-                // post.authorId, post.title, post.reblog, post.text, post.tags, post.attachment);
 
                 paramsList.Clear();
                 SqlParameter tempParam = new SqlParameter("@AuthorId", SqlDbType.Int);

@@ -1,6 +1,7 @@
 ﻿using ServiceStack;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -27,20 +28,18 @@ namespace WebApplication2.ServiceModel
         {
             var userPosts = new List<UserPost>();
             UserPost post = new UserPost();
-            string connectionString = null;
-            SqlConnection cnn;
-            connectionString = "Server=tcp:fantastic.database.windows.net,1433;Database=fantastic;User ID=qacpiweb@fantastic;Password=nhm554WW;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
-            cnn = new SqlConnection(connectionString);
+            var dbConnection = new DatabaseConnector();
+            var paramsList = new List<SqlParameter>();
+            SqlDataReader dataReader;
+            string command;
+
             try
             {
-                string command;
                 if (request.Id == 0)
                 {
                     command = "Select * from Wall";
-                    SqlCommand polecenie = new SqlCommand(command, cnn);
-                    SqlDataReader dataReader;
-                    cnn.Open();
-                    dataReader = polecenie.ExecuteReader();
+                    dataReader = dbConnection.executeCommand(command, paramsList);
+                    
                     while(dataReader.Read())
                     {
                         userPosts.Add(new UserPost
@@ -55,16 +54,18 @@ namespace WebApplication2.ServiceModel
                         });
                     }
                     dataReader.Close();
-                    cnn.Close();
+
                     return userPosts;
                 }
                 else
                 {
-                    command = String.Format("Select * from Wall where id='{0}'", request.Id);
-                    SqlCommand polecenie = new SqlCommand(command, cnn);
-                    SqlDataReader dataReader;
-                    cnn.Open();
-                    dataReader = polecenie.ExecuteReader();
+                    paramsList.Clear();
+
+                    SqlParameter loginParam = new SqlParameter("@Id", SqlDbType.Int);
+                    loginParam.Value = request.Id;
+                    paramsList.Add(loginParam);
+                    command = "Select * from Wall where id=@Id";
+                    dataReader = dbConnection.executeCommand(command, paramsList);
                     
                     if (dataReader.HasRows)
                     {
@@ -83,13 +84,11 @@ namespace WebApplication2.ServiceModel
 
                         dataReader.Close();
 
-                        cnn.Close();
                         return userPosts;
                     }
                     else
                     {
                         dataReader.Close();
-                        cnn.Close();
                         return null;
                     }
                 }
@@ -104,21 +103,23 @@ namespace WebApplication2.ServiceModel
         public List<UserPost> Patch(UserPostRequest request)
         {
             var userPosts = new List<UserPost>();
-            string connectionString = null;
-            SqlConnection cnn;
-            connectionString = "Server=tcp:fantastic.database.windows.net,1433;Database=fantastic;User ID=qacpiweb@fantastic;Password=nhm554WW;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
-            cnn = new SqlConnection(connectionString);
+            var dbConnection = new DatabaseConnector();
+            var paramsList = new List<SqlParameter>();
+            SqlDataReader dataReader;
+            string command;
+
             try
             {
-                string command;
-                command = String.Format("Select * from Wall where id='{0}'", request.Id);
-                SqlCommand polecenie = new SqlCommand(command, cnn);
-                SqlDataReader dataReader;
-                cnn.Open();
-                dataReader = polecenie.ExecuteReader();
+                SqlParameter loginParam = new SqlParameter("@Id", SqlDbType.Int);
+                loginParam.Value = request.Id;
+                paramsList.Add(loginParam);
+                command = "Select * from Wall where id=@Id";
+                dataReader = dbConnection.executeCommand(command, paramsList);
+
                 if (dataReader.HasRows)
                 {
                     dataReader.Read();
+
                     userPosts.Add(new UserPost
                     {
                         id = dataReader.GetInt32(0),
@@ -137,20 +138,29 @@ namespace WebApplication2.ServiceModel
                     userPosts.ElementAt(0).title = request.Title;
                     userPosts.ElementAt(0).text = request.Content;
 
-                    command = String.Format("UPDATE Wall set Tytul='{0}', Tresc='{1}' where id='{2}'", request.Title, request.Content, request.Id);
-                    polecenie = new SqlCommand(command, cnn);
-                    dataReader = polecenie.ExecuteReader();
+                    command = "UPDATE Wall set Tytul=@Title, Tresc=@Content where id=@IId";
+                    paramsList.Clear();
+
+                    SqlParameter tempParam = new SqlParameter("@Title", SqlDbType.VarChar, request.Title.Length);
+                    tempParam.Value = request.Title;
+                    paramsList.Add(tempParam);
+                    tempParam = new SqlParameter("@Content", SqlDbType.VarChar, request.Content.Length);
+                    tempParam.Value = request.Content;
+                    paramsList.Add(tempParam);
+                    tempParam = new SqlParameter("@IId", SqlDbType.Int);
+                    tempParam.Value = request.Id;
+                    paramsList.Add(tempParam);
+
+                    dataReader = dbConnection.executeCommand(command, paramsList);
 
                     if (dataReader.RecordsAffected > 0)
                     {
                         dataReader.Close();
-                        cnn.Close();
                         return userPosts;
                     }
                     else
                     {
                         dataReader.Close();
-                        cnn.Close();
                         return null;
                     }
 
@@ -158,7 +168,6 @@ namespace WebApplication2.ServiceModel
                 else
                 {
                     dataReader.Close();
-                    cnn.Close();
                     return null;
                 }
             }
