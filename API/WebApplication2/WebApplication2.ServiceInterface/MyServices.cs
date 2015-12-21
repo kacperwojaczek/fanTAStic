@@ -81,13 +81,28 @@ namespace WebApplication2.ServiceInterface
         public object Get(UserPostsRequest request)
         {
             UserPostsResponse Response = new UserPostsResponse();
-            var posts = Response.Respond(request);
+            var posts = Response.Get(request);
             string response = JsonConvert.SerializeObject(posts, Formatting.Indented);
             return response;
         }
+        public object Post(UserPostsRequest request)
+        {
+            UserPostsResponse Response = new UserPostsResponse();
+            var resp = Response.Post(request);
+            if (resp == 200)
+            {
+                base.Response.StatusCode = (int)HttpStatusCode.OK;
+                return Response;
+            }
+            else
+            {
+                base.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                return Response;
+            }
+        }
     }
 
-    public class AddUserPostService : Service
+   /* public class AddUserPostService : Service
     {
         public object Post(AddUserPostRequest request)
         {
@@ -104,7 +119,7 @@ namespace WebApplication2.ServiceInterface
                 return Response;
             }
         }
-    }
+    }*/
     public class UserPostService : Service
     {
         public object Get(UserPostRequest request)
