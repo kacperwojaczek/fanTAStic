@@ -52,7 +52,7 @@ namespace WebApplication2.ServiceModel
                     post.reblog = dataReader.GetInt32(3);
                     post.text = dataReader.GetString(4);
                     post.attachment = dataReader.GetString(6);
-                    post.date = dataReader.GetString(7);
+                    post.date = dataReader.GetDateTime(7);
 
                     dataReader.Close();
 
@@ -83,7 +83,7 @@ namespace WebApplication2.ServiceModel
         public string text { get; set; }
         public int tags { get; set; }
         public string attachment { get; set; }
-        public string date { get; set; }
+        public DateTime date { get; set; }
 
     }
 }
