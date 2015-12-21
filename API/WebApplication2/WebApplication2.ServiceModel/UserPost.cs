@@ -20,8 +20,9 @@ namespace WebApplication2.ServiceModel
 
         public string Result { get; set; }
 
-        public UserPost Respond(UserPostRequest request)
+        public List<UserPost> Respond(UserPostRequest request)
         {
+            var userPosts = new List<UserPost>();
             UserPost post = new UserPost();
             string connectionString = null;
             SqlConnection cnn;
@@ -33,37 +34,61 @@ namespace WebApplication2.ServiceModel
                 if (request.Id == 0)
                 {
                     command = "Select * from Wall";
+                    SqlCommand polecenie = new SqlCommand(command, cnn);
+                    SqlDataReader dataReader;
+                    cnn.Open();
+                    dataReader = polecenie.ExecuteReader();
+                    while(dataReader.Read())
+                    {
+                        userPosts.Add(new UserPost
+                        {
+                            id = dataReader.GetInt32(0),
+                            authorId = dataReader.GetInt32(1),
+                            title = dataReader.GetString(2),
+                            reblog = dataReader.GetInt32(3),
+                            text = dataReader.GetString(4),
+                            attachment = dataReader.GetString(6),
+                            date = dataReader.GetDateTime(7)
+                        });
+                    }
+                    dataReader.Close();
+                    cnn.Close();
+                    return userPosts;
                 }
                 else
                 {
                     command = String.Format("Select * from Wall where id='{0}'", request.Id);
-                }
-                SqlCommand polecenie = new SqlCommand(command, cnn);
-                SqlDataReader dataReader;
-                cnn.Open();
-                dataReader = polecenie.ExecuteReader();
-                if (dataReader.HasRows)
-                {
-                    dataReader.Read();
+                    SqlCommand polecenie = new SqlCommand(command, cnn);
+                    SqlDataReader dataReader;
+                    cnn.Open();
+                    dataReader = polecenie.ExecuteReader();
+                    
+                    if (dataReader.HasRows)
+                    {
+                        dataReader.Read();
 
-                    post.id = dataReader.GetInt32(0);
-                    post.authorId = dataReader.GetInt32(1);
-                    post.title = dataReader.GetString(2);
-                    post.reblog = dataReader.GetInt32(3);
-                    post.text = dataReader.GetString(4);
-                    post.attachment = dataReader.GetString(6);
-                    post.date = dataReader.GetDateTime(7);
+                        userPosts.Add(new UserPost
+                        {
+                            id = dataReader.GetInt32(0),
+                            authorId = dataReader.GetInt32(1),
+                            title = dataReader.GetString(2),
+                            reblog = dataReader.GetInt32(3),
+                            text = dataReader.GetString(4),
+                            attachment = dataReader.GetString(6),
+                            date = dataReader.GetDateTime(7)
+                        });
 
-                    dataReader.Close();
+                        dataReader.Close();
 
-                    cnn.Close();
-                    return post;
-                }
-                else
-                {
-                    dataReader.Close();
-                    cnn.Close();
-                    return null;
+                        cnn.Close();
+                        return userPosts;
+                    }
+                    else
+                    {
+                        dataReader.Close();
+                        cnn.Close();
+                        return null;
+                    }
                 }
             }
             catch (Exception ex)

@@ -91,13 +91,13 @@ namespace WebApplication2.ServiceInterface
         public object Get(UserPostRequest request)
         {
             UserPostResponse Response = new UserPostResponse();
-            var post = Response.Respond(request);
-            if (post == null)
+            var posts = Response.Respond(request);
+            if (posts == null)
             {
                 base.Response.StatusCode = (int)HttpStatusCode.NoContent;
                 return Response;
             }
-            string response = JsonConvert.SerializeObject(post, Formatting.Indented);
+            string response = JsonConvert.SerializeObject(posts, Formatting.Indented);
             return response;
         }
     }
