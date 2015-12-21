@@ -152,7 +152,7 @@ namespace WebApplication2.ServiceModel
                 user.Avatar = request.Avatar;
                 user.Bio = request.Bio;
 
-                command = String.Format("UPDATE Users set Imie='{0}', Nazwisko='{1}', Password='{2}', Avatar='{3}', Bio='{4}'", request.Firstname, request.Lastname, request.Password, request.Avatar, request.Bio);
+                command = String.Format("UPDATE Users set Imie='{0}', Nazwisko='{1}', Password='{2}', Avatar='{3}', Bio='{4}' where Id='{5}' ", request.Firstname, request.Lastname, request.Password, request.Avatar, request.Bio, user.Id);
                 polecenie = new SqlCommand(command, cnn);
                 dataReader = polecenie.ExecuteReader();
 

@@ -114,30 +114,25 @@ namespace WebApplication2.ServiceInterface
         }
     }
 
-   /* public class AddUserPostService : Service
-    {
-        public object Post(AddUserPostRequest request)
-        {
-            AddUserPostResponse Response = new AddUserPostResponse();
-            var resp = Response.Respond(request);
-            if (resp == 200)
-            {
-                base.Response.StatusCode = (int)HttpStatusCode.OK;
-                return Response;
-            }
-            else
-            {
-                base.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-                return Response;
-            }
-        }
-    }*/
     public class UserPostService : Service
     {
         public object Get(UserPostRequest request)
         {
             UserPostResponse Response = new UserPostResponse();
-            var posts = Response.Respond(request);
+            var posts = Response.Get(request);
+            if (posts == null)
+            {
+                base.Response.StatusCode = (int)HttpStatusCode.NoContent;
+                return Response;
+            }
+            string response = JsonConvert.SerializeObject(posts, Formatting.Indented);
+            return response;
+        }
+
+        public object Patch(UserPostRequest request)
+        {
+            UserPostResponse Response = new UserPostResponse();
+            var posts = Response.Patch(request);
             if (posts == null)
             {
                 base.Response.StatusCode = (int)HttpStatusCode.NoContent;
