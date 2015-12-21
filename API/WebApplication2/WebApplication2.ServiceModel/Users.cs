@@ -7,12 +7,11 @@ using System.Data.SqlClient;
 
 namespace WebApplication2.ServiceModel
 {
-    [Route("/users/", "GET")]
-    [Route("/users/{Login}", "GET")]
-    [Route("/users/{Login}", "PATCH")]
+    [Route("/users/{Id}", "GET")]
+    [Route("/users/{Id}", "PATCH")]
     public class UserRequest : IReturn<UserResponse>
     {
-        public string Login { get; set; }
+        public int Id { get; set; }
     }
 
     public class UserResponse
@@ -30,7 +29,7 @@ namespace WebApplication2.ServiceModel
             cnn = new SqlConnection(connectionString);
             try
             {
-                string command = String.Format("Select * from Users where Login='{0}'", request.Login);
+                string command = String.Format("Select * from Users where id='{0}'", request.Id);
                 SqlCommand polecenie = new SqlCommand(command, cnn);
                 SqlDataReader dataReader;
                 cnn.Open();
