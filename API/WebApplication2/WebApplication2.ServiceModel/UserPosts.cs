@@ -12,7 +12,6 @@ namespace WebApplication2.ServiceModel
     public class UserPostsRequest : IReturn<UserPostResponse>
     {
         public string Login{get; set;}
-        public int Id {get;set;}
     }
 
     public class UserPostsResponse
