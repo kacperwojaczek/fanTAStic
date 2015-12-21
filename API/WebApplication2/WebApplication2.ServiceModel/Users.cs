@@ -42,6 +42,8 @@ namespace WebApplication2.ServiceModel
                     user.Lastname = dataReader.GetString(2);
                     user.Login = dataReader.GetString(4);
                     user.Password = dataReader.GetString(5);
+                    user.Avatar = dataReader.GetString(6);
+                    user.Bio = dataReader.GetString(7);
 
                     dataReader.Close();
                     cnn.Close();
@@ -71,4 +73,6 @@ namespace WebApplication2.ServiceModel
         public string Lastname { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
+        public string Avatar { get; set; }
+        public string Bio { get; set; }
     }
