@@ -9,9 +9,12 @@ using System.Threading.Tasks;
 namespace WebApplication2.ServiceModel
 {
     [Route("/posts/{Id}", "GET")]
+    [Route("/posts/{Id}", "PATCH")]
     public class UserPostRequest : IReturn<UserPostResponse>
     {
         public int Id { get; set; }
+        public string Title { get; set; }
+        public string Content { get; set; }
     }
 
     public class UserPostResponse
@@ -20,16 +23,95 @@ namespace WebApplication2.ServiceModel
 
         public string Result { get; set; }
 
-        public UserPost Respond(UserPostRequest request)
+        public List<UserPost> Get(UserPostRequest request)
         {
+            var userPosts = new List<UserPost>();
             UserPost post = new UserPost();
             string connectionString = null;
             SqlConnection cnn;
-            connectionString = "workstation id=fantastic.mssql.somee.com;packet size=4096;user id=qacpiweb_SQLLogin_1;pwd=cfzqlqsobm;data source=fantastic.mssql.somee.com;persist security info=False;initial catalog=fantastic";
+            connectionString = "Server=tcp:fantastic.database.windows.net,1433;Database=fantastic;User ID=qacpiweb@fantastic;Password=nhm554WW;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
             cnn = new SqlConnection(connectionString);
             try
             {
-                string command = String.Format("Select * from Wall where id='{0}'", request.Id);
+                string command;
+                if (request.Id == 0)
+                {
+                    command = "Select * from Wall";
+                    SqlCommand polecenie = new SqlCommand(command, cnn);
+                    SqlDataReader dataReader;
+                    cnn.Open();
+                    dataReader = polecenie.ExecuteReader();
+                    while(dataReader.Read())
+                    {
+                        userPosts.Add(new UserPost
+                        {
+                            id = dataReader.GetInt32(0),
+                            authorId = dataReader.GetInt32(1),
+                            title = dataReader.GetString(2),
+                            reblog = dataReader.GetInt32(3),
+                            text = dataReader.GetString(4),
+                            attachment = dataReader.GetString(6),
+                            date = dataReader.GetDateTime(7)
+                        });
+                    }
+                    dataReader.Close();
+                    cnn.Close();
+                    return userPosts;
+                }
+                else
+                {
+                    command = String.Format("Select * from Wall where id='{0}'", request.Id);
+                    SqlCommand polecenie = new SqlCommand(command, cnn);
+                    SqlDataReader dataReader;
+                    cnn.Open();
+                    dataReader = polecenie.ExecuteReader();
+                    
+                    if (dataReader.HasRows)
+                    {
+                        dataReader.Read();
+
+                        userPosts.Add(new UserPost
+                        {
+                            id = dataReader.GetInt32(0),
+                            authorId = dataReader.GetInt32(1),
+                            title = dataReader.GetString(2),
+                            reblog = dataReader.GetInt32(3),
+                            text = dataReader.GetString(4),
+                            attachment = dataReader.GetString(6),
+                            date = dataReader.GetDateTime(7)
+                        });
+
+                        dataReader.Close();
+
+                        cnn.Close();
+                        return userPosts;
+                    }
+                    else
+                    {
+                        dataReader.Close();
+                        cnn.Close();
+                        return null;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+        }
+
+        public List<UserPost> Patch(UserPostRequest request)
+        {
+            var userPosts = new List<UserPost>();
+            string connectionString = null;
+            SqlConnection cnn;
+            connectionString = "Server=tcp:fantastic.database.windows.net,1433;Database=fantastic;User ID=qacpiweb@fantastic;Password=nhm554WW;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
+            cnn = new SqlConnection(connectionString);
+            try
+            {
+                string command;
+                command = String.Format("Select * from Wall where id='{0}'", request.Id);
                 SqlCommand polecenie = new SqlCommand(command, cnn);
                 SqlDataReader dataReader;
                 cnn.Open();
@@ -37,19 +119,41 @@ namespace WebApplication2.ServiceModel
                 if (dataReader.HasRows)
                 {
                     dataReader.Read();
-
-                    post.id = dataReader.GetInt32(0);
-                    post.authorId = dataReader.GetInt32(1);
-                    post.title = dataReader.GetString(2);
-                    post.reblog = dataReader.GetInt32(3);
-                    post.text = dataReader.GetString(4);
-                    post.attachment = dataReader.GetString(6);
-                    post.date = dataReader.GetString(7);
+                    userPosts.Add(new UserPost
+                    {
+                        id = dataReader.GetInt32(0),
+                        authorId = dataReader.GetInt32(1),
+                        title = dataReader.GetString(2),
+                        reblog = dataReader.GetInt32(3),
+                        text = dataReader.GetString(4),
+                        attachment = dataReader.GetString(6),
+                        date = dataReader.GetDateTime(7)
+                    });
 
                     dataReader.Close();
 
-                    cnn.Close();
-                    return post;
+                    //update post
+
+                    userPosts.ElementAt(0).title = request.Title;
+                    userPosts.ElementAt(0).text = request.Content;
+
+                    command = String.Format("UPDATE Wall set Tytul='{0}', Tresc='{1}' where id='{2}'", request.Title, request.Content, request.Id);
+                    polecenie = new SqlCommand(command, cnn);
+                    dataReader = polecenie.ExecuteReader();
+
+                    if (dataReader.RecordsAffected > 0)
+                    {
+                        dataReader.Close();
+                        cnn.Close();
+                        return userPosts;
+                    }
+                    else
+                    {
+                        dataReader.Close();
+                        cnn.Close();
+                        return null;
+                    }
+
                 }
                 else
                 {
@@ -75,7 +179,7 @@ namespace WebApplication2.ServiceModel
         public string text { get; set; }
         public int tags { get; set; }
         public string attachment { get; set; }
-        public string date { get; set; }
+        public DateTime date { get; set; }
 
     }
 }
