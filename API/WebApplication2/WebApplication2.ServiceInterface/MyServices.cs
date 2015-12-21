@@ -49,6 +49,11 @@ namespace WebApplication2.ServiceInterface
                 return Response;
             }
             user = Response.Get(request);
+            if (user == null)
+            {
+                base.Response.StatusCode = (int)HttpStatusCode.NotFound;
+                return Response;
+            }
             string response = JsonConvert.SerializeObject(user,Formatting.Indented);
             return response;
         }
@@ -68,6 +73,7 @@ namespace WebApplication2.ServiceInterface
             if(user == null)
             {
                 base.Response.StatusCode = (int)HttpStatusCode.NotFound;
+                return Response;
             }
             string response = JsonConvert.SerializeObject(user, Formatting.Indented);
             return response;
