@@ -44,7 +44,7 @@ namespace WebApplication2.ServiceInterface
         {
             User user;
             UserResponse Response = new UserResponse();
-            if (request.Id == 0)
+            if (request.Login.IsNullOrEmpty())
             {
                 base.Response.StatusCode = (int)HttpStatusCode.BadRequest;
                 return Response;
@@ -58,7 +58,7 @@ namespace WebApplication2.ServiceInterface
 
         public object Patch(UserRequest request)
         {
-            return new UserResponse { Result = "Modifiying user {0} ".Fmt(request.Id) };
+            return new UserResponse { Result = "Modifiying user {0} ".Fmt(request.Login) };
         }
     }
     public class loginService : Service
