@@ -40,3 +40,5 @@ C:\Users\Kacper\Documents\fantastic\project\API\WebApplication2\WebApplication2.
 C:\Users\Kacper\Documents\fantastic\project\API\WebApplication2\WebApplication2.Tests\obj\Debug\WebApplication2.Tests.csprojResolveAssemblyReference.cache
 C:\Users\Kacper\Documents\fantastic\project\API\WebApplication2\WebApplication2.Tests\obj\Debug\WebApplication2.Tests.dll
 C:\Users\Kacper\Documents\fantastic\project\API\WebApplication2\WebApplication2.Tests\obj\Debug\WebApplication2.Tests.pdb
+C:\Users\Kacper\Documents\GitHub\fanTAStic\API\WebApplication2\WebApplication2.Tests\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Kacper\Documents\GitHub\fanTAStic\API\WebApplication2\WebApplication2.Tests\bin\Debug\Newtonsoft.Json.xml

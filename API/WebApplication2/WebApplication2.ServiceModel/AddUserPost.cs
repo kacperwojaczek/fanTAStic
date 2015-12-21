@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace WebApplication2.ServiceModel
 {
+    [Route("/users/{Login}/posts", "POST")]
 
-    [Route("/post/add/{Login}", "POST")]
     public class AddUserPostRequest : IReturn<AddUserPostResponse>
     {
         public int Login { get; set; }
@@ -61,5 +61,4 @@ namespace WebApplication2.ServiceModel
 
         }
     }
-
 }

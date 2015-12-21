@@ -38,6 +38,7 @@ namespace WebApplication2.ServiceModel
                 if (dataReader.HasRows)
                 {
                     dataReader.Read();
+                    user.Id = dataReader.GetInt32(0);
                     user.Firstname = dataReader.GetString(1);
                     user.Lastname = dataReader.GetString(2);
                     user.Login = dataReader.GetString(4);
@@ -65,6 +66,7 @@ namespace WebApplication2.ServiceModel
 
     public class User
     {
+        public int Id { get; set; }
         public string Login { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; }
