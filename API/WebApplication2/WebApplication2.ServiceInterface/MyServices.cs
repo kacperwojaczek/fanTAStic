@@ -86,21 +86,6 @@ namespace WebApplication2.ServiceInterface
             return response;
         }
     }
-    public class UserPostService : Service
-    {
-        public object Get(UserPostRequest request)
-        {
-            UserPostResponse Response = new UserPostResponse();
-            var posts = Response.Respond(request);
-            if (posts == null)
-            {
-                base.Response.StatusCode = (int)HttpStatusCode.NoContent;
-                return Response;
-            }
-            string response = JsonConvert.SerializeObject(posts, Formatting.Indented);
-            return response;
-        }
-    }
 
     public class AddUserPostService : Service
     {
@@ -118,6 +103,21 @@ namespace WebApplication2.ServiceInterface
                 base.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
                 return Response;
             }
+        }
+    }
+    public class UserPostService : Service
+    {
+        public object Get(UserPostRequest request)
+        {
+            UserPostResponse Response = new UserPostResponse();
+            var posts = Response.Respond(request);
+            if (posts == null)
+            {
+                base.Response.StatusCode = (int)HttpStatusCode.NoContent;
+                return Response;
+            }
+            string response = JsonConvert.SerializeObject(posts, Formatting.Indented);
+            return response;
         }
     }
 }
