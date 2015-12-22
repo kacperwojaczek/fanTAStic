@@ -30,7 +30,6 @@ namespace WebApplication2.ServiceInterface
             user1.Lastname = request.Lastname.ToString();
             user1.Login = request.Login.ToString();
             user1.Password = request.Password.ToString();
-            user1.Email = request.Email.ToString();
             RegistrationResponse Response = new RegistrationResponse();
             int result = Response.Session(request);
             base.Response.StatusCode = result;
@@ -49,7 +48,7 @@ namespace WebApplication2.ServiceInterface
                 base.Response.StatusCode = (int)HttpStatusCode.BadRequest;
                 return Response;
             }
-            user = Response.Respond(request);
+            user = Response.Get(request);
             string response = JsonConvert.SerializeObject(user,Formatting.Indented);
             return response;
         }
@@ -58,7 +57,20 @@ namespace WebApplication2.ServiceInterface
 
         public object Patch(UserRequest request)
         {
-            return new UserResponse { Result = "Modifiying user {0} ".Fmt(request.Login) };
+            User user;
+            UserResponse Response = new UserResponse();
+            if (request.Login.IsNullOrEmpty())
+            {
+                base.Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return Response;
+            }
+            user = Response.Patch(request);
+            if(user == null)
+            {
+                base.Response.StatusCode = (int)HttpStatusCode.NotFound;
+            }
+            string response = JsonConvert.SerializeObject(user, Formatting.Indented);
+            return response;
         }
     }
     public class loginService : Service
@@ -81,23 +93,52 @@ namespace WebApplication2.ServiceInterface
         public object Get(UserPostsRequest request)
         {
             UserPostsResponse Response = new UserPostsResponse();
-            var posts = Response.Respond(request);
+            var posts = Response.Get(request);
             string response = JsonConvert.SerializeObject(posts, Formatting.Indented);
             return response;
         }
+        public object Post(UserPostsRequest request)
+        {
+            UserPostsResponse Response = new UserPostsResponse();
+            var resp = Response.Post(request);
+            if (resp == 200)
+            {
+                base.Response.StatusCode = (int)HttpStatusCode.OK;
+                return Response;
+            }
+            else
+            {
+                base.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                return Response;
+            }
+        }
     }
+
     public class UserPostService : Service
     {
         public object Get(UserPostRequest request)
         {
             UserPostResponse Response = new UserPostResponse();
-            var post = Response.Respond(request);
-            if(post == null)
+            var posts = Response.Get(request);
+            if (posts == null)
             {
                 base.Response.StatusCode = (int)HttpStatusCode.NoContent;
                 return Response;
             }
-            string response = JsonConvert.SerializeObject(post, Formatting.Indented);
+            string response = JsonConvert.SerializeObject(posts, Formatting.Indented);
+            return response;
+        }
+
+        public object Patch(UserPostRequest request)
+        {
+            UserPostResponse Response = new UserPostResponse();
+            var posts = Response.Patch(request);
+            if (posts == null)
+            {
+                base.Response.StatusCode = (int)HttpStatusCode.NoContent;
+                return Response;
+            }
+            string response = JsonConvert.SerializeObject(posts, Formatting.Indented);
             return response;
         }
     }

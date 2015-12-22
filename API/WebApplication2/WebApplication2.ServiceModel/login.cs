@@ -25,7 +25,7 @@ namespace WebApplication2.ServiceModel
         {
             string connetionString = null;
             SqlConnection cnn;
-            connetionString = "workstation id=fantastic.mssql.somee.com;packet size=4096;user id=qacpiweb_SQLLogin_1;pwd=cfzqlqsobm;data source=fantastic.mssql.somee.com;persist security info=False;initial catalog=fantastic";
+            connetionString = "Server=tcp:fantastic.database.windows.net,1433;Database=fantastic;User ID=qacpiweb@fantastic;Password=nhm554WW;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
             cnn = new SqlConnection(connetionString);
             try
             {
