@@ -16,16 +16,22 @@ body {
 body > main, body > #modal-control > main {
 	display: inline-block;
 
-	min-height: calc(100vh - #{$navbar-height});
+	min-height: calc(100vh - #{$navbar-height + $footer-height});
 
 	width: 100vw;
 	&.aside {
 		width: calc(100vw - #{$aside-width});
 	}
 
-	padding-top: $navbar-height + $margin/4;
+	padding-top: $navbar-height; //+ $margin/4;
 
 	background-color: $light;
+
+	&.home {
+		width: 800px;
+
+		margin: 0 calc(50vw - 400px);
+	}
 }
 
 body > nav, body > #modal-control > nav {

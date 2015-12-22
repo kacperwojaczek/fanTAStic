@@ -1,0 +1,60 @@
+.profile {
+	width: 800px;
+	margin: 0 auto 20px;
+
+	header {
+		height: 150px;
+
+		.info {
+			float: right;
+
+			width: 640px;
+
+			font-size: 32px;
+
+			line-height: 50px;
+
+			.login {
+				display: block;
+				transition: opacity $duration;
+
+				height: 50px;
+
+				color: $medium;
+
+				opacity: 0.2;
+				&:hover {opacity: 1}
+				&:before {content: "@"}
+			}
+			.name {
+				display: inline-block;
+
+				height: 50px;
+
+				color: $dark;
+
+				&.first {
+					margin: 0 10px 0 10px;
+				}
+				&.last {
+				}
+			}
+			.bio {
+				display: block;
+
+				height: 50px;
+				width: 610px;
+
+				color: $medium;
+
+				font-style: italic;
+			}
+		}
+	}
+
+	section {
+		margin: 20px 0 0;
+	}
+	footer {
+	}
+}
