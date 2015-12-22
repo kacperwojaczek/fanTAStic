@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using ServiceStack;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace WebApplication2.ServiceModel
 {
@@ -25,56 +26,59 @@ namespace WebApplication2.ServiceModel
 
         public string Result { get; set; }
 
+        public User readDb(SqlDataReader dataReader)
+        {
+            var user = new User();
+
+            dataReader.Read();
+
+            user.Id = dataReader.GetInt32(0);
+            user.Firstname = dataReader.GetString(1);
+            user.Lastname = dataReader.GetString(2);
+            user.Login = dataReader.GetString(4);
+            user.Password = dataReader.GetString(5);
+            user.Avatar = dataReader.GetString(6);
+            user.Bio = dataReader.GetString(7);
+
+            dataReader.Close();
+
+            return user; 
+        }
+
         public User Get(UserRequest request)
         {
-            User user = new User();
+            User user;
+            var dbConnection = new DatabaseConnector();
+            var paramsList = new List<SqlParameter>();
 
-            string connectionString = null;
-            SqlConnection cnn;
-            connectionString = "Server=tcp:fantastic.database.windows.net,1433;Database=fantastic;User ID=qacpiweb@fantastic;Password=nhm554WW;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
-            cnn = new SqlConnection(connectionString);
             try
             {
-                string command;
-                command = String.Format("Select * from Users where id='{0}'", request.Login);
-                SqlCommand polecenie = new SqlCommand(command, cnn);
-                SqlDataReader dataReader;
-                cnn.Open();
-                dataReader = polecenie.ExecuteReader();
+                SqlParameter loginParam = new SqlParameter("@Login", SqlDbType.VarChar, request.Login.Length);
+                loginParam.Value = request.Login;
+                paramsList.Add(loginParam);
+                string command = "Select * from Users where id=@Login";
+                SqlDataReader dataReader = dbConnection.executeCommand(command, paramsList);
+
                 if (dataReader.HasRows)
                 {
-                    dataReader.Read();
-                    user.Id = dataReader.GetInt32(0);
-                    user.Firstname = dataReader.GetString(1);
-                    user.Lastname = dataReader.GetString(2);
-                    user.Login = dataReader.GetString(4);
-                    user.Password = dataReader.GetString(5);
-                    user.Avatar = dataReader.GetString(6);
-                    user.Bio = dataReader.GetString(7);
+                    user = readDb(dataReader);
 
-                    dataReader.Close();
-                    cnn.Close();
                     return user;
                 }
                 else
                 {
                     dataReader.Close();
-                    command = String.Format("Select * from Users where Login='{0}'", request.Login);
-                    polecenie = new SqlCommand(command, cnn);
-                    dataReader = polecenie.ExecuteReader();
+                    SqlParameter login2Param = new SqlParameter("@Login2", SqlDbType.VarChar, request.Login.Length);
+                    login2Param.Value = request.Login;
+                    paramsList.Clear();
+                    paramsList.Add(login2Param);
+                    command = "Select * from Users where Login=@Login2";
+                    dataReader = dbConnection.executeCommand(command, paramsList);
+
                     if (dataReader.HasRows)
                     {
-                        dataReader.Read();
-                        user.Id = dataReader.GetInt32(0);
-                        user.Firstname = dataReader.GetString(1);
-                        user.Lastname = dataReader.GetString(2);
-                        user.Login = dataReader.GetString(4);
-                        user.Password = dataReader.GetString(5);
-                        user.Avatar = dataReader.GetString(6);
-                        user.Bio = dataReader.GetString(7);
+                        user = readDb(dataReader);
 
-                        dataReader.Close();
-                        cnn.Close();
                         return user;
                     }
                     else
@@ -92,51 +96,35 @@ namespace WebApplication2.ServiceModel
 
         public User Patch(UserRequest request)
         {
-            User user = new User();
+            var user = new User();
+            var dbConnection = new DatabaseConnector();
+            var paramsList = new List<SqlParameter>();
 
-            string connectionString = null;
-            SqlConnection cnn;
-            connectionString = "Server=tcp:fantastic.database.windows.net,1433;Database=fantastic;User ID=qacpiweb@fantastic;Password=nhm554WW;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
-            cnn = new SqlConnection(connectionString);
             try
             {
-                string command;
-                command = String.Format("Select * from Users where id='{0}'", request.Login);
-                SqlCommand polecenie = new SqlCommand(command, cnn);
-                SqlDataReader dataReader;
-                cnn.Open();
-                dataReader = polecenie.ExecuteReader();
+                SqlParameter loginParam = new SqlParameter("@Login", SqlDbType.VarChar, request.Login.Length);
+                loginParam.Value = request.Login;
+                paramsList.Add(loginParam);
+                string command = "Select * from Users where id=@Login";
+                SqlDataReader dataReader = dbConnection.executeCommand(command, paramsList);
+
                 if (dataReader.HasRows)
                 {
-                    dataReader.Read();
-                    user.Id = dataReader.GetInt32(0);
-                    user.Firstname = dataReader.GetString(1);
-                    user.Lastname = dataReader.GetString(2);
-                    user.Login = dataReader.GetString(4);
-                    user.Password = dataReader.GetString(5);
-                    user.Avatar = dataReader.GetString(6);
-                    user.Bio = dataReader.GetString(7);
-
-                    dataReader.Close();
+                    user = readDb(dataReader);
                 }
                 else
                 {
                     dataReader.Close();
-                    command = String.Format("Select * from Users where Login='{0}'", request.Login);
-                    polecenie = new SqlCommand(command, cnn);
-                    dataReader = polecenie.ExecuteReader();
+                    SqlParameter login2Param = new SqlParameter("@Login2", SqlDbType.VarChar, request.Login.Length);
+                    login2Param.Value = request.Login;
+                    paramsList.Clear();
+                    paramsList.Add(login2Param);
+                    command = "Select * from Users where Login=@Login2";
+                    dataReader = dbConnection.executeCommand(command, paramsList);
+
                     if (dataReader.HasRows)
                     {
-                        dataReader.Read();
-                        user.Id = dataReader.GetInt32(0);
-                        user.Firstname = dataReader.GetString(1);
-                        user.Lastname = dataReader.GetString(2);
-                        user.Login = dataReader.GetString(4);
-                        user.Password = dataReader.GetString(5);
-                        user.Avatar = dataReader.GetString(6);
-                        user.Bio = dataReader.GetString(7);
-
-                        dataReader.Close();
+                        user = readDb(dataReader);
                     }
                     else
                     {
@@ -152,20 +140,37 @@ namespace WebApplication2.ServiceModel
                 user.Avatar = request.Avatar;
                 user.Bio = request.Bio;
 
-                command = String.Format("UPDATE Users set Imie='{0}', Nazwisko='{1}', Password='{2}', Avatar='{3}', Bio='{4}' where Id='{5}' ", request.Firstname, request.Lastname, request.Password, request.Avatar, request.Bio, user.Id);
-                polecenie = new SqlCommand(command, cnn);
-                dataReader = polecenie.ExecuteReader();
+                paramsList.Clear();
+
+                command = "UPDATE Users set Imie=@Name, Nazwisko=@Surname, Password=@Password, Avatar=@Avatar, Bio=@Bio where Id=@Id";
+                
+                SqlParameter tempParam = new SqlParameter("@Name", SqlDbType.VarChar, request.Firstname.Length);
+                tempParam.Value = request.Firstname;
+                paramsList.Add(tempParam);
+                tempParam = new SqlParameter("@Surname", SqlDbType.VarChar, request.Lastname.Length);
+                tempParam.Value = request.Lastname;
+                paramsList.Add(tempParam);
+                tempParam = new SqlParameter("@Password", SqlDbType.VarChar, request.Password.Length);
+                tempParam.Value = request.Password;
+                paramsList.Add(tempParam);
+                tempParam = new SqlParameter("@Avatar", SqlDbType.VarChar, request.Avatar.Length);
+                tempParam.Value = request.Avatar;
+                paramsList.Add(tempParam);
+                tempParam = new SqlParameter("@Bio", SqlDbType.VarChar, request.Bio.Length);
+                tempParam.Value = request.Bio;
+                paramsList.Add(tempParam);
+                tempParam = new SqlParameter("@Id", SqlDbType.Int);
+                tempParam.Value = user.Id;
+                paramsList.Add(tempParam);
+
+                dataReader = dbConnection.executeCommand(command, paramsList);
 
                 if (dataReader.RecordsAffected > 0)
                 {
-                    dataReader.Close();
-                    cnn.Close();
                     return user;
                 }
                 else
                 {
-                    dataReader.Close();
-                    cnn.Close();
                     return null;
                 }
             }
