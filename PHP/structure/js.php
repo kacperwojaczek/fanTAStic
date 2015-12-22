@@ -2,13 +2,37 @@
 function js() {
 	$result = '
 	<script>
+		var backend = "http://ipsume2.azurewebsites.net";
 		var scrolled;
+
+		function sendData(path, params, method) {
+		    method = method || "post"; // Set method to post by default if not specified.
+
+		    var form = document.createElement("form");
+		    form.setAttribute("method", method);
+		    form.setAttribute("action", path);
+
+		    for(var key in params) {
+		        if(params.hasOwnProperty(key)) {
+		            var hiddenField = document.createElement("input");
+		            hiddenField.setAttribute("type", "hidden");
+		            hiddenField.setAttribute("name", key);
+		            hiddenField.setAttribute("value", params[key]);
+
+		            form.appendChild(hiddenField);
+		         }
+		    }
+
+		    document.body.appendChild(form);
+		    form.submit();
+		}
 
 		function modal(type) {
 			var modal;
 
 			if(type == "register") modal = "'. trim(str_replace("\"", "\\\"", preg_replace('/\s+/', ' ', registerModal() ))) .'";
 			if(type == "login") modal = "'. trim(str_replace("\"", "\\\"", preg_replace('/\s+/', ' ', loginModal() ))) .'";
+			if(type == "save") modal = "'. trim(str_replace("\"", "\\\"", preg_replace('/\s+/', ' ', saveModal() ))) .'";
 
 			document.getElementById("modal-control").className = "";
 			document.getElementById("modal-wrapper").className = "";
@@ -32,6 +56,28 @@ function js() {
 			}
 
 			return false;
+		}
+
+		function save(type) {
+			if(type == "profile.php") {
+				var fn = document.getElementById("firstname").innerHTML;
+				var ln = document.getElementById("lastname").innerHTML;
+				var b = document.getElementById("bio").innerHTML;
+
+				sendData("/functions/profileAction.php", {Firstname: fn, Lastname: ln, Bio: b});
+				
+				modal("save");
+			}
+			else if(type == "home.php") {
+				var t = document.getElementById("new-post").getElementsByTagName("H2")[0].innerHTML;
+				var c = document.getElementById("new-post").getElementsByTagName("p")[0].innerHTML;
+
+				if((t !== "New Post") || (c !== "Write your story")) {
+					sendData("/functions/postAction.php?new", {Title: t, Content: c});
+
+					modal("save");
+				}
+			}
 		}
 
 		document.addEventListener("readystatechange", function() {

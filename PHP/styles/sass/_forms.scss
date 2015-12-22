@@ -84,7 +84,7 @@ a.form-header {
    color: $medium;  
 }
 
-input[type="text"], input[type="email"], input[type="password"], input[type="tel"], input[type="search"], input[type="url"], input[type="time"], input[type="week"] textarea {
+input[type="text"], input[type="email"], input[type="password"], input[type="tel"], input[type="search"], input[type="url"], input[type="time"], input[type="week"], textarea {
 	display: block;
 
 	height: 50px;
@@ -165,4 +165,19 @@ nav .button  {
 	color: $black;
 
 	background-color: $white;
+
+	&.color {
+		transition: color $duration, background-color $duration;
+
+		color: $light;
+		background-color: $color;
+
+		&:hover {
+			color: $color;
+			background-color: $light;
+		}
+		&:active {
+			background-color: $white;
+		}
+	}
 }

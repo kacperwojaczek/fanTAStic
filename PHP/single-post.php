@@ -1,15 +1,42 @@
 <?php
-	include_once "config.php";
+	include "structure/post.php";
+	include "config.php";
+
+	$post = '';
+	if(!$_SERVER['QUERY_STRING']) {
+		header("Location: /");
+	} else $post .= $_SERVER['QUERY_STRING'];
+
+	$post = dataGet($urlBackend."/posts/".$post);
+	if(!$post) header("Location: /");
+	$post = $post[0];
+
+	$profile = dataGet($urlBackend."/users/".$post["authorId"]);
 ?>
+
 <html>
-<?php echo head("__BLOG_TITLE__", "__POST_TITLE__"); ?>
+<?php echo head($profile["Login"], $post["title"]); ?>
 <body>
-	<!--?php //include navbar ?-->
-	<main class="aside">
-		<!--?php //post(id) ?-->
+	<div id="modal-control" class="hidden">
+	<?php echo navbar() ?>
+	<main>
+	<?php
+		$author = $profile["Firstname"]." ". $profile["Lastname"];
+		$authorUrl = $profile["Login"];
+
+		$postTitle = $post["title"];
+		$postUrl = $post["id"];
+
+		$postText = $post["text"];
+
+		$postDate = $post["date"];
+
+		echo postFull($author, $authorUrl, $postUrl, $postTitle, $postText, $postDate);
+	?>
 	</main>
-	<aside>
-	</aside>
-	<!--?php footer(); ?-->
+	<?php echo footer(); ?>
+	</div>
+	<div id="modal-wrapper" class="hidden">
+	</div>
 </body>
 </html>
