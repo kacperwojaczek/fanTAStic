@@ -1,6 +1,10 @@
 # fanTAStic
 Kappa (czyli opis)
 
+Dodawanie domyslnego imienia i nazwiska przy rejestracji
+Pierwsza literka w postach
+Stala wysokosc opisu
+
 ### Terminy
 - [X] 3.11 Wspólny Postęp
 - [X] 10.11 
