@@ -1,9 +1,10 @@
 # fanTAStic
 Kappa (czyli opis)
 
-Dodawanie domyslnego imienia i nazwiska przy rejestracji
-Pierwsza literka w postach
-Stala wysokosc opisu
+### Rzeczy do zmiany
+- [ ] Dodawanie domyslnego imienia i nazwiska przy rejestracji
+- [ ] Pierwsza literka w postach
+- [ ] Stala wysokosc opisu
 
 ### Terminy
 - [X] 3.11 Wspólny Postęp
