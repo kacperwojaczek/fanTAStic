@@ -1,10 +1,16 @@
 # fanTAStic
 Kappa (czyli opis)
 
-### Rzeczy do zmiany
+### Rzeczy do zrobienia
 - [ ] Dodawanie domyslnego imienia i nazwiska przy rejestracji
 - [X] Pierwsza literka w postach
 - [X] Stala wysokosc opisu
+- [ ] Zapisywanie zmiany postów
+- [ ] Usuwanie postów
+- [ ] Share'owanie
+- [ ] Usuwanie konta
+- [ ] Zmiana hasła
+- [ ] Dropdown menu dla użytkownika
 
 ### Terminy
 - [X] 3.11 Wspólny Postęp
