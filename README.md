@@ -3,8 +3,8 @@ Kappa (czyli opis)
 
 ### Rzeczy do zmiany
 - [ ] Dodawanie domyslnego imienia i nazwiska przy rejestracji
-- [ ] Pierwsza literka w postach
-- [ ] Stala wysokosc opisu
+- [X] Pierwsza literka w postach
+- [X] Stala wysokosc opisu
 
 ### Terminy
 - [X] 3.11 Wspólny Postęp
