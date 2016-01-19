@@ -11,6 +11,7 @@ Kappa (czyli opis)
 - [ ] Usuwanie konta
 - [ ] Zmiana hasła
 - [ ] Dropdown menu dla użytkownika
+- [ ] Nowy UI
 
 ### Terminy
 - [X] 3.11 Wspólny Postęp
