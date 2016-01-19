@@ -12,6 +12,7 @@ Kappa (czyli opis)
 - [ ] Zmiana hasła
 - [ ] Dropdown menu dla użytkownika
 - [ ] Nowy UI
+- [ ] Lista Statusów i case'ów
 
 ### Terminy
 - [X] 3.11 Wspólny Postęp
