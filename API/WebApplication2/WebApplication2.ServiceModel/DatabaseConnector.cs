@@ -9,7 +9,7 @@ namespace WebApplication2.ServiceModel
 {
     public class DatabaseConnector
     {
-        public static string connectionString = "Server=tcp:fantastic.database.windows.net,1433;Database=fantastic;User ID=qacpiweb@fantastic;Password=nhm554WW;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
+        public static string connectionString = "Server=tcp:fantastic.database.windows.net,1433;Database=restAPI;User ID=qacpiweb@fantastic;Password=nhm554WW;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         public SqlConnection connection;
         public string command;
         public SqlCommand sqlCommand;

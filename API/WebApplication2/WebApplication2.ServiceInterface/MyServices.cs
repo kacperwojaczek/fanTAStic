@@ -18,64 +18,212 @@ namespace WebApplication2.ServiceInterface
         }
     }
 
-    public class RegistrationService : Service
-    {
-        public object Post(RegistrationRequest request)
-        {
-            //sprawdzenie czy user jest w bazie danych
-            //wstawienei do bazy danych
-            //odpowiedz do frontu
-            User user1 = new User();
-            user1.Firstname = request.Firstname.ToString();
-            user1.Lastname = request.Lastname.ToString();
-            user1.Login = request.Login.ToString();
-            user1.Password = request.Password.ToString();
-            RegistrationResponse Response = new RegistrationResponse();
-            int result = Response.Session(request);
-            base.Response.StatusCode = result;
-            return Response;
-        }
-    }
-
     public class UsersService: Service
     {
         public object Get(UserRequest request)
         {
             User user;
             UserResponse Response = new UserResponse();
-            if (request.Login.IsNullOrEmpty())
-            {
-                base.Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                return Response;
-            }
-            user = Response.Get(request);
-            if (user == null)
-            {
-                base.Response.StatusCode = (int)HttpStatusCode.NotFound;
-                return Response;
-            }
+
+                if (request.Login.IsNullOrEmpty())
+                {
+                    throw new HttpError(HttpStatusCode.BadRequest, "Bad Request")
+                    {
+                        Response = new ErrorResponse
+                        {
+                            ResponseStatus = new ResponseStatus
+                            {
+                                Errors = new List<ResponseError> {
+                                new ResponseError {
+                                    ErrorCode = "LoginIsNull",
+                                    FieldName = "Login",
+                                    Message = "'Login' should not be empty."
+                                }
+                            }
+                            }
+                        }
+                    };
+                }
+
+                user = Response.Get(request);
+
+                if (user == null)
+                {
+                    throw new HttpError(HttpStatusCode.NotFound, "Not Found")
+                    {
+                        Response = new ErrorResponse
+                        {
+                            ResponseStatus = new ResponseStatus
+                            {
+                                Errors = new List<ResponseError> {
+                                new ResponseError {
+                                    ErrorCode = "NotFound",
+                                    Message = "User not found"
+                                }
+                            }
+                            }
+                        }
+                    };
+                }
+
+            base.Response.StatusCode = (int)HttpStatusCode.OK;
             string response = JsonConvert.SerializeObject(user,Formatting.Indented);
             return response;
         }
 
-        //modyfikacja danych uzytkownika
-
         public object Patch(UserRequest request)
         {
+
             User user;
             UserResponse Response = new UserResponse();
             if (request.Login.IsNullOrEmpty())
             {
-                base.Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                return Response;
+                throw new HttpError(HttpStatusCode.BadRequest, "Bad Request")
+                {
+                    Response = new ErrorResponse
+                    {
+                        ResponseStatus = new ResponseStatus
+                        {
+                            Errors = new List<ResponseError> {
+                                new ResponseError {
+                                    ErrorCode = "LoginIsNull",
+                                    FieldName = "Login",
+                                    Message = "'Login' should not be empty."
+                                }
+                            }
+                        }
+                    }
+                };
             }
+
             user = Response.Patch(request);
+
             if(user == null)
             {
-                base.Response.StatusCode = (int)HttpStatusCode.NotFound;
-                return Response;
+                throw new HttpError(HttpStatusCode.NotFound, "Not Found")
+                {
+                    Response = new ErrorResponse
+                    {
+                        ResponseStatus = new ResponseStatus
+                        {
+                            Errors = new List<ResponseError> {
+                                new ResponseError {
+                                    ErrorCode = "NotFound",
+                                    Message = "User not found"
+                                }
+                            }
+                        }
+                    }
+                };
             }
+
+            base.Response.StatusCode = (int)HttpStatusCode.OK;
             string response = JsonConvert.SerializeObject(user, Formatting.Indented);
+            return response;
+        }
+
+        public object Post(UserRequest request)
+        {
+            User user;
+            UserResponse Response = new UserResponse();
+
+            if (request.Login.IsNullOrEmpty())
+            {
+                throw new HttpError(HttpStatusCode.BadRequest, "Bad Request")
+                {
+                    Response = new ErrorResponse
+                    {
+                        ResponseStatus = new ResponseStatus
+                        {
+                            Errors = new List<ResponseError> {
+                                new ResponseError {
+                                    ErrorCode = "LoginIsNull",
+                                    FieldName = "Login",
+                                    Message = "'Login' should not be empty."
+                                }
+                            }
+                        }
+                    }
+                };
+            }
+
+            user = Response.Post(request);
+
+            if(user == null)
+            {
+                throw new HttpError(HttpStatusCode.InternalServerError, "Internal Server Error")
+                {
+                    Response = new ErrorResponse
+                    {
+                        ResponseStatus = new ResponseStatus
+                        {
+                            Errors = new List<ResponseError> {
+                                new ResponseError {
+                                    ErrorCode = "CannotCreate",
+                                    Message = "Cannot Create new user"
+                                }
+                            }
+                        }
+                    }
+                };
+            }
+
+            string response = JsonConvert.SerializeObject(user, Formatting.Indented);
+           
+
+            base.Response.StatusCode = (int)HttpStatusCode.Created;
+            return response;
+        }
+
+        public object Delete(UserRequest request)
+        {
+            User user;
+            UserResponse Response = new UserResponse();
+
+            if (request.Login.IsNullOrEmpty())
+            {
+                throw new HttpError(HttpStatusCode.BadRequest, "Bad Request")
+                {
+                    Response = new ErrorResponse
+                    {
+                        ResponseStatus = new ResponseStatus
+                        {
+                            Errors = new List<ResponseError> {
+                                new ResponseError {
+                                    ErrorCode = "LoginIsNull",
+                                    FieldName = "Login",
+                                    Message = "'Login' should not be empty."
+                                }
+                            }
+                        }
+                    }
+                };
+            }
+
+            user = Response.Post(request);
+
+            if (user == null)
+            {
+                throw new HttpError(HttpStatusCode.InternalServerError, "Internal Server Error")
+                {
+                    Response = new ErrorResponse
+                    {
+                        ResponseStatus = new ResponseStatus
+                        {
+                            Errors = new List<ResponseError> {
+                                new ResponseError {
+                                    ErrorCode = "CannotDelete",
+                                    Message = "Cannot delete user"
+                                }
+                            }
+                        }
+                    }
+                };
+            }
+
+            string response = JsonConvert.SerializeObject(user, Formatting.Indented);
+
+            base.Response.StatusCode = (int)HttpStatusCode.OK;
             return response;
         }
     }

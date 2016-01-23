@@ -24,6 +24,7 @@ namespace WebApplication2
         /// <param name="container"></param>
         public override void Configure(Container container)
         {
+            SetConfig(new HostConfig { DebugMode = false, });
             //Config examples
             //this.Plugins.Add(new PostmanFeature());
             //this.Plugins.Add(new CorsFeature());

@@ -10,6 +10,7 @@ namespace WebApplication2.ServiceModel
 {
     [Route("/users/{Login}", "GET")]
     [Route("/users/{Login}", "PATCH")]
+    [Route("/users/{Login}", "POST")]
     public class UserRequest : IReturn<UserResponse>
     {
         public string Login { get; set; }
@@ -32,13 +33,13 @@ namespace WebApplication2.ServiceModel
 
             dataReader.Read();
 
-            user.Id = dataReader.GetInt32(0);
+            user.Id = dataReader.GetString(0);
             user.Firstname = dataReader.GetString(1);
             user.Lastname = dataReader.GetString(2);
-            user.Login = dataReader.GetString(4);
-            user.Password = dataReader.GetString(5);
-            user.Avatar = dataReader.GetString(6);
-            user.Bio = dataReader.GetString(7);
+            user.Login = dataReader.GetString(3);
+            user.Password = dataReader.GetString(4);
+            user.Avatar = dataReader.GetString(5);
+            user.Bio = dataReader.GetString(6);
 
             dataReader.Close();
 
@@ -100,6 +101,8 @@ namespace WebApplication2.ServiceModel
             var dbConnection = new DatabaseConnector();
             var paramsList = new List<SqlParameter>();
 
+            var response = new UserResponse();
+
             try
             {
                 SqlParameter loginParam = new SqlParameter("@Login", SqlDbType.VarChar, request.Login.Length);
@@ -159,7 +162,7 @@ namespace WebApplication2.ServiceModel
                 tempParam = new SqlParameter("@Bio", SqlDbType.VarChar, request.Bio.Length);
                 tempParam.Value = request.Bio;
                 paramsList.Add(tempParam);
-                tempParam = new SqlParameter("@Id", SqlDbType.Int);
+                tempParam = new SqlParameter("@Id", SqlDbType.VarChar, user.Id.Length);
                 tempParam.Value = user.Id;
                 paramsList.Add(tempParam);
 
@@ -180,12 +183,153 @@ namespace WebApplication2.ServiceModel
             }
 
         }
+
+        public User Post(UserRequest request)
+        {
+            var user = new User();
+            var dbConnection = new DatabaseConnector();
+            var paramsList = new List<SqlParameter>();
+
+            SqlParameter loginParam;
+            string command;
+            SqlDataReader dataReader;
+
+            try
+            {
+                //check if user exists
+
+                loginParam = new SqlParameter("@Login", SqlDbType.VarChar, request.Login.Length);
+                loginParam.Value = request.Login;
+                paramsList.Clear();
+                paramsList.Add(loginParam);
+                command = "Select * from Users where Login=@Login";
+                dataReader = dbConnection.executeCommand(command, paramsList);
+
+                if (dataReader.HasRows)
+                {
+                    return null;
+                }
+
+                dataReader.Close();
+
+                //create user
+
+                user.Id = System.Guid.NewGuid().ToString();
+                user.Login = request.Login;
+                user.Firstname = request.Firstname;
+                user.Lastname = request.Lastname;
+                user.Password = request.Password;
+                user.Avatar = request.Avatar;
+                user.Bio = request.Bio;
+
+                paramsList.Clear();
+
+                command = "INSERT into Users values (@Id, @Name, @Surname, @Login, @Password, @Avatar, @Bio)";
+
+                SqlParameter tempParam = new SqlParameter("@Id", SqlDbType.VarChar, user.Id.Length);
+                tempParam.Value = user.Id;
+                paramsList.Add(tempParam);
+                tempParam = new SqlParameter("@Name", SqlDbType.VarChar, request.Firstname.Length);
+                tempParam.Value = request.Firstname;
+                paramsList.Add(tempParam);
+                tempParam = new SqlParameter("@Surname", SqlDbType.VarChar, request.Lastname.Length);
+                tempParam.Value = request.Lastname;
+                paramsList.Add(tempParam);
+                tempParam = new SqlParameter("@Login", SqlDbType.VarChar, request.Login.Length);
+                tempParam.Value = request.Login;
+                paramsList.Add(tempParam);
+                tempParam = new SqlParameter("@Password", SqlDbType.VarChar, request.Password.Length);
+                tempParam.Value = request.Password;
+                paramsList.Add(tempParam);
+                tempParam = new SqlParameter("@Avatar", SqlDbType.VarChar, request.Avatar.Length);
+                tempParam.Value = request.Avatar;
+                paramsList.Add(tempParam);
+                tempParam = new SqlParameter("@Bio", SqlDbType.VarChar, request.Bio.Length);
+                tempParam.Value = request.Bio;
+                paramsList.Add(tempParam);
+
+                dataReader = dbConnection.executeCommand(command, paramsList);
+
+                if (dataReader.RecordsAffected > 0)
+                {
+                    return user;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (SqlException ex)
+            {
+                return null;
+            }
+        }
+
+        public User Delete(UserRequest request)
+        {
+            var user = new User();
+            var dbConnection = new DatabaseConnector();
+            var paramsList = new List<SqlParameter>();
+
+            SqlParameter loginParam;
+            string command;
+            SqlDataReader dataReader;
+
+            try
+            {
+                //check if user exists
+
+                loginParam = new SqlParameter("@Login", SqlDbType.VarChar, request.Login.Length);
+                loginParam.Value = request.Login;
+                paramsList.Clear();
+                paramsList.Add(loginParam);
+                command = "Select * from Users where Login=@Login";
+                dataReader = dbConnection.executeCommand(command, paramsList);
+
+                if (dataReader.HasRows)
+                {
+                    user = readDb(dataReader);
+
+                    dataReader.Close();
+                    
+                    //check if user has any posts
+
+                    paramsList.Clear();
+
+                    command = "DELETE from Users where Login=@Login";
+
+                    SqlParameter tempParam = new SqlParameter("@Login", SqlDbType.VarChar, request.Login.Length);
+                    tempParam.Value = request.Login;
+                    paramsList.Add(tempParam);
+
+                    dataReader = dbConnection.executeCommand(command, paramsList);
+
+                    if (dataReader.RecordsAffected > 0)
+                    {
+                        return user;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (SqlException ex)
+            {
+                return null;
+            }
+        }
     }
 }
 
     public class User
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Login { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; }
