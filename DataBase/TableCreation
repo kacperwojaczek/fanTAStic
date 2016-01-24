@@ -24,6 +24,12 @@ attachment varchar(150),
 DataPosta date
 );
 
+Create table Shared
+(Autor int, foreign key (Autor) references Users(id),
+PostId int, foreign key (PostId) references Wall(id),
+PostDate date
+);
+
 Select * from Tags;
 Select * from Users;
 select * from Wall;

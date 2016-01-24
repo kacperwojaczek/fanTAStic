@@ -18,13 +18,13 @@ namespace WebApplication2.ServiceModel
         public string Title { get; set; }
         public string Content { get; set; }
     }
-
+    
     public class UserPostsResponse
     {
         public ResponseStatus ResponseStatus { get; set; }
 
         public string Result { get; set; }
-
+        //pobiera posty (danego usera)
         public List<Int32> Get(UserPostsRequest request)
         {
             List<Int32> posts = new List<Int32>();
@@ -73,7 +73,7 @@ namespace WebApplication2.ServiceModel
             }
 
         }
-
+        //Dodaj post
         public int Post(UserPostsRequest request)
         {
             UserPost post = new UserPost();
