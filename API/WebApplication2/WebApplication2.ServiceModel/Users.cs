@@ -5,6 +5,7 @@ using System.Web;
 using ServiceStack;
 using System.Data.SqlClient;
 using System.Data;
+using System.Net;
 
 namespace WebApplication2.ServiceModel
 {
@@ -46,9 +47,9 @@ namespace WebApplication2.ServiceModel
             return user; 
         }
 
-        public User Get(UserRequest request)
+        public UserErrorWrapper Get(UserRequest request)
         {
-            User user;
+            UserErrorWrapper retVal = new UserErrorWrapper();
             var dbConnection = new DatabaseConnector();
             var paramsList = new List<SqlParameter>();
 
@@ -62,9 +63,10 @@ namespace WebApplication2.ServiceModel
 
                 if (dataReader.HasRows)
                 {
-                    user = readDb(dataReader);
+                    retVal.user = readDb(dataReader);
+                    retVal.status = HttpStatusCode.OK;
 
-                    return user;
+                    return retVal;
                 }
                 else
                 {
@@ -78,26 +80,33 @@ namespace WebApplication2.ServiceModel
 
                     if (dataReader.HasRows)
                     {
-                        user = readDb(dataReader);
+                        retVal.user = readDb(dataReader);
+                        retVal.status = HttpStatusCode.OK;
 
-                        return user;
+                        return retVal;
                     }
                     else
                     {
-                        return null;
+                        retVal.user = null;
+                        retVal.status = HttpStatusCode.NotFound;
+
+                        return retVal;
                     }
                 }
             }
             catch (Exception ex)
             {
-                return null;
+                retVal.user = null;
+                retVal.status = HttpStatusCode.InternalServerError;
+
+                return retVal;
             }
 
         }
 
-        public User Patch(UserRequest request)
+        public UserErrorWrapper Patch(UserRequest request)
         {
-            var user = new User();
+            var retVal = new UserErrorWrapper();
             var dbConnection = new DatabaseConnector();
             var paramsList = new List<SqlParameter>();
 
@@ -113,7 +122,7 @@ namespace WebApplication2.ServiceModel
 
                 if (dataReader.HasRows)
                 {
-                    user = readDb(dataReader);
+                    retVal.user = readDb(dataReader);
                 }
                 else
                 {
@@ -127,21 +136,22 @@ namespace WebApplication2.ServiceModel
 
                     if (dataReader.HasRows)
                     {
-                        user = readDb(dataReader);
+                        retVal.user = readDb(dataReader);
                     }
                     else
                     {
-                        return null;
+                        retVal.user = null;
+                        retVal.status = HttpStatusCode.NotFound;
                     }
                 }
 
                 //update user
 
-                user.Firstname = request.Firstname;
-                user.Lastname = request.Lastname;
-                user.Password = request.Password;
-                user.Avatar = request.Avatar;
-                user.Bio = request.Bio;
+                retVal.user.Firstname = request.Firstname;
+                retVal.user.Lastname = request.Lastname;
+                retVal.user.Password = request.Password;
+                retVal.user.Avatar = request.Avatar;
+                retVal.user.Bio = request.Bio;
 
                 paramsList.Clear();
 
@@ -162,31 +172,37 @@ namespace WebApplication2.ServiceModel
                 tempParam = new SqlParameter("@Bio", SqlDbType.VarChar, request.Bio.Length);
                 tempParam.Value = request.Bio;
                 paramsList.Add(tempParam);
-                tempParam = new SqlParameter("@Id", SqlDbType.VarChar, user.Id.Length);
-                tempParam.Value = user.Id;
+                tempParam = new SqlParameter("@Id", SqlDbType.VarChar, retVal.user.Id.Length);
+                tempParam.Value = retVal.user.Id;
                 paramsList.Add(tempParam);
 
                 dataReader = dbConnection.executeCommand(command, paramsList);
 
                 if (dataReader.RecordsAffected > 0)
                 {
-                    return user;
+                    retVal.status = HttpStatusCode.OK;
+
+                    return retVal;
                 }
                 else
                 {
-                    return null;
+                    retVal.user = null;
+                    retVal.status = HttpStatusCode.InternalServerError;
+                    return retVal;
                 }
             }
             catch (Exception ex)
             {
-                return null;
+                retVal.user = null;
+                retVal.status = HttpStatusCode.InternalServerError;
+                return retVal;
             }
 
         }
 
-        public User Post(UserRequest request)
+        public UserErrorWrapper Post(UserRequest request)
         {
-            var user = new User();
+            var retVal = new UserErrorWrapper();
             var dbConnection = new DatabaseConnector();
             var paramsList = new List<SqlParameter>();
 
@@ -207,27 +223,29 @@ namespace WebApplication2.ServiceModel
 
                 if (dataReader.HasRows)
                 {
-                    return null;
+                    retVal.user = null;
+                    retVal.status = HttpStatusCode.Conflict;
+                    return retVal;
                 }
 
                 dataReader.Close();
 
                 //create user
 
-                user.Id = System.Guid.NewGuid().ToString();
-                user.Login = request.Login;
-                user.Firstname = request.Firstname;
-                user.Lastname = request.Lastname;
-                user.Password = request.Password;
-                user.Avatar = request.Avatar;
-                user.Bio = request.Bio;
+                retVal.user.Id = System.Guid.NewGuid().ToString();
+                retVal.user.Login = request.Login;
+                retVal.user.Firstname = request.Firstname;
+                retVal.user.Lastname = request.Lastname;
+                retVal.user.Password = request.Password;
+                retVal.user.Avatar = request.Avatar;
+                retVal.user.Bio = request.Bio;
 
                 paramsList.Clear();
 
                 command = "INSERT into Users values (@Id, @Name, @Surname, @Login, @Password, @Avatar, @Bio)";
 
-                SqlParameter tempParam = new SqlParameter("@Id", SqlDbType.VarChar, user.Id.Length);
-                tempParam.Value = user.Id;
+                SqlParameter tempParam = new SqlParameter("@Id", SqlDbType.VarChar, retVal.user.Id.Length);
+                tempParam.Value = retVal.user.Id;
                 paramsList.Add(tempParam);
                 tempParam = new SqlParameter("@Name", SqlDbType.VarChar, request.Firstname.Length);
                 tempParam.Value = request.Firstname;
@@ -252,22 +270,27 @@ namespace WebApplication2.ServiceModel
 
                 if (dataReader.RecordsAffected > 0)
                 {
-                    return user;
+                    retVal.status = HttpStatusCode.Created;
+                    return retVal;
                 }
                 else
                 {
-                    return null;
+                    retVal.status = HttpStatusCode.InternalServerError;
+                    retVal.user = null;
+                    return retVal;
                 }
             }
             catch (SqlException ex)
             {
-                return null;
+                retVal.status = HttpStatusCode.InternalServerError;
+                retVal.user = null;
+                return retVal;
             }
         }
 
-        public User Delete(UserRequest request)
+        public UserErrorWrapper Delete(UserRequest request)
         {
-            var user = new User();
+            var retVal = new UserErrorWrapper();
             var dbConnection = new DatabaseConnector();
             var paramsList = new List<SqlParameter>();
 
@@ -288,7 +311,7 @@ namespace WebApplication2.ServiceModel
 
                 if (dataReader.HasRows)
                 {
-                    user = readDb(dataReader);
+                    retVal.user = readDb(dataReader);
 
                     dataReader.Close();
                     
@@ -306,22 +329,31 @@ namespace WebApplication2.ServiceModel
 
                     if (dataReader.RecordsAffected > 0)
                     {
-                        return user;
+                        retVal.status = HttpStatusCode.OK;
+
+                        return retVal;
                     }
                     else
                     {
-                        return null;
+                        retVal.user = null;
+                        retVal.status = HttpStatusCode.InternalServerError;
+                        return retVal;
                     }
 
                 }
                 else
                 {
-                    return null;
+                    retVal.user = null;
+                    retVal.status = HttpStatusCode.NotFound;
+                    return retVal;
                 }
             }
             catch (SqlException ex)
             {
-                return null;
+
+                retVal.user = null;
+                retVal.status = HttpStatusCode.InternalServerError;
+                return retVal;
             }
         }
     }
@@ -336,4 +368,10 @@ namespace WebApplication2.ServiceModel
         public string Password { get; set; }
         public string Avatar { get; set; }
         public string Bio { get; set; }
+    }
+
+    public class UserErrorWrapper
+    {
+        public User user { get; set; }
+        public HttpStatusCode status { get; set; }
     }

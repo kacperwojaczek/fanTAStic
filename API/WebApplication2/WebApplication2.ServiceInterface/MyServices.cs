@@ -22,60 +22,80 @@ namespace WebApplication2.ServiceInterface
     {
         public object Get(UserRequest request)
         {
-            User user;
             UserResponse Response = new UserResponse();
+            UserErrorWrapper getResponse;
 
-                if (request.Login.IsNullOrEmpty())
+            if (request.Login.IsNullOrEmpty())
+            {
+                throw new HttpError(HttpStatusCode.BadRequest, "Bad Request")
                 {
-                    throw new HttpError(HttpStatusCode.BadRequest, "Bad Request")
+                    Response = new ErrorResponse
                     {
-                        Response = new ErrorResponse
+                        ResponseStatus = new ResponseStatus
                         {
-                            ResponseStatus = new ResponseStatus
-                            {
-                                Errors = new List<ResponseError> {
+                            Errors = new List<ResponseError> {
                                 new ResponseError {
                                     ErrorCode = "LoginIsNull",
                                     FieldName = "Login",
                                     Message = "'Login' should not be empty."
                                 }
                             }
-                            }
                         }
-                    };
-                }
+                    }
+                };
+            }
 
-                user = Response.Get(request);
+            getResponse = Response.Get(request);
 
-                if (user == null)
+            if (getResponse.user == null)
+            {
+                if (getResponse.status == HttpStatusCode.NotFound)
                 {
-                    throw new HttpError(HttpStatusCode.NotFound, "Not Found")
+                    throw new HttpError(getResponse.status, "Not Found")
                     {
                         Response = new ErrorResponse
                         {
                             ResponseStatus = new ResponseStatus
                             {
                                 Errors = new List<ResponseError> {
-                                new ResponseError {
-                                    ErrorCode = "NotFound",
-                                    Message = "User not found"
-                                }
-                            }
+                                        new ResponseError {
+                                            ErrorCode = "NotFound",
+                                            Message = "User not found"
+                                        }
+                                    }
                             }
                         }
                     };
                 }
-
-            base.Response.StatusCode = (int)HttpStatusCode.OK;
-            string response = JsonConvert.SerializeObject(user,Formatting.Indented);
+                else if (getResponse.status == HttpStatusCode.InternalServerError)
+                {
+                    throw new HttpError(getResponse.status, "Internal Server Error")
+                    {
+                        Response = new ErrorResponse
+                        {
+                            ResponseStatus = new ResponseStatus
+                            {
+                                Errors = new List<ResponseError> {
+                                            new ResponseError {
+                                                ErrorCode = "ServerError",
+                                                Message = "Server is unable to process request"
+                                            }
+                                        }
+                            }
+                        }
+                    };
+                }
+            }
+            base.Response.StatusCode = (int)getResponse.status;
+            string response = JsonConvert.SerializeObject(getResponse.user, Formatting.Indented);
             return response;
         }
 
         public object Patch(UserRequest request)
         {
-
-            User user;
+            UserErrorWrapper getResponse;
             UserResponse Response = new UserResponse();
+
             if (request.Login.IsNullOrEmpty())
             {
                 throw new HttpError(HttpStatusCode.BadRequest, "Bad Request")
@@ -96,35 +116,55 @@ namespace WebApplication2.ServiceInterface
                 };
             }
 
-            user = Response.Patch(request);
+            getResponse = Response.Patch(request);
 
-            if(user == null)
+            if(getResponse.user == null)
             {
-                throw new HttpError(HttpStatusCode.NotFound, "Not Found")
+                if (getResponse.status == HttpStatusCode.NotFound)
                 {
-                    Response = new ErrorResponse
+                    throw new HttpError(getResponse.status, "Not Found")
                     {
-                        ResponseStatus = new ResponseStatus
+                        Response = new ErrorResponse
                         {
-                            Errors = new List<ResponseError> {
+                            ResponseStatus = new ResponseStatus
+                            {
+                                Errors = new List<ResponseError> {
                                 new ResponseError {
                                     ErrorCode = "NotFound",
                                     Message = "User not found"
                                 }
                             }
+                            }
                         }
-                    }
-                };
+                    };
+                }
+                else if(getResponse.status == HttpStatusCode.InternalServerError)
+                {
+                    throw new HttpError(getResponse.status, "Internal Server Error")
+                    {
+                        Response = new ErrorResponse
+                        {
+                            ResponseStatus = new ResponseStatus
+                            {
+                                Errors = new List<ResponseError> {
+                                new ResponseError {
+                                    ErrorCode = "ServerError",
+                                    Message = "Server is unable to process request"
+                                }
+                            }
+                            }
+                        }
+                    };
+                }
             }
-
-            base.Response.StatusCode = (int)HttpStatusCode.OK;
-            string response = JsonConvert.SerializeObject(user, Formatting.Indented);
+            base.Response.StatusCode = (int)getResponse.status;
+            string response = JsonConvert.SerializeObject(getResponse.user, Formatting.Indented);
             return response;
         }
 
         public object Post(UserRequest request)
         {
-            User user;
+            UserErrorWrapper getResponse;
             UserResponse Response = new UserResponse();
 
             if (request.Login.IsNullOrEmpty())
@@ -147,37 +187,56 @@ namespace WebApplication2.ServiceInterface
                 };
             }
 
-            user = Response.Post(request);
+            getResponse = Response.Post(request);
 
-            if(user == null)
+            if(getResponse.user == null)
             {
-                throw new HttpError(HttpStatusCode.InternalServerError, "Internal Server Error")
+                if (getResponse.status == HttpStatusCode.InternalServerError)
                 {
-                    Response = new ErrorResponse
+                    throw new HttpError(getResponse.status, "Internal Server Error")
                     {
-                        ResponseStatus = new ResponseStatus
+                        Response = new ErrorResponse
                         {
-                            Errors = new List<ResponseError> {
+                            ResponseStatus = new ResponseStatus
+                            {
+                                Errors = new List<ResponseError> {
                                 new ResponseError {
-                                    ErrorCode = "CannotCreate",
-                                    Message = "Cannot Create new user"
+                                    ErrorCode = "ServerError",
+                                    Message = "Server is unable to process request"
                                 }
                             }
+                            }
                         }
-                    }
-                };
+                    };
+                }
+                else if (getResponse.status == HttpStatusCode.Conflict )
+                {
+                    throw new HttpError(getResponse.status, "Conflict")
+                    {
+                        Response = new ErrorResponse
+                        {
+                            ResponseStatus = new ResponseStatus
+                            {
+                                Errors = new List<ResponseError> {
+                                new ResponseError {
+                                    ErrorCode = "LoginConflict",
+                                    Message = "User already exists"
+                                }
+                            }
+                            }
+                        }
+                    };
+                }
             }
 
-            string response = JsonConvert.SerializeObject(user, Formatting.Indented);
-           
-
-            base.Response.StatusCode = (int)HttpStatusCode.Created;
+            string response = JsonConvert.SerializeObject(getResponse.user, Formatting.Indented);
+            base.Response.StatusCode = (int)getResponse.status;
             return response;
         }
 
         public object Delete(UserRequest request)
         {
-            User user;
+            UserErrorWrapper getResponse;
             UserResponse Response = new UserResponse();
 
             if (request.Login.IsNullOrEmpty())
@@ -200,30 +259,51 @@ namespace WebApplication2.ServiceInterface
                 };
             }
 
-            user = Response.Post(request);
+            getResponse = Response.Post(request);
 
-            if (user == null)
+            if (getResponse.user == null)
             {
-                throw new HttpError(HttpStatusCode.InternalServerError, "Internal Server Error")
+                if (getResponse.status == HttpStatusCode.InternalServerError)
                 {
-                    Response = new ErrorResponse
+                    throw new HttpError(getResponse.status, "Internal Server Error")
                     {
-                        ResponseStatus = new ResponseStatus
+                        Response = new ErrorResponse
                         {
-                            Errors = new List<ResponseError> {
+                            ResponseStatus = new ResponseStatus
+                            {
+                                Errors = new List<ResponseError> {
                                 new ResponseError {
-                                    ErrorCode = "CannotDelete",
-                                    Message = "Cannot delete user"
+                                    ErrorCode = "ServerError",
+                                    Message = "Server cannot process request"
                                 }
                             }
+                            }
                         }
-                    }
-                };
+                    };
+                }
+                else if (getResponse.status == HttpStatusCode.NotFound)
+                {
+                    throw new HttpError(getResponse.status, "Not Found")
+                    {
+                        Response = new ErrorResponse
+                        {
+                            ResponseStatus = new ResponseStatus
+                            {
+                                Errors = new List<ResponseError> {
+                                new ResponseError {
+                                    ErrorCode = "NotFound",
+                                    Message = "User not found"
+                                }
+                            }
+                            }
+                        }
+                    };
+                }
             }
 
-            string response = JsonConvert.SerializeObject(user, Formatting.Indented);
+            string response = JsonConvert.SerializeObject(getResponse.user, Formatting.Indented);
 
-            base.Response.StatusCode = (int)HttpStatusCode.OK;
+            base.Response.StatusCode = (int)getResponse.status;
             return response;
         }
     }
