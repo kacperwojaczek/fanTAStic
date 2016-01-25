@@ -9,6 +9,7 @@ using System.Net;
 
 namespace WebApplication2.ServiceModel
 {
+    [Route("/users/", "GET")]
     [Route("/users/{Login}", "GET")]
     [Route("/users/{Login}", "PATCH")]
     [Route("/users/{Login}", "POST")]
@@ -47,6 +48,46 @@ namespace WebApplication2.ServiceModel
             return user; 
         }
 
+        public List<User> GetAll(UserRequest request)
+        {
+            List<User> usersList = new List<User>();
+            var dbConnection = new DatabaseConnector();
+            var paramsList = new List<SqlParameter>();
+
+            try
+            {
+                string command = "Select * from Users";
+                SqlDataReader dataReader = dbConnection.executeCommand(command, paramsList);
+
+                if (dataReader.HasRows)
+                {
+                    while (dataReader.Read())
+                    {
+                        usersList.Add(new User
+                        {
+                            Id = dataReader.GetString(0),
+                            Firstname = dataReader.GetString(1),
+                            Lastname = dataReader.GetString(2),
+                            Login = dataReader.GetString(3),
+                            Password = dataReader.GetString(4),
+                            Avatar = dataReader.GetString(5),
+                            Bio = dataReader.GetString(6)
+                        });
+                    }
+                    dataReader.Close();
+                    return usersList;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public UserErrorWrapper Get(UserRequest request)
         {
             UserErrorWrapper retVal = new UserErrorWrapper();
@@ -58,7 +99,7 @@ namespace WebApplication2.ServiceModel
                 SqlParameter loginParam = new SqlParameter("@Login", SqlDbType.VarChar, request.Login.Length);
                 loginParam.Value = request.Login;
                 paramsList.Add(loginParam);
-                string command = "Select * from Users where id=@Login";
+                string command = "Select * from Users where Id=@Login";
                 SqlDataReader dataReader = dbConnection.executeCommand(command, paramsList);
 
                 if (dataReader.HasRows)
