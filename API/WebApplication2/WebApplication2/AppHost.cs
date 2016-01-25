@@ -1,6 +1,7 @@
 ﻿using Funq;
 using ServiceStack;
 using WebApplication2.ServiceInterface;
+using WebApplication2.ServiceModel;
 
 namespace WebApplication2
 {
@@ -23,6 +24,7 @@ namespace WebApplication2
         /// <param name="container"></param>
         public override void Configure(Container container)
         {
+            SetConfig(new HostConfig { DebugMode = false, });
             //Config examples
             //this.Plugins.Add(new PostmanFeature());
             //this.Plugins.Add(new CorsFeature());

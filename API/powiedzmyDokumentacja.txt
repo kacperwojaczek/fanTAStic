@@ -1,0 +1,11 @@
+﻿Logowanie
+	POST	/login
+		/login/{Login}
+
+Rejestracja
+	POST	/register/{Login}
+
+Użytkownicy
+	GET	/users
+		/users/{Login}
+	PATCH	/users/{Login}
