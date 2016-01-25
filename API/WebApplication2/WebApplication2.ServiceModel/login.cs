@@ -4,11 +4,12 @@ using System.Linq;
 using System.Web;
 using ServiceStack;
 using System.Data.SqlClient;
+using System.Data;
+using System.Net;
 
 namespace WebApplication2.ServiceModel
 {
     [Route("/login", "POST")]
-    [Route("/login/{Login}", "POST")]
     public class loginRequest : IReturn<loginResponse>
     {
         public string Login { get; set; }
@@ -21,50 +22,53 @@ namespace WebApplication2.ServiceModel
 
         public string Result { get; set; }
 
-        public int Session(loginRequest request)
+        public HttpStatusCode Post(loginRequest request)
         {
-            string connetionString = null;
-            SqlConnection cnn;
-            connetionString = "Server=tcp:fantastic.database.windows.net,1433;Database=fantastic;User ID=qacpiweb@fantastic;Password=nhm554WW;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
-            cnn = new SqlConnection(connetionString);
+            var dbConnection = new DatabaseConnector();
+            var paramsList = new List<SqlParameter>();
+
+            SqlParameter loginParam;
+            string command;
+            SqlDataReader dataReader;
+
             try
             {
-                
-                //Console.WriteLine("Connection Open ! ");
-                string command = String.Format("Select Password from Users where Login='{0}'", request.Login);
-                SqlCommand polecenie = new SqlCommand(command, cnn);
-                SqlDataReader dataReader;
-                cnn.Open();
-                dataReader = polecenie.ExecuteReader();
+                //check if user exists
+
+                loginParam = new SqlParameter("@Login", SqlDbType.VarChar, request.Login.Length);
+                loginParam.Value = request.Login;
+                paramsList.Clear();
+                paramsList.Add(loginParam);
+                command = "Select Password from Users where Login=@Login";
+                dataReader = dbConnection.executeCommand(command, paramsList);
+
                 if (dataReader.HasRows)
                 {
                     dataReader.Read();
+
                     string password = dataReader.GetString(0);
-                    if (password == request.Password)
+
+                    dataReader.Close();
+
+                    if(password == request.Password)
                     {
-                        dataReader.Close();
-                        cnn.Close();
-                        return 200;
+                        return HttpStatusCode.OK;
                     }
                     else
                     {
-                        dataReader.Close();
-                        cnn.Close();
-                        return 401;
+                        return HttpStatusCode.Unauthorized;
                     }
                 }
                 else
                 {
-                    dataReader.Close();
-                    cnn.Close();
-                    return 404;
+                    return HttpStatusCode.NotFound;
                 }
-            }
-            catch (Exception ex)
-            {
-                return 500;
-            }
 
+            }
+            catch (SqlException ex)
+            {
+                return HttpStatusCode.InternalServerError;
+            }
         }
     }
 }

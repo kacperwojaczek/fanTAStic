@@ -13,6 +13,7 @@ namespace WebApplication2.ServiceModel
     [Route("/users/{Login}", "GET")]
     [Route("/users/{Login}", "PATCH")]
     [Route("/users/{Login}", "POST")]
+    [Route("/users/{Login}", "DELETE")]
     public class UserRequest : IReturn<UserResponse>
     {
         public string Login { get; set; }
@@ -196,7 +197,7 @@ namespace WebApplication2.ServiceModel
 
                 paramsList.Clear();
 
-                command = "UPDATE Users set Imie=@Name, Nazwisko=@Surname, Password=@Password, Avatar=@Avatar, Bio=@Bio where Id=@Id";
+                command = "UPDATE Users set FirstName=@Name, Lastname=@Surname, Password=@Password, Avatar=@Avatar, Bio=@Bio where Id=@Id";
                 
                 SqlParameter tempParam = new SqlParameter("@Name", SqlDbType.VarChar, request.Firstname.Length);
                 tempParam.Value = request.Firstname;
@@ -244,6 +245,8 @@ namespace WebApplication2.ServiceModel
         public UserErrorWrapper Post(UserRequest request)
         {
             var retVal = new UserErrorWrapper();
+            var user = new User();
+            retVal.user = user;
             var dbConnection = new DatabaseConnector();
             var paramsList = new List<SqlParameter>();
 
@@ -332,6 +335,7 @@ namespace WebApplication2.ServiceModel
         public UserErrorWrapper Delete(UserRequest request)
         {
             var retVal = new UserErrorWrapper();
+            retVal.user = new User();
             var dbConnection = new DatabaseConnector();
             var paramsList = new List<SqlParameter>();
 
@@ -358,26 +362,43 @@ namespace WebApplication2.ServiceModel
                     
                     //check if user has any posts
 
+                    SqlParameter tempParam2 = new SqlParameter("@Id", SqlDbType.VarChar, retVal.user.Id.Length);
+                    tempParam2.Value = retVal.user.Id;
                     paramsList.Clear();
-
-                    command = "DELETE from Users where Login=@Login";
-
-                    SqlParameter tempParam = new SqlParameter("@Login", SqlDbType.VarChar, request.Login.Length);
-                    tempParam.Value = request.Login;
-                    paramsList.Add(tempParam);
-
+                    paramsList.Add(tempParam2);
+                    command = "Select * from Wall where AuthorId=@Id";
                     dataReader = dbConnection.executeCommand(command, paramsList);
 
-                    if (dataReader.RecordsAffected > 0)
+                    if (!dataReader.HasRows)
                     {
-                        retVal.status = HttpStatusCode.OK;
+                        dataReader.Close();
+                        paramsList.Clear();
 
-                        return retVal;
+                        command = "DELETE from Users where Login=@Login";
+
+                        SqlParameter tempParam = new SqlParameter("@Login", SqlDbType.VarChar, request.Login.Length);
+                        tempParam.Value = request.Login;
+                        paramsList.Add(tempParam);
+
+                        dataReader = dbConnection.executeCommand(command, paramsList);
+
+                        if (dataReader.RecordsAffected > 0)
+                        {
+                            retVal.status = HttpStatusCode.OK;
+
+                            return retVal;
+                        }
+                        else
+                        {
+                            retVal.user = null;
+                            retVal.status = HttpStatusCode.InternalServerError;
+                            return retVal;
+                        }
                     }
                     else
                     {
                         retVal.user = null;
-                        retVal.status = HttpStatusCode.InternalServerError;
+                        retVal.status = HttpStatusCode.Forbidden;
                         return retVal;
                     }
 

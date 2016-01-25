@@ -18,7 +18,7 @@ namespace WebApplication2.ServiceInterface
         }
     }
 
-    public class UsersService: Service
+    public class UsersService : Service
     {
         public object Get(UserRequest request)
         {
@@ -28,7 +28,7 @@ namespace WebApplication2.ServiceInterface
             if (request.Login.IsNullOrEmpty())
             {
                 var usersList = Response.GetAll(request);
-                if(usersList == null)
+                if (usersList == null)
                 {
                     throw new HttpError(HttpStatusCode.InternalServerError, "Internal Server Error")
                     {
@@ -127,7 +127,7 @@ namespace WebApplication2.ServiceInterface
 
             getResponse = Response.Patch(request);
 
-            if(getResponse.user == null)
+            if (getResponse.user == null)
             {
                 if (getResponse.status == HttpStatusCode.NotFound)
                 {
@@ -147,7 +147,7 @@ namespace WebApplication2.ServiceInterface
                         }
                     };
                 }
-                else if(getResponse.status == HttpStatusCode.InternalServerError)
+                else if (getResponse.status == HttpStatusCode.InternalServerError)
                 {
                     throw new HttpError(getResponse.status, "Internal Server Error")
                     {
@@ -198,7 +198,7 @@ namespace WebApplication2.ServiceInterface
 
             getResponse = Response.Post(request);
 
-            if(getResponse.user == null)
+            if (getResponse.user == null)
             {
                 if (getResponse.status == HttpStatusCode.InternalServerError)
                 {
@@ -218,7 +218,7 @@ namespace WebApplication2.ServiceInterface
                         }
                     };
                 }
-                else if (getResponse.status == HttpStatusCode.Conflict )
+                else if (getResponse.status == HttpStatusCode.Conflict)
                 {
                     throw new HttpError(getResponse.status, "Conflict")
                     {
@@ -268,7 +268,7 @@ namespace WebApplication2.ServiceInterface
                 };
             }
 
-            getResponse = Response.Post(request);
+            getResponse = Response.Delete(request);
 
             if (getResponse.user == null)
             {
@@ -308,6 +308,24 @@ namespace WebApplication2.ServiceInterface
                         }
                     };
                 }
+                else if (getResponse.status == HttpStatusCode.Forbidden)
+                {
+                    throw new HttpError(getResponse.status, "Forbidden")
+                    {
+                        Response = new ErrorResponse
+                        {
+                            ResponseStatus = new ResponseStatus
+                            {
+                                Errors = new List<ResponseError> {
+                                new ResponseError {
+                                    ErrorCode = "Forbidden",
+                                    Message = "Cannot delete a user that has posts"
+                                }
+                            }
+                            }
+                        }
+                    };
+                }
             }
 
             string response = JsonConvert.SerializeObject(getResponse.user, Formatting.Indented);
@@ -323,11 +341,81 @@ namespace WebApplication2.ServiceInterface
             loginResponse Response = new loginResponse();
             if (request.Login.IsNullOrEmpty())
             {
-                base.Response.StatusCode = 400;
-                return base.Response;
+                throw new HttpError(HttpStatusCode.BadRequest, "Bad Request")
+                {
+                    Response = new ErrorResponse
+                    {
+                        ResponseStatus = new ResponseStatus
+                        {
+                            Errors = new List<ResponseError> {
+                                new ResponseError {
+                                    ErrorCode = "LoginIsNull",
+                                    FieldName = "Login",
+                                    Message = "'Login' should not be empty."
+                                }
+                            }
+                        }
+                    }
+                };
             }
             
-            base.Response.StatusCode = Response.Session(request);
+            HttpStatusCode status = Response.Post(request);
+
+            if(status == HttpStatusCode.Unauthorized)
+            {
+                throw new HttpError(status, "Unauthorized")
+                {
+                    Response = new ErrorResponse
+                    {
+                        ResponseStatus = new ResponseStatus
+                        {
+                            Errors = new List<ResponseError> {
+                                new ResponseError {
+                                    ErrorCode = "Unauthorized",
+                                    Message = "Incorrect password"
+                                }
+                            }
+                        }
+                    }
+                };
+            }
+            else if (status == HttpStatusCode.InternalServerError)
+            {
+                throw new HttpError(status, "Internal Server Error")
+                {
+                    Response = new ErrorResponse
+                    {
+                        ResponseStatus = new ResponseStatus
+                        {
+                            Errors = new List<ResponseError> {
+                                new ResponseError {
+                                    ErrorCode = "ServerError",
+                                    Message = "Server cannot process request"
+                                }
+                            }
+                        }
+                    }
+                };
+            }
+            else if (status == HttpStatusCode.NotFound)
+            {
+                throw new HttpError(status, "Not Found")
+                {
+                    Response = new ErrorResponse
+                    {
+                        ResponseStatus = new ResponseStatus
+                        {
+                            Errors = new List<ResponseError> {
+                                new ResponseError {
+                                    ErrorCode = "NotFound",
+                                    Message = "User not found"
+                                }
+                            }
+                        }
+                    }
+                };
+            }
+
             return Response;
         }
     }
@@ -392,7 +480,7 @@ namespace WebApplication2.ServiceInterface
             UserPostsResponse Response = new UserPostsResponse();
             var post = Response.Post(request);
 
-            if (post.userPosts == null)
+            if (post.userPost == null)
             {
                 if (post.status == HttpStatusCode.InternalServerError)
                 {
@@ -432,9 +520,151 @@ namespace WebApplication2.ServiceInterface
                 }
             }
             base.Response.StatusCode = (int)post.status;
-            string allPosts = JsonConvert.SerializeObject(post.userPosts, Formatting.Indented);
+            string allPosts = JsonConvert.SerializeObject(post.userPost, Formatting.Indented);
             return allPosts;
 
         }
+    }
+    public class PostsService : Service
+    {
+        public object Get(PostsRequest request)
+        {
+            var Response = new PostResponse();
+
+            if (request.Id.IsNullOrEmpty())
+            {
+                var posts = Response.GetAll(request);
+
+                if (posts.userPosts == null)
+                {
+                    if (posts.status == HttpStatusCode.InternalServerError)
+                    {
+                        throw new HttpError(posts.status, "Internal Server Error")
+                        {
+                            Response = new ErrorResponse
+                            {
+                                ResponseStatus = new ResponseStatus
+                                {
+                                    Errors = new List<ResponseError> {
+                                            new ResponseError {
+                                                ErrorCode = "ServerError",
+                                                Message = "Server is unable to process request"
+                                            }
+                                        }
+                                }
+                            }
+                        };
+                    }
+                    else if (posts.status == HttpStatusCode.NoContent)
+                    {
+                        base.Response.StatusCode = (int)posts.status;
+                        return null;
+                    }
+                }
+
+                base.Response.StatusCode = (int)posts.status;
+                string allPosts = JsonConvert.SerializeObject(posts.userPosts, Formatting.Indented);
+                return allPosts;
+            }
+            else
+            {
+                var posts = Response.Get(request);
+
+                if (posts.userPost == null)
+                {
+                    if (posts.status == HttpStatusCode.InternalServerError)
+                    {
+                        throw new HttpError(posts.status, "Internal Server Error")
+                        {
+                            Response = new ErrorResponse
+                            {
+                                ResponseStatus = new ResponseStatus
+                                {
+                                    Errors = new List<ResponseError> {
+                                            new ResponseError {
+                                                ErrorCode = "ServerError",
+                                                Message = "Server is unable to process request"
+                                            }
+                                        }
+                                }
+                            }
+                        };
+                    }
+                    else if (posts.status == HttpStatusCode.NotFound)
+                    {
+                        throw new HttpError(posts.status, "Not Found")
+                        {
+                            Response = new ErrorResponse
+                            {
+                                ResponseStatus = new ResponseStatus
+                                {
+                                    Errors = new List<ResponseError> {
+                                        new ResponseError {
+                                            ErrorCode = "NotFound",
+                                            Message = "Post not found"
+                                        }
+                                    }
+                                }
+                            }
+                        };
+                    }
+                }
+
+                base.Response.StatusCode = (int)posts.status;
+                string allPosts = JsonConvert.SerializeObject(posts.userPost, Formatting.Indented);
+                return allPosts;
+            }
+        }
+        public object Put(PostsRequest request)
+        {
+            var Response = new PostResponse();
+            var posts = Response.Put(request);
+
+            if (posts.userPost == null)
+            {
+                if (posts.status == HttpStatusCode.InternalServerError)
+                {
+                    throw new HttpError(posts.status, "Internal Server Error")
+                    {
+                        Response = new ErrorResponse
+                        {
+                            ResponseStatus = new ResponseStatus
+                            {
+                                Errors = new List<ResponseError> {
+                                            new ResponseError {
+                                                ErrorCode = "ServerError",
+                                                Message = "Server is unable to process request"
+                                            }
+                                        }
+                            }
+                        }
+                    };
+                }
+                else if (posts.status == HttpStatusCode.NotFound)
+                {
+                    throw new HttpError(posts.status, "Not Found")
+                    {
+                        Response = new ErrorResponse
+                        {
+                            ResponseStatus = new ResponseStatus
+                            {
+                                Errors = new List<ResponseError> {
+                                        new ResponseError {
+                                            ErrorCode = "NotFound",
+                                            Message = "Post not found"
+                                        }
+                                    }
+                            }
+                        }
+                    };
+                }
+            }
+
+            base.Response.StatusCode = (int)posts.status;
+            string allPosts = JsonConvert.SerializeObject(posts.userPost, Formatting.Indented);
+            return allPosts;
+
+        }
+
     }
 }

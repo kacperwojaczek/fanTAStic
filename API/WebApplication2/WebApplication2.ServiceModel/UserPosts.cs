@@ -102,7 +102,7 @@ namespace WebApplication2.ServiceModel
                         SqlParameter authorParam = new SqlParameter("@Author", SqlDbType.VarChar, authorId.Length);
                         authorParam.Value = authorId;
                         paramsList.Add(authorParam);
-                        command = "Select * from Wall where AutorId=@Author";
+                        command = "Select * from Wall where AuthorId=@Author";
                         dataReader = dbConnection.executeCommand(command, paramsList);
 
                         if (dataReader.HasRows)
@@ -172,7 +172,7 @@ namespace WebApplication2.ServiceModel
                     post.authorId = dataReader.GetString(0);
                     post.title = request.Title;
                     post.content = request.Content;
-                    post.date = new DateTime();
+                    post.date = DateTime.Now;
                 }
                 else
                 {
@@ -192,7 +192,7 @@ namespace WebApplication2.ServiceModel
                         post.authorId = dataReader.GetString(0);
                         post.title = request.Title;
                         post.content = request.Content;
-                        post.date = new DateTime();
+                        post.date = DateTime.Now;
                     }
                     else
                     {
@@ -222,7 +222,7 @@ namespace WebApplication2.ServiceModel
                 tempParam = new SqlParameter("@Content", SqlDbType.VarChar, post.content.Length);
                 tempParam.Value = post.content;
                 paramsList.Add(tempParam);
-                tempParam = new SqlParameter("@Date", SqlDbType.DateTime2);
+                tempParam = new SqlParameter("@Date", SqlDbType.DateTime);
                 tempParam.Value = post.date;
                 paramsList.Add(tempParam);
 
