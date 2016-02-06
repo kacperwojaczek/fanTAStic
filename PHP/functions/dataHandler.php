@@ -57,4 +57,15 @@ function dataPatch($url, $json) {
 
 	return $result;
 }
+
+function sharedPostSend($url, $json) {
+
+
+	$json = array(
+		"Login" => $_POST['username'],
+		"PostId" => $_POST['PostId'] #Nie znalazłem... :<<<
+	);
+	
+	
+}
 ?>

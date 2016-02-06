@@ -58,7 +58,15 @@ namespace WebApplication2.ServiceModel
                     {
                         posts.Add(dataReader.GetInt32(0));
                     }
+                    //Pobieranie share postów
+                    command = "Select id from Wall where id in (select PostId from Shared where Autor=@Autor";
+                    dataReader = dbConnection.executeCommand(command, paramsList);
 
+                    while (dataReader.Read())
+                    {
+                        posts.Add(dataReader.GetInt32(0));
+                    }
+                    //
                     return posts;
                 }
                 else
