@@ -10,16 +10,19 @@ using System.Threading.Tasks;
 
 namespace WebApplication2.ServiceModel
 {
-    [Route("/users/{Login}/posts", "SHAREPOST")]
-    
+    [Route("/share", "POST")]
     public class SharePostsRequest : IReturn<SharePostResponse>
     {
-        public string Login { get; set; }
         public int Id { get; set; }
+        public string Login { get; set; }
     }
 
     public class SharePostResponse
     {
+        public ResponseStatus ResponseStatus { get; set; }
+
+        public string Result { get; set; }
+
         public int SharePost(SharePostsRequest request)
         {
             SharedPost post = new SharedPost();

@@ -153,7 +153,7 @@ namespace WebApplication2.ServiceInterface
 
     public class SharePostService : Service
     {
-        public object SharePost(SharePostsRequest request)
+        public object Post(SharePostsRequest request)
         {
             SharePostResponse Response = new SharePostResponse();
             var resp = Response.SharePost(request);
@@ -167,6 +167,19 @@ namespace WebApplication2.ServiceInterface
                 base.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
                 return Response;
             }
+        }
+    }
+
+    public class TagSearchservice : Service
+    {
+        public object Get(TagSearchRequest request)
+        {
+            TagSearchResponse Response = new TagSearchResponse();
+            var result = Response.Get(request);
+            var response = JsonConvert.SerializeObject(result, Formatting.Indented);
+            return response;
+
+
         }
     }
 }
