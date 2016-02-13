@@ -46,15 +46,15 @@ namespace WebApplication2.ServiceModel
 
                 dataReader.Close();
 
-                command = "INSERT into Shared (Autor, PostId, PostDate) values (@AuthorId, @PostId, GETDATE())";
-
                 paramsList.Clear();
                 SqlParameter tempParam = new SqlParameter("@AuthorId", SqlDbType.Int);
                 tempParam.Value = post.authorId;
                 paramsList.Add(tempParam);
                 tempParam = new SqlParameter("@PostId", SqlDbType.Int);
-                tempParam.Value = post.authorId;
+                tempParam.Value = post.id;
                 paramsList.Add(tempParam);
+
+                command = "INSERT into Shared (Autor, PostId, PostDate) values (@AuthorId, @PostId, GETDATE())";
 
                 dataReader = dbConnection.executeCommand(command, paramsList);
 
