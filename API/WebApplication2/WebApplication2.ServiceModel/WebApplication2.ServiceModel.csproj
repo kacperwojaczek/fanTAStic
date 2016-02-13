@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseConnector.cs" />
+    <Compile Include="Friend.cs" />
     <Compile Include="Hello.cs" />
     <Compile Include="login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

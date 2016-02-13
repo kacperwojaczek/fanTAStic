@@ -37,7 +37,7 @@ namespace WebApplication2.ServiceInterface
         }
     }
 
-    public class UsersService: Service
+    public class UsersService : Service
     {
         public object Get(UserRequest request)
         {
@@ -54,7 +54,7 @@ namespace WebApplication2.ServiceInterface
                 base.Response.StatusCode = (int)HttpStatusCode.NotFound;
                 return Response;
             }
-            string response = JsonConvert.SerializeObject(user,Formatting.Indented);
+            string response = JsonConvert.SerializeObject(user, Formatting.Indented);
             return response;
         }
 
@@ -70,7 +70,7 @@ namespace WebApplication2.ServiceInterface
                 return Response;
             }
             user = Response.Patch(request);
-            if(user == null)
+            if (user == null)
             {
                 base.Response.StatusCode = (int)HttpStatusCode.NotFound;
                 return Response;
@@ -90,7 +90,7 @@ namespace WebApplication2.ServiceInterface
                 base.Response.StatusCode = 400;
                 return base.Response;
             }
-            
+
             base.Response.StatusCode = Response.Session(request);
             return Response;
         }
@@ -182,4 +182,39 @@ namespace WebApplication2.ServiceInterface
 
         }
     }
+
+    public class FriendService : Service
+    {
+        public object Get(FriendRequest request)
+        {
+            FriendResponse Response = new FriendResponse();
+            var friends = Response.Get(request);
+            if (friends == null)
+            {
+                base.Response.StatusCode = (int)HttpStatusCode.NoContent;
+                return Response;
+            }
+            string response = JsonConvert.SerializeObject(friends, Formatting.Indented);
+            return response;
+        }
+
+        public object Post(FriendRequest request)
+        {
+            FriendResponse Response = new FriendResponse();
+            var friends = Response.FriendPost(request);
+            if (friends == null)
+            {
+                base.Response.StatusCode = (int)HttpStatusCode.NoContent;
+                return Response;
+            }
+            string response = JsonConvert.SerializeObject(friends, Formatting.Indented);
+            return response;
+        }
+
+
+
+
+
+    }
+
 }
