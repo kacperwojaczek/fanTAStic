@@ -31,7 +31,7 @@
 
 		$postDate = $post["date"];
 
-		echo postFull($author, $authorUrl, $postUrl, $postTitle, $postText, $postDate);
+		echo postFull($author, $authorUrl, $postUrl, $postTitle, $postText, $postDate, $postUrl);
 	?>
 	</main>
 	<?php echo footer(); ?>

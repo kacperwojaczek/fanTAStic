@@ -7,20 +7,23 @@ function halloffame() {
 
 	$posts = dataGet($urlBackend ."/posts/0/");
 
-	foreach ($posts as $post) {
-		$profile = dataGet($urlBackend ."/users/". $post["authorId"]);
+	if($posts){
+		foreach ($posts as $post) {
+			$profile = dataGet($urlBackend ."/users/". $post["authorId"]);
 
-		$author = $profile["Firstname"]." ". $profile["Lastname"];
-		$authorUrl = $profile["Login"];
+			$author = $profile["Firstname"]." ". $profile["Lastname"];
+			$authorUrl = $profile["Login"];
 
-		$postTitle = $post["title"];
-		$postUrl = $post["id"];
+			$postTitle = $post["title"];
 
-		$postText = $post["text"];
+			$postUrl = $post["id"];
 
-		$postDate = $post["date"];
+			$postText = $post["text"];
 
-		$result .= postExcerpt($author, $authorUrl, $postUrl, $postTitle, $postText, $postDate);
+			$postDate = $post["date"];
+
+			$result .= postExcerpt($author, $authorUrl, $postUrl, $postTitle, $postText, $postDate);
+		}
 	}
 	$result .= "</div>";
 	return $result;

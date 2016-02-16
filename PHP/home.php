@@ -31,7 +31,7 @@
 
 						$postDate = date("l, F jS Y, H:i");
 
-						echo postFull($author, $authorUrl, $postUrl, $postTitle, $postText, $postDate);
+						echo postFull($author, $authorUrl, $postUrl, $postTitle, $postText, $postDate, $postUrl);
 					}
 				?>
 			</div>
@@ -53,7 +53,7 @@
 
 						$postDate = $post["date"];
 
-						echo postFull($author, $authorUrl, $postUrl, $postTitle, $postText, $postDate);
+						echo postFull($author, $authorUrl, $postUrl, $postTitle, $postText, $postDate, $postUrl);
 					}
 				?>
 			</div>

@@ -1,0 +1,263 @@
+[Mon Feb 08 17:37:42.796126 2016] [:error] [pid 68798] [client 127.0.0.1:56231] PHP Notice:  A session had already been started - ignoring session_start() in /Users/greg/Sites/tas/functions/loginAction.php on line 14, referer: http://tas.loc/
+[Mon Feb 08 23:06:16.052138 2016] [:error] [pid 68798] [client 127.0.0.1:56843] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:06:16.131823 2016] [:error] [pid 68798] [client 127.0.0.1:56843] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:06:19.120900 2016] [:error] [pid 68798] [client 127.0.0.1:56843] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:06:19.121004 2016] [:error] [pid 68798] [client 127.0.0.1:56843] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:06:22.018389 2016] [:error] [pid 68798] [client 127.0.0.1:56843] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:06:22.033715 2016] [:error] [pid 68798] [client 127.0.0.1:56843] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:06:24.783537 2016] [:error] [pid 68798] [client 127.0.0.1:56843] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:06:24.783691 2016] [:error] [pid 68798] [client 127.0.0.1:56843] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:06:27.548923 2016] [:error] [pid 68798] [client 127.0.0.1:56843] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:06:27.549059 2016] [:error] [pid 68798] [client 127.0.0.1:56843] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:06:30.005666 2016] [:error] [pid 68798] [client 127.0.0.1:56843] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:06:30.136460 2016] [:error] [pid 68798] [client 127.0.0.1:56843] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:06:33.224709 2016] [:error] [pid 68798] [client 127.0.0.1:56843] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:06:33.224912 2016] [:error] [pid 68798] [client 127.0.0.1:56843] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:06:35.842729 2016] [:error] [pid 68798] [client 127.0.0.1:56843] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:06:35.842834 2016] [:error] [pid 68798] [client 127.0.0.1:56843] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:06:38.348847 2016] [:error] [pid 68798] [client 127.0.0.1:56843] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:06:38.348952 2016] [:error] [pid 68798] [client 127.0.0.1:56843] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:06:41.065480 2016] [:error] [pid 68798] [client 127.0.0.1:56843] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:06:41.065602 2016] [:error] [pid 68798] [client 127.0.0.1:56843] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:06:43.514964 2016] [:error] [pid 68798] [client 127.0.0.1:56843] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:06:43.515120 2016] [:error] [pid 68798] [client 127.0.0.1:56843] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:06:46.124432 2016] [:error] [pid 68798] [client 127.0.0.1:56843] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:06:46.124556 2016] [:error] [pid 68798] [client 127.0.0.1:56843] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:06:48.700552 2016] [:error] [pid 68798] [client 127.0.0.1:56843] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:06:49.115087 2016] [:error] [pid 68798] [client 127.0.0.1:56843] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:06:56.454984 2016] [:error] [pid 68895] [client 127.0.0.1:56844] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:06:56.455192 2016] [:error] [pid 68895] [client 127.0.0.1:56844] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:06:58.994431 2016] [:error] [pid 68895] [client 127.0.0.1:56844] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:06:58.994581 2016] [:error] [pid 68895] [client 127.0.0.1:56844] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:07:01.669669 2016] [:error] [pid 68895] [client 127.0.0.1:56844] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:07:01.669792 2016] [:error] [pid 68895] [client 127.0.0.1:56844] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:07:04.214772 2016] [:error] [pid 68895] [client 127.0.0.1:56844] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:07:04.214892 2016] [:error] [pid 68895] [client 127.0.0.1:56844] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:07:06.682764 2016] [:error] [pid 68895] [client 127.0.0.1:56844] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:07:06.682864 2016] [:error] [pid 68895] [client 127.0.0.1:56844] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:07:09.327845 2016] [:error] [pid 68895] [client 127.0.0.1:56844] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:07:09.328090 2016] [:error] [pid 68895] [client 127.0.0.1:56844] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:07:11.995058 2016] [:error] [pid 68895] [client 127.0.0.1:56844] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:07:11.995208 2016] [:error] [pid 68895] [client 127.0.0.1:56844] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:07:14.550329 2016] [:error] [pid 68895] [client 127.0.0.1:56844] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:07:14.550439 2016] [:error] [pid 68895] [client 127.0.0.1:56844] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:07:17.315170 2016] [:error] [pid 68895] [client 127.0.0.1:56844] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:07:17.315330 2016] [:error] [pid 68895] [client 127.0.0.1:56844] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:07:19.772719 2016] [:error] [pid 68895] [client 127.0.0.1:56844] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:07:19.772819 2016] [:error] [pid 68895] [client 127.0.0.1:56844] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:07:22.284849 2016] [:error] [pid 68895] [client 127.0.0.1:56844] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:07:22.285056 2016] [:error] [pid 68895] [client 127.0.0.1:56844] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:07:24.834009 2016] [:error] [pid 68895] [client 127.0.0.1:56844] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:07:24.834199 2016] [:error] [pid 68895] [client 127.0.0.1:56844] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:07:27.453637 2016] [:error] [pid 68895] [client 127.0.0.1:56844] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:07:27.453738 2016] [:error] [pid 68895] [client 127.0.0.1:56844] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:30:42.353579 2016] [:error] [pid 72957] [client 127.0.0.1:56946] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:30:42.368871 2016] [:error] [pid 72957] [client 127.0.0.1:56946] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:30:44.932579 2016] [:error] [pid 72957] [client 127.0.0.1:56946] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:30:44.932702 2016] [:error] [pid 72957] [client 127.0.0.1:56946] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:30:47.420576 2016] [:error] [pid 72957] [client 127.0.0.1:56946] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:30:47.420704 2016] [:error] [pid 72957] [client 127.0.0.1:56946] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:30:50.016612 2016] [:error] [pid 72957] [client 127.0.0.1:56946] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:30:50.047421 2016] [:error] [pid 72957] [client 127.0.0.1:56946] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:30:52.452545 2016] [:error] [pid 72957] [client 127.0.0.1:56946] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:30:52.472880 2016] [:error] [pid 72957] [client 127.0.0.1:56946] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:30:55.383835 2016] [:error] [pid 72957] [client 127.0.0.1:56946] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:30:55.497197 2016] [:error] [pid 72957] [client 127.0.0.1:56946] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:30:58.454732 2016] [:error] [pid 72957] [client 127.0.0.1:56946] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:30:58.588324 2016] [:error] [pid 72957] [client 127.0.0.1:56946] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:31:01.011818 2016] [:error] [pid 72957] [client 127.0.0.1:56946] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:31:01.012027 2016] [:error] [pid 72957] [client 127.0.0.1:56946] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:31:03.469825 2016] [:error] [pid 72957] [client 127.0.0.1:56946] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:31:03.469955 2016] [:error] [pid 72957] [client 127.0.0.1:56946] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:31:06.139852 2016] [:error] [pid 72957] [client 127.0.0.1:56946] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:31:06.173278 2016] [:error] [pid 72957] [client 127.0.0.1:56946] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:31:09.125247 2016] [:error] [pid 72957] [client 127.0.0.1:56946] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:31:09.125368 2016] [:error] [pid 72957] [client 127.0.0.1:56946] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:31:11.709538 2016] [:error] [pid 72957] [client 127.0.0.1:56946] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:31:11.709633 2016] [:error] [pid 72957] [client 127.0.0.1:56946] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:31:14.415246 2016] [:error] [pid 72957] [client 127.0.0.1:56946] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:31:14.431431 2016] [:error] [pid 72957] [client 127.0.0.1:56946] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:32:43.501765 2016] [:error] [pid 68798] [client 127.0.0.1:56982] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:32:43.841224 2016] [:error] [pid 68798] [client 127.0.0.1:56982] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:32:46.574254 2016] [:error] [pid 68798] [client 127.0.0.1:56982] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:32:46.574365 2016] [:error] [pid 68798] [client 127.0.0.1:56982] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:32:49.030878 2016] [:error] [pid 68798] [client 127.0.0.1:56982] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:32:49.031104 2016] [:error] [pid 68798] [client 127.0.0.1:56982] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:32:51.687834 2016] [:error] [pid 68798] [client 127.0.0.1:56982] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:32:51.687934 2016] [:error] [pid 68798] [client 127.0.0.1:56982] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:32:54.253225 2016] [:error] [pid 68798] [client 127.0.0.1:56982] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:32:54.253327 2016] [:error] [pid 68798] [client 127.0.0.1:56982] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:32:56.808039 2016] [:error] [pid 68798] [client 127.0.0.1:56982] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:32:56.808307 2016] [:error] [pid 68798] [client 127.0.0.1:56982] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:32:59.476241 2016] [:error] [pid 68798] [client 127.0.0.1:56982] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:32:59.476376 2016] [:error] [pid 68798] [client 127.0.0.1:56982] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:33:02.241811 2016] [:error] [pid 68798] [client 127.0.0.1:56982] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:33:02.241912 2016] [:error] [pid 68798] [client 127.0.0.1:56982] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:33:04.833078 2016] [:error] [pid 68798] [client 127.0.0.1:56982] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:33:04.833187 2016] [:error] [pid 68798] [client 127.0.0.1:56982] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:33:07.465522 2016] [:error] [pid 68798] [client 127.0.0.1:56982] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:33:07.465630 2016] [:error] [pid 68798] [client 127.0.0.1:56982] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:33:10.135374 2016] [:error] [pid 68798] [client 127.0.0.1:56982] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:33:10.135492 2016] [:error] [pid 68798] [client 127.0.0.1:56982] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:33:12.595279 2016] [:error] [pid 68798] [client 127.0.0.1:56982] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:33:12.595411 2016] [:error] [pid 68798] [client 127.0.0.1:56982] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:33:15.143012 2016] [:error] [pid 68798] [client 127.0.0.1:56982] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:33:15.143147 2016] [:error] [pid 68798] [client 127.0.0.1:56982] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:33:46.899549 2016] [:error] [pid 68895] [client 127.0.0.1:57000] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:33:46.899695 2016] [:error] [pid 68895] [client 127.0.0.1:57000] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:33:48.732252 2016] [:error] [pid 68895] [client 127.0.0.1:57000] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:33:48.732357 2016] [:error] [pid 68895] [client 127.0.0.1:57000] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:33:50.574354 2016] [:error] [pid 68895] [client 127.0.0.1:57000] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:33:50.574454 2016] [:error] [pid 68895] [client 127.0.0.1:57000] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:33:52.302653 2016] [:error] [pid 68895] [client 127.0.0.1:57000] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:33:52.302762 2016] [:error] [pid 68895] [client 127.0.0.1:57000] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:33:54.159163 2016] [:error] [pid 68895] [client 127.0.0.1:57000] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:33:54.159284 2016] [:error] [pid 68895] [client 127.0.0.1:57000] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:33:55.887522 2016] [:error] [pid 68895] [client 127.0.0.1:57000] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:33:55.887634 2016] [:error] [pid 68895] [client 127.0.0.1:57000] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:33:57.726677 2016] [:error] [pid 68895] [client 127.0.0.1:57000] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:33:57.726847 2016] [:error] [pid 68895] [client 127.0.0.1:57000] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:33:59.585142 2016] [:error] [pid 68895] [client 127.0.0.1:57000] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:33:59.585246 2016] [:error] [pid 68895] [client 127.0.0.1:57000] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:34:01.224148 2016] [:error] [pid 68895] [client 127.0.0.1:57000] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:34:01.224247 2016] [:error] [pid 68895] [client 127.0.0.1:57000] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:34:02.965064 2016] [:error] [pid 68895] [client 127.0.0.1:57000] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:34:02.965168 2016] [:error] [pid 68895] [client 127.0.0.1:57000] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:34:04.910564 2016] [:error] [pid 68895] [client 127.0.0.1:57000] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:34:04.910664 2016] [:error] [pid 68895] [client 127.0.0.1:57000] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:34:06.754939 2016] [:error] [pid 68895] [client 127.0.0.1:57000] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:34:06.755038 2016] [:error] [pid 68895] [client 127.0.0.1:57000] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:34:08.429321 2016] [:error] [pid 68895] [client 127.0.0.1:57000] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:34:08.429420 2016] [:error] [pid 68895] [client 127.0.0.1:57000] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:37:56.848586 2016] [:error] [pid 68798] [client 127.0.0.1:57025] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:37:56.897325 2016] [:error] [pid 68798] [client 127.0.0.1:57025] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:37:59.495507 2016] [:error] [pid 68798] [client 127.0.0.1:57025] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:37:59.563961 2016] [:error] [pid 68798] [client 127.0.0.1:57025] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:02.163276 2016] [:error] [pid 68798] [client 127.0.0.1:57025] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:02.163412 2016] [:error] [pid 68798] [client 127.0.0.1:57025] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:04.835878 2016] [:error] [pid 68798] [client 127.0.0.1:57025] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:04.860945 2016] [:error] [pid 68798] [client 127.0.0.1:57025] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:07.600883 2016] [:error] [pid 68798] [client 127.0.0.1:57025] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:07.600981 2016] [:error] [pid 68798] [client 127.0.0.1:57025] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:10.366507 2016] [:error] [pid 68798] [client 127.0.0.1:57025] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:10.366608 2016] [:error] [pid 68798] [client 127.0.0.1:57025] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:12.923192 2016] [:error] [pid 68798] [client 127.0.0.1:57025] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:12.923324 2016] [:error] [pid 68798] [client 127.0.0.1:57025] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:16.329129 2016] [:error] [pid 68798] [client 127.0.0.1:57025] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:16.329227 2016] [:error] [pid 68798] [client 127.0.0.1:57025] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:19.294942 2016] [:error] [pid 68798] [client 127.0.0.1:57025] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:19.295062 2016] [:error] [pid 68798] [client 127.0.0.1:57025] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:22.039258 2016] [:error] [pid 68798] [client 127.0.0.1:57025] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:22.039359 2016] [:error] [pid 68798] [client 127.0.0.1:57025] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:24.805336 2016] [:error] [pid 68798] [client 127.0.0.1:57025] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:24.879091 2016] [:error] [pid 68798] [client 127.0.0.1:57025] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:27.319386 2016] [:error] [pid 68798] [client 127.0.0.1:57025] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:27.319485 2016] [:error] [pid 68798] [client 127.0.0.1:57025] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:30.026617 2016] [:error] [pid 68798] [client 127.0.0.1:57025] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:30.026734 2016] [:error] [pid 68798] [client 127.0.0.1:57025] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:35.863400 2016] [:error] [pid 72957] [client 127.0.0.1:57024] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:35.863738 2016] [:error] [pid 72957] [client 127.0.0.1:57024] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:38.457988 2016] [:error] [pid 72957] [client 127.0.0.1:57024] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:38.458088 2016] [:error] [pid 72957] [client 127.0.0.1:57024] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:40.976872 2016] [:error] [pid 72957] [client 127.0.0.1:57024] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:40.976978 2016] [:error] [pid 72957] [client 127.0.0.1:57024] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:43.544278 2016] [:error] [pid 72957] [client 127.0.0.1:57024] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:43.544379 2016] [:error] [pid 72957] [client 127.0.0.1:57024] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:46.050700 2016] [:error] [pid 72957] [client 127.0.0.1:57024] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:46.050895 2016] [:error] [pid 72957] [client 127.0.0.1:57024] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:48.765924 2016] [:error] [pid 72957] [client 127.0.0.1:57024] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:48.766110 2016] [:error] [pid 72957] [client 127.0.0.1:57024] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:51.312915 2016] [:error] [pid 72957] [client 127.0.0.1:57024] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:51.313111 2016] [:error] [pid 72957] [client 127.0.0.1:57024] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:53.811574 2016] [:error] [pid 72957] [client 127.0.0.1:57024] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:53.811674 2016] [:error] [pid 72957] [client 127.0.0.1:57024] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:56.232304 2016] [:error] [pid 72957] [client 127.0.0.1:57024] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:56.232405 2016] [:error] [pid 72957] [client 127.0.0.1:57024] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:58.903858 2016] [:error] [pid 72957] [client 127.0.0.1:57024] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:38:58.903966 2016] [:error] [pid 72957] [client 127.0.0.1:57024] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:39:01.526898 2016] [:error] [pid 72957] [client 127.0.0.1:57024] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:39:01.527042 2016] [:error] [pid 72957] [client 127.0.0.1:57024] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:39:04.310261 2016] [:error] [pid 72957] [client 127.0.0.1:57024] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:39:04.310671 2016] [:error] [pid 72957] [client 127.0.0.1:57024] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:39:06.794524 2016] [:error] [pid 72957] [client 127.0.0.1:57024] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:39:06.794725 2016] [:error] [pid 72957] [client 127.0.0.1:57024] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:39:13.650218 2016] [:error] [pid 68895] [client 127.0.0.1:57026] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:39:13.650319 2016] [:error] [pid 68895] [client 127.0.0.1:57026] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:39:16.414447 2016] [:error] [pid 68895] [client 127.0.0.1:57026] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:39:16.414618 2016] [:error] [pid 68895] [client 127.0.0.1:57026] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:39:19.028096 2016] [:error] [pid 68895] [client 127.0.0.1:57026] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:39:19.028208 2016] [:error] [pid 68895] [client 127.0.0.1:57026] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:39:21.944256 2016] [:error] [pid 68895] [client 127.0.0.1:57026] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:39:21.944365 2016] [:error] [pid 68895] [client 127.0.0.1:57026] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:39:24.590935 2016] [:error] [pid 68895] [client 127.0.0.1:57026] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:39:24.591043 2016] [:error] [pid 68895] [client 127.0.0.1:57026] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:39:27.473430 2016] [:error] [pid 68895] [client 127.0.0.1:57026] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:39:27.473546 2016] [:error] [pid 68895] [client 127.0.0.1:57026] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:39:30.190983 2016] [:error] [pid 68895] [client 127.0.0.1:57026] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:39:30.191085 2016] [:error] [pid 68895] [client 127.0.0.1:57026] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:39:32.888880 2016] [:error] [pid 68895] [client 127.0.0.1:57026] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:39:32.889046 2016] [:error] [pid 68895] [client 127.0.0.1:57026] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:39:35.767833 2016] [:error] [pid 68895] [client 127.0.0.1:57026] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:39:35.767939 2016] [:error] [pid 68895] [client 127.0.0.1:57026] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:39:38.366540 2016] [:error] [pid 68895] [client 127.0.0.1:57026] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:39:38.366692 2016] [:error] [pid 68895] [client 127.0.0.1:57026] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:39:40.932884 2016] [:error] [pid 68895] [client 127.0.0.1:57026] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:39:40.932996 2016] [:error] [pid 68895] [client 127.0.0.1:57026] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:39:43.613885 2016] [:error] [pid 68895] [client 127.0.0.1:57026] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:39:43.613988 2016] [:error] [pid 68895] [client 127.0.0.1:57026] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:39:46.170153 2016] [:error] [pid 68895] [client 127.0.0.1:57026] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:39:46.170255 2016] [:error] [pid 68895] [client 127.0.0.1:57026] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:43:13.233734 2016] [:error] [pid 73552] [client 127.0.0.1:57082] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:43:13.273814 2016] [:error] [pid 73552] [client 127.0.0.1:57082] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:43:16.032941 2016] [:error] [pid 73552] [client 127.0.0.1:57082] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:43:16.033039 2016] [:error] [pid 73552] [client 127.0.0.1:57082] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:43:18.184603 2016] [:error] [pid 73552] [client 127.0.0.1:57082] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:43:18.184732 2016] [:error] [pid 73552] [client 127.0.0.1:57082] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:43:20.027519 2016] [:error] [pid 73552] [client 127.0.0.1:57082] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:43:20.027619 2016] [:error] [pid 73552] [client 127.0.0.1:57082] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:43:21.818586 2016] [:error] [pid 73552] [client 127.0.0.1:57082] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:43:21.818744 2016] [:error] [pid 73552] [client 127.0.0.1:57082] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:43:23.660217 2016] [:error] [pid 73552] [client 127.0.0.1:57082] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:43:23.660395 2016] [:error] [pid 73552] [client 127.0.0.1:57082] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:43:25.556737 2016] [:error] [pid 73552] [client 127.0.0.1:57082] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:43:25.556887 2016] [:error] [pid 73552] [client 127.0.0.1:57082] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:43:27.399674 2016] [:error] [pid 73552] [client 127.0.0.1:57082] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:43:27.399778 2016] [:error] [pid 73552] [client 127.0.0.1:57082] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:43:29.242642 2016] [:error] [pid 73552] [client 127.0.0.1:57082] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:43:29.242742 2016] [:error] [pid 73552] [client 127.0.0.1:57082] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:43:31.086621 2016] [:error] [pid 73552] [client 127.0.0.1:57082] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:43:31.086731 2016] [:error] [pid 73552] [client 127.0.0.1:57082] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:43:32.928990 2016] [:error] [pid 73552] [client 127.0.0.1:57082] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:43:32.929126 2016] [:error] [pid 73552] [client 127.0.0.1:57082] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:43:34.369746 2016] [:error] [pid 73552] [client 127.0.0.1:57082] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:43:34.369876 2016] [:error] [pid 73552] [client 127.0.0.1:57082] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:43:36.330106 2016] [:error] [pid 73552] [client 127.0.0.1:57082] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:43:36.330199 2016] [:error] [pid 73552] [client 127.0.0.1:57082] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23
+[Mon Feb 08 23:45:59.588575 2016] [:error] [pid 68798] [client 127.0.0.1:57101] PHP Notice:  Undefined index: username in /Users/greg/Sites/tas/functions/loginAction.php on line 7, referer: http://tas.loc/
+[Mon Feb 08 23:45:59.597110 2016] [:error] [pid 68798] [client 127.0.0.1:57101] PHP Notice:  Undefined index: password in /Users/greg/Sites/tas/functions/loginAction.php on line 8, referer: http://tas.loc/
+[Mon Feb 08 23:46:05.301850 2016] [:error] [pid 68798] [client 127.0.0.1:57101] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23, referer: http://tas.loc/
+[Mon Feb 08 23:46:05.301948 2016] [:error] [pid 68798] [client 127.0.0.1:57101] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23, referer: http://tas.loc/
+[Mon Feb 08 23:46:36.364323 2016] [:error] [pid 68798] [client 127.0.0.1:57101] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23, referer: http://tas.loc/
+[Mon Feb 08 23:46:36.402093 2016] [:error] [pid 68798] [client 127.0.0.1:57101] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23, referer: http://tas.loc/
+[Mon Feb 08 23:47:07.357821 2016] [:error] [pid 68798] [client 127.0.0.1:57101] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23, referer: http://tas.loc/
+[Mon Feb 08 23:47:07.374359 2016] [:error] [pid 68798] [client 127.0.0.1:57101] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23, referer: http://tas.loc/
+[Mon Feb 08 23:47:38.250439 2016] [:error] [pid 68798] [client 127.0.0.1:57101] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23, referer: http://tas.loc/
+[Mon Feb 08 23:47:38.250526 2016] [:error] [pid 68798] [client 127.0.0.1:57101] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23, referer: http://tas.loc/
+[Mon Feb 08 23:48:09.415772 2016] [:error] [pid 68798] [client 127.0.0.1:57101] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23, referer: http://tas.loc/
+[Mon Feb 08 23:48:09.415890 2016] [:error] [pid 68798] [client 127.0.0.1:57101] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23, referer: http://tas.loc/
+[Mon Feb 08 23:48:41.973329 2016] [:error] [pid 68798] [client 127.0.0.1:57101] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23, referer: http://tas.loc/
+[Mon Feb 08 23:48:41.973436 2016] [:error] [pid 68798] [client 127.0.0.1:57101] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23, referer: http://tas.loc/
+[Mon Feb 08 23:49:13.004976 2016] [:error] [pid 68798] [client 127.0.0.1:57101] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23, referer: http://tas.loc/
+[Mon Feb 08 23:49:13.005080 2016] [:error] [pid 68798] [client 127.0.0.1:57101] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23, referer: http://tas.loc/
+[Mon Feb 08 23:49:44.338595 2016] [:error] [pid 68798] [client 127.0.0.1:57101] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23, referer: http://tas.loc/
+[Mon Feb 08 23:49:44.338701 2016] [:error] [pid 68798] [client 127.0.0.1:57101] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23, referer: http://tas.loc/
+[Mon Feb 08 23:50:15.366935 2016] [:error] [pid 68798] [client 127.0.0.1:57101] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23, referer: http://tas.loc/
+[Mon Feb 08 23:50:15.367052 2016] [:error] [pid 68798] [client 127.0.0.1:57101] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23, referer: http://tas.loc/
+[Mon Feb 08 23:50:46.702370 2016] [:error] [pid 68798] [client 127.0.0.1:57101] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23, referer: http://tas.loc/
+[Mon Feb 08 23:50:46.738325 2016] [:error] [pid 68798] [client 127.0.0.1:57101] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23, referer: http://tas.loc/
+[Mon Feb 08 23:51:17.561250 2016] [:error] [pid 68798] [client 127.0.0.1:57101] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23, referer: http://tas.loc/
+[Mon Feb 08 23:51:17.561377 2016] [:error] [pid 68798] [client 127.0.0.1:57101] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23, referer: http://tas.loc/
+[Mon Feb 08 23:51:48.448682 2016] [:error] [pid 68798] [client 127.0.0.1:57101] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23, referer: http://tas.loc/
+[Mon Feb 08 23:51:48.448830 2016] [:error] [pid 68798] [client 127.0.0.1:57101] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23, referer: http://tas.loc/
+[Mon Feb 08 23:52:19.334162 2016] [:error] [pid 68798] [client 127.0.0.1:57101] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23, referer: http://tas.loc/
+[Mon Feb 08 23:52:19.334301 2016] [:error] [pid 68798] [client 127.0.0.1:57101] PHP Notice:  Undefined variable: postUrl in /Users/greg/Sites/tas/structure/halloffame.php on line 23, referer: http://tas.loc/

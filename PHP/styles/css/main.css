@@ -870,8 +870,8 @@ body > footer nav ul li, body > #modal-control > footer nav ul li {
   text-align: justify;
   background-color: #f2f2f2;
 }
-/* line 98, ../sass/_post.scss */
-.post.full article p:first-letter {
+/* line 99, ../sass/_post.scss */
+.post.full article:not([contenteditable="true"]):first-letter {
   float: left;
   height: 64px;
   width: 64px;
@@ -882,22 +882,22 @@ body > footer nav ul li, body > #modal-control > footer nav ul li {
   text-align: right;
   background-color: #f85145;
 }
-/* line 115, ../sass/_post.scss */
+/* line 117, ../sass/_post.scss */
 .post.full footer {
   transition: opacity 1s;
   opacity: 0.5;
   padding: 10px;
 }
-/* line 118, ../sass/_post.scss */
+/* line 120, ../sass/_post.scss */
 .post.full footer:hover {
   opacity: 1;
 }
-/* line 122, ../sass/_post.scss */
+/* line 124, ../sass/_post.scss */
 .post.full footer > * {
   display: inline-block;
   margin: 0 20px 0 0;
 }
-/* line 127, ../sass/_post.scss */
+/* line 129, ../sass/_post.scss */
 .post.full footer .post-date {
   color: #6b736a;
 }
@@ -1132,12 +1132,11 @@ a.avatar-wrapper {
 /* line 42, ../sass/_profile.scss */
 .profile header .info .bio {
   display: block;
-  height: 50px;
   width: 610px;
   color: #6b736a;
   font-style: italic;
 }
-/* line 55, ../sass/_profile.scss */
+/* line 54, ../sass/_profile.scss */
 .profile section {
   margin: 20px 0 0;
 }
