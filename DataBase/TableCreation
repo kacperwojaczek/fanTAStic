@@ -24,6 +24,11 @@ attachment varchar(150),
 DataPosta date
 );
 
+Create table Friends
+(User1 int, foreign key (User1) references Users(id),
+Friend int, foreign key (Friend) references Users(id)
+);
+
 Create table Shared
 (Autor int, foreign key (Autor) references Users(id),
 PostId int, foreign key (PostId) references Wall(id),

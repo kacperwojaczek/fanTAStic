@@ -51,32 +51,6 @@ C:\Users\Kacper\Documents\GitHub\fanTAStic\API\WebApplication2\WebApplication2\b
 C:\Users\Kacper\Documents\GitHub\fanTAStic\API\WebApplication2\WebApplication2\obj\Debug\WebApplication2.csprojResolveAssemblyReference.cache
 C:\Users\Kacper\Documents\GitHub\fanTAStic\API\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
 C:\Users\Kacper\Documents\GitHub\fanTAStic\API\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb
-C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\WebApplication2.dll
-C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\WebApplication2.pdb
-C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\ServiceStack.Client.dll
-C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\ServiceStack.Common.dll
-C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\ServiceStack.dll
-C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\ServiceStack.Interfaces.dll
-C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\ServiceStack.OrmLite.dll
-C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\ServiceStack.Razor.dll
-C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\ServiceStack.Redis.dll
-C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\ServiceStack.Server.dll
-C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\ServiceStack.Text.dll
-C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\System.Web.Razor.dll
-C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\WebApplication2.ServiceInterface.dll
-C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\WebApplication2.ServiceModel.dll
-C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\WebApplication2.ServiceInterface.pdb
-C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\WebApplication2.ServiceModel.pdb
-C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\ServiceStack.xml
-C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\ServiceStack.Client.xml
-C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\ServiceStack.Common.xml
-C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\ServiceStack.Razor.xml
-C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\ServiceStack.Redis.xml
-C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\ServiceStack.Text.xml
-C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\System.Web.Razor.xml
-C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\obj\Debug\WebApplication2.csprojResolveAssemblyReference.cache
-C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
-C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb
 C:\Users\Kacper\Documents\GitHub\fanTAStic\API\WebApplication2\WebApplication2\bin\Newtonsoft.Json.dll
 C:\Users\Kacper\Documents\GitHub\fanTAStic\API\WebApplication2\WebApplication2\bin\Newtonsoft.Json.xml
 C:\Users\Kacper\Documents\fantastic\project\API\WebApplication2\WebApplication2\bin\WebApplication2.dll.config
@@ -137,3 +111,31 @@ C:\Users\user\Documents\GitHub\fanTAStic\API\WebApplication2\WebApplication2\bin
 C:\Users\user\Documents\GitHub\fanTAStic\API\WebApplication2\WebApplication2\obj\Debug\WebApplication2.csprojResolveAssemblyReference.cache
 C:\Users\user\Documents\GitHub\fanTAStic\API\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
 C:\Users\user\Documents\GitHub\fanTAStic\API\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb
+C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\WebApplication2.dll
+C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\WebApplication2.pdb
+C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\Newtonsoft.Json.dll
+C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\ServiceStack.Client.dll
+C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\ServiceStack.Common.dll
+C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\ServiceStack.dll
+C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\ServiceStack.Interfaces.dll
+C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\ServiceStack.OrmLite.dll
+C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\ServiceStack.Razor.dll
+C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\ServiceStack.Redis.dll
+C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\ServiceStack.Server.dll
+C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\ServiceStack.Text.dll
+C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\System.Web.Razor.dll
+C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\WebApplication2.ServiceInterface.dll
+C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\WebApplication2.ServiceModel.dll
+C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\WebApplication2.ServiceInterface.pdb
+C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\WebApplication2.ServiceModel.pdb
+C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\Newtonsoft.Json.xml
+C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\ServiceStack.xml
+C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\ServiceStack.Client.xml
+C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\ServiceStack.Common.xml
+C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\ServiceStack.Razor.xml
+C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\ServiceStack.Redis.xml
+C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\ServiceStack.Text.xml
+C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\bin\System.Web.Razor.xml
+C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\obj\Debug\WebApplication2.csprojResolveAssemblyReference.cache
+C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
+C:\Users\ww\Documents\Visual Studio 2012\Projects\fanTAStic\API\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb
