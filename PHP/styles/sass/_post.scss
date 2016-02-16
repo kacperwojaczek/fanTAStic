@@ -1,0 +1,131 @@
+.post-container {
+	width: calc(100vw - $margin/2);
+
+	@include column-count(4);
+	@include column-gap($margin/4);
+
+	margin: $margin/4;
+}
+
+.post.excerpt {
+	display: inline-block;
+	width: 100%;
+
+	margin: $margin/4 0;
+	padding: 0;
+
+	background-color: $white;
+
+	header {
+		display: block;
+
+		height: 50px;
+		width: 100%;
+
+		background-color: $color;
+
+		a.post-title {
+			display: block;
+
+			height: 50px;
+			width: calc(100% - 100px);
+
+			line-height: 50px;
+
+			float: right;
+
+			text-align: center;
+
+			color: $dark;
+
+			overflow: hidden;
+		}
+	}
+	article {
+		padding: $margin/4;
+	}
+	footer {
+		display: block;
+
+		padding: 5px;
+
+		font-size: 12px;
+
+		color: $light;
+		background-color: $medium;
+	}
+}
+
+.post.full {
+	width: 800px;
+	margin: 0 auto 20px;
+
+	header {
+		padding: 0 0 10px;
+
+		& > * {
+			display: inline-block;
+		}
+
+		a.post-title {
+			color: $dark;
+			&:hover {color: $color}
+			&:active {color: $white}
+		}
+		a.post-author {
+
+			color: $dark;
+			opacity: 0.2;
+			&:hover {opacity: 0.5; color: $color}
+			&:active {opacity: 1; color: $color}
+
+			h3:before {content: "@";}
+		}
+	}
+	article {
+		min-height: 64px;
+
+		padding: 20px 40px 20px 20px;
+
+		font-size: 16px;
+
+		line-height: 24px;
+
+		text-align: justify;
+
+		background-color: $white;
+
+		p:first-letter {
+			float: left;
+
+			height: 64px;
+			width: 64px;
+
+			margin: 0 10px 0 0;
+
+			color: $white;
+
+			font-size: 64px; 
+			line-height: 54px;
+
+			text-align: right;
+			background-color: $color;
+		}
+	}
+	footer {
+		transition: opacity $duration;
+		opacity: 0.5;
+		&:hover {opacity: 1}
+
+		padding: 10px;
+
+		& > * {
+			display: inline-block;
+			margin: 0 20px 0 0;
+		}
+
+		.post-date {
+			color: $medium;
+		}
+	}
+}

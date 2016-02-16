@@ -1,0 +1,183 @@
+.form {
+	display: block;
+
+	width: 400px;
+
+	overflow: hidden;
+
+	border: solid 1px transparent;
+
+	h2 {
+		transition: opacity $duration/2;
+
+		display: block;
+
+		width: 400px;
+		height: 50px;
+
+		text-align: center;
+		line-height: 50px;
+
+		opacity: $opacity;
+	}
+
+	&.login {
+		border-color: $medium;
+	}
+	&.register {
+		border-color: $color;
+	}
+}
+
+.form-header + .form.login, .form-header + .form.register {
+	transition: max-height $duration;
+
+	max-height: 0px;
+
+	&:target {
+		max-height: 1000px;
+	}
+}
+.login {
+	h2 {
+		color: $medium;
+		
+		border-bottom: solid 1px transparent;
+	}
+}
+.register {
+	h2 {
+		color: $dark;
+
+		border-right: solid 2px $color;
+		border-bottom: solid 1px transparent;
+
+		background-color: $color;
+	}
+}
+
+a.form-header {
+	h2 {
+		display: block;
+
+		width: 400px;
+		height: 50px;
+
+		text-align: center;
+		line-height: 50px;
+	}
+}
+
+::-webkit-input-placeholder {
+   color: $medium;
+}
+
+:-moz-placeholder {
+   color: $medium;  
+}
+
+::-moz-placeholder {
+   color: $medium;  
+}
+
+:-ms-input-placeholder {  
+   color: $medium;  
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="tel"], input[type="search"], input[type="url"], input[type="time"], input[type="week"], textarea {
+	display: block;
+
+	height: 50px;
+	width: 400px;
+
+	padding: $margin/4;
+
+	border: none;
+	outline: none;
+
+	font-size: 18px;
+
+	text-align: center;
+
+	color: $white;
+
+	background: $black;
+
+	&:hover {
+
+	}
+	&:focus {
+
+	}
+	&:active{
+
+	}
+}
+
+input[type="checkbox"] {}
+input[type="radio"] {}
+
+input[type="submit"], input[type="file"], input[type="image"], input[type="reset"], button {
+	display: block;
+
+	height: 50px;
+	width: 400px;
+
+	border: none;
+	outline: none;
+
+	line-height: 50px;
+
+	font-size: 25px;
+
+	text-align: center;
+
+	color: $black;
+
+	background: $white;
+
+	&:hover {
+
+	}
+	&:focus {
+		
+	}
+	&:active{
+
+	}
+}
+nav .button  {
+	display: inline-block;
+
+	height: $navbar-height;
+	width: 100px;
+
+	border: none;
+	outline: none;
+	text-decoration: none;
+
+	line-height: $navbar-height;
+
+	font-size: 16px;
+
+	text-align: center;
+
+	color: $black;
+
+	background-color: $white;
+
+	&.color {
+		transition: color $duration, background-color $duration;
+
+		color: $light;
+		background-color: $color;
+
+		&:hover {
+			color: $color;
+			background-color: $light;
+		}
+		&:active {
+			background-color: $white;
+		}
+	}
+}

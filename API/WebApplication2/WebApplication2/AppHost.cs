@@ -1,6 +1,7 @@
 ﻿using Funq;
 using ServiceStack;
 using WebApplication2.ServiceInterface;
+using WebApplication2.ServiceModel;
 
 namespace WebApplication2
 {

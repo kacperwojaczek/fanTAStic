@@ -1,0 +1,35 @@
+h1 {
+	font-family: 'Wire One', sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+	font-family: 'Unica One', cursive;
+}
+
+* {
+	font-family: 'Vollkorn', serif;
+}
+
+input, button, label, a.button, .post footer {
+	font-family: 'Unica One', cursive;
+}
+
+a {
+	transition: color $duration, opacity $duration;
+	color: $color;
+
+	text-decoration: none;
+
+	&:hover {
+		color: $white;
+	}
+	&:active {
+		color: $dark;
+	}
+	&:focus {
+
+	}
+	&:visited {
+
+	}
+}

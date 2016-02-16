@@ -1,21 +1,39 @@
-Create table Tags
-(nazwa varchar(30) not null unique primary key,
+create table Tags
+(name varchar(30) not null primary key,
 count int,
 );
 
-Create table TablicaWpisow_idUsera
-(id int not null primary key,  
-Tytul varchar(75),
-autor int,
-Tresc text,
-Tagi binary(500)
-attachment varchar(150)
+Create table Users
+(id int not null primary key identity,
+Imie varchar(64),
+Nazwisko varchar(80),
+NazwaBloga varchar(256),
+Login nvarchar(128) unique,
+Password nvarchar(128)
 );
 
-Create table Users
-(id int not null primary key identity(1,1),
-ImieBloggera varchar(30),
-NazwiskoBloggera varchar(50),
-NazwaBloga varchar(100),
-idTabWpis int references TablicaWpisow(id)
+Create table Wall	
+(id int not null primary key,
+Autor int,
+foreign key (Autor) references Users(id),
+Tytul varchar(75),
+reblog int default 0, --Podane ID prawowitego autora w razie reblogowania posta
+Tresc text,
+Tagi binary(500),
+attachment varchar(150),
+DataPosta date
 );
+
+Create table Shared
+(Autor int, foreign key (Autor) references Users(id),
+PostId int, foreign key (PostId) references Wall(id),
+PostDate date
+);
+
+Select * from Tags;
+Select * from Users;
+select * from Wall;
+
+--drop table Tags;
+--drop table Users
+--drop table Wall;

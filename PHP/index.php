@@ -1,18 +1,21 @@
 <?php
-	include "config.php";
-	//$title = "home";
+	include_once "config.php";
 ?>
+
 <html>
-<?php include "structure/header.php" ?>
+<?php echo head(); ?>
 <body>
-	<?php include "structure/nav.php" ?>
+	<div id="modal-control" <?php if($_COOKIE["modal-launch"] === "hidden") {?> class="hidden" <?php } ?>>
+	<?php echo navbar(); ?>
 	<main>
-	<?php include "structure/halloffame.php" ?>
+		<?php echo halloffame(); ?>
 	</main>
-	<aside>
-		<?php include "structure/login.php" ?>
-		<?php include "structure/register.php" ?>
-	</aside>
-	<?php include "structure/footer.php" ?>
+	<?php echo footer(); ?>
+	</div>
+	<div id="modal-wrapper" <?php if($_COOKIE["modal-launch"] === "hidden") {?> class="hidden" <?php } ?>>
+<?php if($_COOKIE["modal-launch"] !== "hidden") { ?>
+		<?php echo splashModal(); ?>
+<?php } ?>
+	</div>
 </body>
 </html>
