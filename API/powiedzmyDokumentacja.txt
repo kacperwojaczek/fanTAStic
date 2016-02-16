@@ -9,3 +9,5 @@ Użytkownicy
 	GET	/users
 		/users/{Login}
 	PATCH	/users/{Login}
+
+Tu będzie finalny deploy na tym branchu
