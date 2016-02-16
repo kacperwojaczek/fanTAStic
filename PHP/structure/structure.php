@@ -13,4 +13,6 @@ include_once "halloffame.php";
 include_once "forms.php";
 
 include_once "logo.php";
+
+include_once "avatar.php";
 ?>

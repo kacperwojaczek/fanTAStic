@@ -1,14 +1,28 @@
 <?php
 function halloffame() {
-	require_once("post.php");
-	require_once("lipsum.php");
+	include_once "post.php";
+	include "config.php";
 
-	$result = '<div class="post-container">';
-	for($i = 0; $i < rand(5, 30); ++$i) {
-		$string = implode(' ', array_slice(explode(' ', $lipsum), 0, rand(5, 100)));
-		$result .= postExcerpt("", "", "", "", $string);
+	$result = "<div class=\"post-container\">";
+
+	$posts = dataGet($urlBackend ."/posts/0/");
+
+	foreach ($posts as $post) {
+		$profile = dataGet($urlBackend ."/users/". $post["authorId"]);
+
+		$author = $profile["Firstname"]." ". $profile["Lastname"];
+		$authorUrl = $profile["Login"];
+
+		$postTitle = $post["title"];
+		$postUrl = $post["id"];
+
+		$postText = $post["text"];
+
+		$postDate = $post["date"];
+
+		$result .= postExcerpt($author, $authorUrl, $postUrl, $postTitle, $postText, $postDate);
 	}
-	$result .= '</div>';
+	$result .= "</div>";
 	return $result;
 }
 ?>

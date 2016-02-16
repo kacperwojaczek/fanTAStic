@@ -23,7 +23,7 @@ namespace WebApplication2.ServiceModel
         public ResponseStatus ResponseStatus { get; set; }
 
         public string Result { get; set; }
-
+        //pobiera postów (wszystkich)
         public List<UserPost> Get(UserPostRequest request)
         {
             var userPosts = new List<UserPost>();
@@ -99,7 +99,7 @@ namespace WebApplication2.ServiceModel
             }
 
         }
-
+        //pobiera posty (zalogowanego) i umożliwia edycję
         public List<UserPost> Patch(UserPostRequest request)
         {
             var userPosts = new List<UserPost>();
@@ -178,7 +178,7 @@ namespace WebApplication2.ServiceModel
 
         }
     }
-
+    
     public class UserPost
     {
         public int id { get; set; }

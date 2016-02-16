@@ -1,0 +1,60 @@
+.avatar {
+	display: block;
+
+	height: 75px;
+	width: 75px;
+
+	margin: -12.5px 12.5px;
+
+	float: left;
+
+	border-radius: 37.5px;
+
+	background-color: $dark;
+
+	text-indent: -9999px;
+
+	&.small {
+		height: 16px;
+		width: 16px;
+
+		margin: 0 5px 0 0;
+
+		border-radius: 8px;
+
+		background-color: $medium;
+	}
+
+	&.nav {
+		height: $navbar-height;
+		width: $navbar-height;
+
+		margin: 0 12.5px;
+
+		background: $medium;
+	}
+
+	&.profile {
+		height: 150px;
+		width: 150px;
+
+		border-radius: 75px;
+
+		margin: 0;
+	}
+}
+
+li.avatar-wrapper {
+	width: auto;
+
+	padding: 0 12.5px 0 0;
+
+	line-height: $navbar-height;
+
+	background: $white;
+}
+
+a.avatar-wrapper {
+	display: block;
+	color: $medium;
+}

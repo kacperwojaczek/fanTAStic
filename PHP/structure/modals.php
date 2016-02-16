@@ -1,5 +1,4 @@
 <?php
-
 function splashModal() {
 	return '
 		<div id="modal" class="splash">
@@ -19,8 +18,7 @@ function splashModal() {
 function registerModal() {
 	return '
 		<div id="modal">
-			<div onclick="modalClose()">close</div>
-			'. logo("medium") .'
+			<div id="close" title="close" onclick="modalClose()">✕</div>
 			'. register() .'
 		</div>
 	';
@@ -29,9 +27,19 @@ function registerModal() {
 function loginModal() {
 	return '
 		<div id="modal">
-			<div onclick="modalClose()">close</div>
-			'. logo("medium") .'
+			<div id="close" title="close" onclick="modalClose()">✕</div>
 			'. login() .'
+		</div>
+	';
+}
+
+function saveModal() {
+	return '
+		<div id="modal">
+			<div id="close" title="close" onclick="modalClose()">✕</div>
+				<p>Changes have been saved.</p>
+				<div class="button" onclick="modalClose()>I am okay with that.</div>
+			</div>
 		</div>
 	';
 }

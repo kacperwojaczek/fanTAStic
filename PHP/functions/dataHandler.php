@@ -1,31 +1,71 @@
 <?php
-function dataSend($url, $jsonData) {
-	$jsonDataEncoded = json_encode($jsonData);
+function dataSend($url, $json) {
+	$ch = curl_init();
 
-	$ch =  curl_init($url);
+	$jsonData = json_encode($json);
 
+    curl_setopt($ch, CURLOPT_URL, $url);
 	curl_setopt($ch, CURLOPT_POST, 1);
-	curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonDataEncoded);
-	curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+		'Content-Type: application/json',
+		'Content-Length: ' . strlen($jsonData))
+	);  
 
-	//$result = curl_exec($ch);
+	curl_exec($ch);
+	$result = curl_getinfo($ch);
 
-	//curl_close($ch);
+	curl_close($ch);
 
-	//return $result;
+	return $result;
 }
 
-function dataGet($url2) {
-  	$ch2 = curl_init($url2);
+function dataGet($url) {
+	$ch = curl_init();
 
-	curl_setopt_array($ch2, array(
-		CURLOPT_URL = $url2
-	));
+	curl_setopt($ch, CURLOPT_URL, $url);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
-	//$answer = curl_exec($ch2);
+	$result = curl_exec($ch);
+	curl_getinfo($ch);
 
-	//curl_close($ch2);
+	curl_close($ch);
+
+	return json_decode($result, 1);
+}
+
+function dataPatch($url, $json) {
+	$ch = curl_init();
+
+	$jsonData = json_encode($json);
+
+	curl_setopt($ch, CURLOPT_URL, $url);
+	curl_setopt($ch, CURLOPT_POST, 1);
+	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PATCh");
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+		'Content-Type: application/json',
+		'Content-Length: ' . strlen($jsonData))
+	);  
+
+	curl_exec($ch);
+	$result = curl_getinfo($ch);
+
+	curl_close($ch);
+
+	return $result;
+}
+
+function sharedPostSend($url, $json) {
+
+
+	$json = array(
+		"Login" => $_POST['username'],
+		"PostId" => $_POST['PostId'] #Nie znalazłem... :<<<
+	);
 	
-	//return $answer;
+	
 }
 ?>

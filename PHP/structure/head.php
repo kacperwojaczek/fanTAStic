@@ -31,7 +31,7 @@ function head($title = "", $subtitle = "") {
 			<meta name="application-name" content="ipsu.me">
 			<meta name="msapplication-TileColor" content="#f2f2f2">
 			<meta name="msapplication-TileImage" content="/styles/favicons/mstile-144x144.png">
-			<meta name="theme-color" content="#f85145">
+			<meta name="theme-color" content="#d7d9d0">
 
 			<!-- css -->
 			<link rel="stylesheet" href="/styles/css/main.css">
@@ -41,7 +41,7 @@ function head($title = "", $subtitle = "") {
 			<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Vollkorn:400,400italic,700italic,700&subset=latin,latin-ext">
 
 			<!-- js -->
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+			<!-- script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script -->
 		</head>
 	';
 }

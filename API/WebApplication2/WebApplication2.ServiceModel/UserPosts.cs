@@ -18,13 +18,13 @@ namespace WebApplication2.ServiceModel
         public string Title { get; set; }
         public string Content { get; set; }
     }
-
+    
     public class UserPostsResponse
     {
         public ResponseStatus ResponseStatus { get; set; }
 
         public string Result { get; set; }
-
+        //pobiera posty (danego usera)
         public List<Int32> Get(UserPostsRequest request)
         {
             List<Int32> posts = new List<Int32>();
@@ -58,7 +58,15 @@ namespace WebApplication2.ServiceModel
                     {
                         posts.Add(dataReader.GetInt32(0));
                     }
+                    //Pobieranie share postów
+                    command = "Select id from Wall where id in (select PostId from Shared where Autor=@Autor";
+                    dataReader = dbConnection.executeCommand(command, paramsList);
 
+                    while (dataReader.Read())
+                    {
+                        posts.Add(dataReader.GetInt32(0));
+                    }
+                    //
                     return posts;
                 }
                 else
@@ -73,7 +81,7 @@ namespace WebApplication2.ServiceModel
             }
 
         }
-
+        //Dodaj post
         public int Post(UserPostsRequest request)
         {
             UserPost post = new UserPost();

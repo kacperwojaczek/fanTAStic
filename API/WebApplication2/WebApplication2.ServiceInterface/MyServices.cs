@@ -79,6 +79,7 @@ namespace WebApplication2.ServiceInterface
             return response;
         }
     }
+
     public class loginService : Service
     {
         public object Post(loginRequest request)
@@ -94,6 +95,7 @@ namespace WebApplication2.ServiceInterface
             return Response;
         }
     }
+
     public class UserPostsService : Service
     {
         public object Get(UserPostsRequest request)
@@ -146,6 +148,38 @@ namespace WebApplication2.ServiceInterface
             }
             string response = JsonConvert.SerializeObject(posts, Formatting.Indented);
             return response;
+        }
+    }
+
+    public class SharePostService : Service
+    {
+        public object Post(SharePostsRequest request)
+        {
+            SharePostResponse Response = new SharePostResponse();
+            var resp = Response.SharePost(request);
+            if (resp == 200)
+            {
+                base.Response.StatusCode = (int)HttpStatusCode.OK;
+                return Response;
+            }
+            else
+            {
+                base.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                return Response;
+            }
+        }
+    }
+
+    public class TagSearchservice : Service
+    {
+        public object Get(TagSearchRequest request)
+        {
+            TagSearchResponse Response = new TagSearchResponse();
+            var result = Response.Get(request);
+            var response = JsonConvert.SerializeObject(result, Formatting.Indented);
+            return response;
+
+
         }
     }
 }
